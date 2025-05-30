@@ -15,7 +15,8 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/ga
 #echo $PATH
 echo -e "\e[1;33mPhase 2...\033[0m"
 echo "Download unmerge list for bad_static set"
-curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/main/rostelecom/${TYPE}_merged.txt https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/main/yandex/${TYPE}_merged.txt https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/main/vkontakte/${TYPE}_merged.txt | sudo sort -t. -k1,1n -k2,2n -k3,3n -k4,4n -T /root/ > /tmp/ru.txt
+cat templates/ipset/delete_ip_bad.txt > /tmp/ru.txt
+#curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/main/rostelecom/${TYPE}_merged.txt https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/main/yandex/${TYPE}_merged.txt https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/main/vkontakte/${TYPE}_merged.txt | sudo sort -t. -k1,1n -k2,2n -k3,3n -k4,4n -T /root/ >> /tmp/ru.txt
 #curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/country-ip-blocks-unmerged/refs/heads/main/${TYPE}/unmerge_ru.txt.zst | zstd -d >> /tmp/ru.txt
 sudo sort /tmp/ru.txt -T /root/ -h | uniq | sponge /tmp/ru.txt
 #cat /tmp/ru.txt | ip2net --v4-threshold=${THRESHOLDv4} --prefix-length=${IP2NET_PREFIX_LENGTH} > /tmp/bad_static_merge
