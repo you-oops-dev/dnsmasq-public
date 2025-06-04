@@ -93,9 +93,7 @@ jobs:
        cat -n /etc/resolv.conf
        echo ""
        sudo systemctl stop systemd-resolved.service && sudo systemctl disable systemd-resolved.service
-       sudo rm -fv /etc/dnsmasq.d/domains.host
-       sudo sed -i '1d' /etc/dnsmasq.d/hosts
-       sudo sed -i '2d' /etc/dnsmasq.d/hosts
+       sudo rm -fv /etc/dnsmasq.d/domains.host /etc/dnsmasq.d/hosts
        sudo systemctl start coredns.service dnsmasq.service && sleep 15s && echo "" && nc -z -v 127.0.0.1 53 && echo ""
        systemctl -q status coredns.service dnsmasq.service
 
