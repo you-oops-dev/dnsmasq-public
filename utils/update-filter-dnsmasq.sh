@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-auto_reboot_service_after_upd_list=y
+auto_reboot_service_after_upd_list=n
 
 if [ "$UID" -ne "0" ]; then
     echo -e "\n\e[0;33m[${0##*/}]\e[1;31m Error: \e[0;33mYOU MUST BE ROOT TO USE THIS!"
@@ -377,11 +377,11 @@ echo ""
 
 if [[ "$auto_reboot_service_after_upd_list" == "Y" ]] || [[ "$auto_reboot_service_after_upd_list" == "y" ]]; then
     echo -e "\e[1;33mАвтоматическая перезагрузка сервиса... \033[0m"
-    cp -v /tmp/01_unbound_filters.hostname ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/domains.host
-    cp -v /etc/dnsmasq.d/hosts ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/
     systemctl -q restart dnsmasq.service
     clear && echo "" && systemctl -q status dnsmasq.service
 else
     echo -e "\e[1;33mНе забудьте перезагрузить сервис dnsmasq вручную!!!! \033[0m"
 fi
+cp -v /tmp/01_unbound_filters.hostname ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/domains.host
+cp -v /etc/dnsmasq.d/hosts ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/
 exit 0
