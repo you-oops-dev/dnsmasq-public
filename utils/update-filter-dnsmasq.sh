@@ -326,13 +326,19 @@ echo "expressvpn.com" >> /tmp/filter/whitelist.hostname
 echo "www.expressvpn.com" >> /tmp/filter/whitelist.hostname
 echo "app.appsflyer.com" >> /tmp/filter/whitelist.hostname
 echo "www.app.appsflyer.com" >> /tmp/filter/whitelist.hostname
+echo "firebase-settings.crashlytics.com" >> /tmp/filter/whitelist.hostname
+echo "www.firebase-settings.crashlytics.com" >> /tmp/filter/whitelist.hostname
+echo "crashlyticsreports-pa.googleapis.com" >> /tmp/filter/whitelist.hostname
+echo "clients.l.google.com" >> /tmp/filter/whitelist.hostname
+echo "l.google.com" >> /tmp/filter/whitelist.hostname
 #Яндекс в белый список
 echo "ya.ru
 yandex.ru
 yastatic.net
 avatars.mds.yandex.net
 mds.yandex.net
-yandex.net" >> /tmp/filter/whitelist.hostname
+yandex.net
+favicon.yandex.net" >> /tmp/filter/whitelist.hostname
 ###
 ###
 #Чистим от киррилитических доменов
