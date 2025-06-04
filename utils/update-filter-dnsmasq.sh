@@ -54,10 +54,10 @@ sed -i '/vortex.data.microsoft.com/d; /vortex-win.data.microsoft.com/d' /tmp/fil
 cat /tmp/filter/spy.txt | awk -F\# '$1!="" { print $1 ;}' | awk '{print $2}' > /tmp/filter/spy.hostname
 echo ""
 
-#echo "Загрузка список хостов TikTok (но не включаем его)"
-#wget -nv -4 -P /tmp/filter/ https://raw.githubusercontent.com/d43m0nhLInt3r/socialblocklists/master/TikTok/tiktokblocklistWithoutRegex.txt
-#cat /tmp/filter/tiktokblocklistWithoutRegex.txt | awk '{print $2}' > /tmp/filter/tiktok_block.hostname_off
-#echo ""
+echo "Загрузка список хостов TikTok (но не включаем его)"
+wget -nv -4 -P /tmp/filter/ https://raw.githubusercontent.com/d43m0nhLInt3r/socialblocklists/master/TikTok/tiktokblocklistWithoutRegex.txt
+cat /tmp/filter/tiktokblocklistWithoutRegex.txt | awk '{print $2}' > /tmp/filter/tiktok_block.hostname_off
+echo ""
 
 echo "Загрузка листа... Содержит домена вредоностных сайтов с вредоностным ПО..."
 wget -4 -nv -P /tmp/filter/ https://urlhaus.abuse.ch/downloads/hostfile/
@@ -75,7 +75,7 @@ echo ""
 echo "Загрузка листа... Содержит домена для блокировки рекламы.Оч.Жесткая блокировка"
 wget -nv -4 -P /tmp/filter/ https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds-Ultra.txt
 #Чистка
-cat /tmp/filter/GoodbyeAds-Ultra.txt | awk -F\# '$1!="" { print $1 ;}' | grep -i 0.0.0.0 | sed '/0.0.0.0 0.0.0.0/d' | awk '{print $2}' > /tmp/filter/GoodbyeAds-Ultra.hostname_off
+cat /tmp/filter/GoodbyeAds-Ultra.txt | awk -F\# '$1!="" { print $1 ;}' | grep -i 0.0.0.0 | sed '/0.0.0.0 0.0.0.0/d' | awk '{print $2}' > /tmp/filter/GoodbyeAds-Ultra.hostname
 echo ""
 
 echo "Загрузка листа... Содержит домена для блокировки Facebook..."
@@ -326,12 +326,16 @@ echo "expressvpn.com" >> /tmp/filter/whitelist.hostname
 echo "www.expressvpn.com" >> /tmp/filter/whitelist.hostname
 echo "app.appsflyer.com" >> /tmp/filter/whitelist.hostname
 echo "www.app.appsflyer.com" >> /tmp/filter/whitelist.hostname
+echo "ya.ru" >> /tmp/filter/whitelist.hostname
+echo "yandex.ru" >> /tmp/filter/whitelist.hostname
+###
 ###
 #Чистим от киррилитических доменов
 sed -i '/[А-Я]/d' /tmp/filter/whitelist.hostname
 sed -i '/[а-я]/d' /tmp/filter/whitelist.hostname
-#
+#sed -i 's/^ *//g' /tmp/filter/whitelist.hostname
 sed -i 's/ //g' /tmp/filter/whitelist.hostname #Чистим от пробелов
+sort /tmp/filter/whitelist.hostname -T /root/ | uniq | sponge /tmp/filter/whitelist.hostname
 
 echo "Сливаем списки, которые в HOME... (Если есть и не пусты)"
 if [[ -f /home/"$USERNAME"/whitelist.txt ]]; then
