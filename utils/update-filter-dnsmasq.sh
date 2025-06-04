@@ -366,7 +366,7 @@ echo "Сливаем два списка предварительно отсор
 comm -23 /tmp/filter/unbound.hostname /tmp/filter/whitelist.hostname > /tmp/01_unbound_filters.hostname
 echo ""
 
-cat /tmp/01_unbound_filters.hostname | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq/dnsmasq.d/hosts
+cat /tmp/01_unbound_filters.hostname | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
 
 echo ""
 echo "Удаление загруженых листов..."
