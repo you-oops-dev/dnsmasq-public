@@ -9,6 +9,8 @@ if [ "$UID" -ne "0" ]; then
 fi
 USERNAME=root
 export HOME_GITHUB=$(pwd)
+export LANG=en_US.UTF-8
+export CHARSET=UTF-8
 
 delele_dir(){
     rm -rf /tmp/filter/
@@ -111,7 +113,7 @@ wget -4 -nv -O /tmp/filter/wapclick_megafon2.txt https://raw.githubusercontent.c
 wget -4 -nv -O /tmp/filter/wapclick_mts.txt https://raw.githubusercontent.com/mtxadmin/ublock/master/hosts/subdomains/_wapclick_mts_podpiski_all
 #ALL
 wget -4 -nv -O /tmp/filter/wapclick_all.txt https://raw.githubusercontent.com/mtxadmin/ublock/master/hosts/subdomains/_wapclick_all
-cat /tmp/filter/wapclick_*.txt | awk -F\! '$1!="" { print $1 ;}' | sort -u | sed '1d'  > /tmp/filter/01_anti_wapclick.hostname
+cat /tmp/filter/wapclick_*.txt | awk -F\! '$1!="" { print $1 ;}' | sort -T /root/ | uniq | sed '1d'  > /tmp/filter/01_anti_wapclick.hostname
 #echo ""
 
 #Блокировка онлайн-казино
@@ -120,7 +122,7 @@ echo "Загрузка листа... Содержит домена онлайн-
 wget -4 -nv -O /tmp/filter/01_azino.txt https://raw.githubusercontent.com/mtxadmin/ublock/master/hosts/subdomains/_all_bets_are_off__azino7_all
 #1xbet
 wget -4 -nv -O /tmp/filter/01_1xbet.txt https://raw.githubusercontent.com/mtxadmin/ublock/master/hosts/subdomains/_all_bets_are_off__1xbet_all
-cat /tmp/filter/01_{azino,1xbet}.txt | awk -F\! '$1!="" { print $1 ;}' | sort -u | sed '1d' > /tmp/filter/01_casino.hostname
+cat /tmp/filter/01_{azino,1xbet}.txt | awk -F\! '$1!="" { print $1 ;}' | sort -T /root/ | uniq | sed '1d' > /tmp/filter/01_casino.hostname
 echo ""
 echo "Блокировка рекламы"
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock.hostname https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/ParsedBlacklists/RUAdListBitBlock.txt
@@ -128,9 +130,9 @@ wget -4 -nv -O /tmp/filter/RUAdListBitBlock1.hostname https://raw.githubusercont
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock2.hostname https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/ParsedBlacklists/RU-AdList.txt
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock3.hostname https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/CountryCodesLists/Russia.txt
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock4.txt https://raw.githubusercontent.com/parseword/nolovia/master/skel/hosts-government-malware.txt
-cat /tmp/filter/RUAdListBitBlock4.txt | sed '/#/d' | sed '/!/d' | sort | uniq > /tmp/filter/RUAdListBitBlock4.hostname
+cat /tmp/filter/RUAdListBitBlock4.txt | sed '/#/d' | sed '/!/d' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock4.hostname
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock5.txt https://block.energized.pro/blu/formats/domains.txt
-cat /tmp/filter/RUAdListBitBlock5.txt | sed '/#/d' | sed '/!/d' | sort | uniq > /tmp/filter/RUAdListBitBlock5.hostname
+cat /tmp/filter/RUAdListBitBlock5.txt | sed '/#/d' | sed '/!/d' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock5.hostname
 echo ""
 
 echo "Объеденение несколько списков в один список..."
@@ -148,7 +150,7 @@ sed -i '/[А-Я]/d' /tmp/filter/unbound.hostname
 sed -i '/[а-я]/d' /tmp/filter/unbound.hostname
 #
 sed -i 's/^ *//g' /tmp/filter/unbound.hostname
-sort /tmp/filter/unbound.hostname | uniq | sponge /tmp/filter/unbound.hostname
+sort /tmp/filter/unbound.hostname -T /root/ | uniq | sponge /tmp/filter/unbound.hostname
 
 #######
 ##Блокировка
@@ -270,7 +272,7 @@ echo "api3.friproxy.org" >> /tmp/filter/unbound.hostname
 echo "s1814.frigateblocklist.com" >> /tmp/filter/unbound.hostname
 echo "s814.frigateblocklist.com" >> /tmp/filter/unbound.hostname
 #######
-sort /tmp/filter/unbound.hostname | uniq | sponge /tmp/filter/unbound.hostname
+sort /tmp/filter/unbound.hostname -T /root/ | uniq | sponge /tmp/filter/unbound.hostname
 
 echo "Загрузка белого листа"
 wget -4 -nv -O /tmp/filter/whitelist.hostname https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt
@@ -354,10 +356,10 @@ fi
 ###
 echo ""
 echo "Сортируем списки..."
-sort /tmp/filter/unbound.hostname | uniq | sponge /tmp/filter/unbound.hostname.sort
+sort /tmp/filter/unbound.hostname -T /root/ | uniq | sponge /tmp/filter/unbound.hostname.sort
 mv /tmp/filter/unbound.hostname.sort /tmp/filter/unbound.hostname
 
-sort /tmp/filter/whitelist.hostname | uniq | sponge /tmp/filter/whitelist.hostname.sort
+sort /tmp/filter/whitelist.hostname -T /root/ | uniq | sponge /tmp/filter/whitelist.hostname.sort
 mv /tmp/filter/whitelist.hostname.sort /tmp/filter/whitelist.hostname
 echo ""
 echo "Сливаем два списка предварительно отсортируем их в новый список идёт только разница"
@@ -375,9 +377,9 @@ echo ""
 
 if [[ "$auto_reboot_service_after_upd_list" == "Y" ]] || [[ "$auto_reboot_service_after_upd_list" == "y" ]]; then
     echo -e "\e[1;33mАвтоматическая перезагрузка сервиса... \033[0m"
-    systemctl -q restart dnsmasq.service
     cp -v /tmp/01_unbound_filters.hostname ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/domains.host
     cp -v /etc/dnsmasq/dnsmasq.d/hosts ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/
+    systemctl -q restart dnsmasq.service
     clear && echo "" && systemctl -q status dnsmasq.service
 else
     echo -e "\e[1;33mНе забудьте перезагрузить сервис dnsmasq вручную!!!! \033[0m"
