@@ -171,7 +171,7 @@ jobs:
        mv -fv domain_bad_ipset.conf templates/dnsmasq/dnsmasq.d/ && mv -fv domain_bad_nftset.conf templates/dnsmasq/dnsmasq.d/ && mv -fv unblock_ipset.conf templates/dnsmasq/dnsmasq.d/ && mv -fv unblock_nftset.conf templates/dnsmasq/dnsmasq.d/
 
     - name: Test config
-      run: sudo rm -rfv /etc/dnsmasq* && sudo cp -fv templates/dnsmasq/dnsmasq.conf /etc/dnsmasq.conf && sudo cp -fvr templates/dnsmasq/dnsmasq.d/ /etc/ && sudo chown -Rc root:root /etc/dnsmasq* && sudo systemctl restart coredns.service dnsmasq.service && sleep 15s && echo "" && nc -z -v 127.0.0.1 53 && echo "" && systemctl -q status coredns.service dnsmasq.service && sleep 3s
+      run: sudo rm -rfv /etc/dnsmasq* && sudo cp -fv templates/dnsmasq/dnsmasq.conf /etc/dnsmasq.conf && sudo cp -fvr templates/dnsmasq/dnsmasq.d/ /etc/ && sudo chown -Rc root:root /etc/dnsmasq* && sudo rm -fv /etc/dnsmasq.d/domains.host /etc/dnsmasq.d/hosts && sudo systemctl restart coredns.service dnsmasq.service && sleep 15s && echo "" && nc -z -v 127.0.0.1 53 && echo "" && systemctl -q status coredns.service dnsmasq.service && sleep 3s
 
     - name: Test func dnsmasq and ipset
       run: sudo ipset create bad hash:ip maxelem 1000000 && sudo ipset create bad_static hash:ip maxelem 1000000000 && sudo ipset create unblock hash:ip maxelem 1000000 timeout 3600 && sudo ipset create unblock_static hash:ip maxelem 1000000000 && dig rutracker.org A +short && dig rutracker.org A +short && sudo ipset -L unblock | head -n 15
