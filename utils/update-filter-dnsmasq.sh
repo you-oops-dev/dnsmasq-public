@@ -378,7 +378,7 @@ echo ""
 if [[ "$auto_reboot_service_after_upd_list" == "Y" ]] || [[ "$auto_reboot_service_after_upd_list" == "y" ]]; then
     echo -e "\e[1;33mАвтоматическая перезагрузка сервиса... \033[0m"
     cp -v /tmp/01_unbound_filters.hostname ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/domains.host
-    cp -v /etc/dnsmasq/dnsmasq.d/hosts ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/
+    cp -v /etc/dnsmasq.d/hosts ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/
     systemctl -q restart dnsmasq.service
     clear && echo "" && systemctl -q status dnsmasq.service
 else
