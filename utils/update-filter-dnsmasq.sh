@@ -326,8 +326,13 @@ echo "expressvpn.com" >> /tmp/filter/whitelist.hostname
 echo "www.expressvpn.com" >> /tmp/filter/whitelist.hostname
 echo "app.appsflyer.com" >> /tmp/filter/whitelist.hostname
 echo "www.app.appsflyer.com" >> /tmp/filter/whitelist.hostname
-echo "ya.ru" >> /tmp/filter/whitelist.hostname
-echo "yandex.ru" >> /tmp/filter/whitelist.hostname
+#Яндекс в белый список
+echo "ya.ru
+yandex.ru
+yastatic.net
+avatars.mds.yandex.net
+mds.yandex.net
+yandex.net" >> /tmp/filter/whitelist.hostname
 ###
 ###
 #Чистим от киррилитических доменов
