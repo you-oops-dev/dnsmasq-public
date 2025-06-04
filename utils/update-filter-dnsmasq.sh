@@ -367,6 +367,8 @@ comm -23 /tmp/filter/unbound.hostname /tmp/filter/whitelist.hostname > /tmp/01_u
 echo ""
 
 cat /tmp/01_unbound_filters.hostname | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
+sed -i '1d' /etc/dnsmasq.d/hosts
+sed -i '2d' /etc/dnsmasq.d/hosts
 
 echo ""
 echo "Удаление загруженых листов..."
