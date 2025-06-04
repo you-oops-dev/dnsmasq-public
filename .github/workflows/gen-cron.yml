@@ -206,3 +206,17 @@ jobs:
           commit_user_name: github-actions[bot]
           commit_user_email: github-actions[bot]@users.noreply.github.com
           commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+    - name: Generation adblock-list for dnsmasq
+      run: echo "addn-hosts=/etc/dnsmasq.d/hosts" | tee -a /etc/dnsmasq.conf && sudo bash ./utils/update-filter-dnsmasq.sh
+
+    - name: Commit ipset configs file
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+          commit_message: "Auto-update adslist for dnsmasq"
+          file_pattern: './*/*/hosts ./*/*/domains.host'
+          commit_options: "--no-verify"
+          repository: .
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
