@@ -295,6 +295,7 @@ echo "googleadservices.com" >> /tmp/filter/whitelist.hostname
 echo "miru.mobi" >> /tmp/filter/whitelist.hostname
 echo "static.wikia.nocookie.net" >> /tmp/filter/whitelist.hostname
 echo "gstatic.com" >> /tmp/filter/whitelist.hostname
+echo "www.gstatic.com" >> /tmp/filter/whitelist.hostname
 echo "darkreader.github.io" >> /tmp/filter/whitelist.hostname
 echo "2ip.ru" >> /tmp/filter/whitelist.hostname
 echo "services.fandom.com^" >> /tmp/filter/whitelist.hostname
@@ -326,19 +327,20 @@ echo "expressvpn.com" >> /tmp/filter/whitelist.hostname
 echo "www.expressvpn.com" >> /tmp/filter/whitelist.hostname
 echo "app.appsflyer.com" >> /tmp/filter/whitelist.hostname
 echo "www.app.appsflyer.com" >> /tmp/filter/whitelist.hostname
-echo "firebase-settings.crashlytics.com" >> /tmp/filter/whitelist.hostname
-echo "www.firebase-settings.crashlytics.com" >> /tmp/filter/whitelist.hostname
-echo "crashlyticsreports-pa.googleapis.com" >> /tmp/filter/whitelist.hostname
-echo "clients.l.google.com" >> /tmp/filter/whitelist.hostname
-echo "l.google.com" >> /tmp/filter/whitelist.hostname
+
 #Яндекс в белый список
 echo "ya.ru
+www.ya.ru
 yandex.ru
+www.yandex.ru
 yastatic.net
 avatars.mds.yandex.net
 mds.yandex.net
 yandex.net
-favicon.yandex.net" >> /tmp/filter/whitelist.hostname
+favicon.yandex.net
+mc.yandex.ru
+mail.yandex.ru
+music.yandex.ru" >> /tmp/filter/whitelist.hostname
 ###
 ###
 #Чистим от киррилитических доменов
