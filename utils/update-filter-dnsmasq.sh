@@ -133,6 +133,8 @@ wget -4 -nv -O /tmp/filter/RUAdListBitBlock4.txt https://raw.githubusercontent.c
 cat /tmp/filter/RUAdListBitBlock4.txt | sed '/#/d' | sed '/!/d' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock4.hostname
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock5.txt https://block.energized.pro/blu/formats/domains.txt
 cat /tmp/filter/RUAdListBitBlock5.txt | sed '/#/d' | sed '/!/d' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock5.hostname
+wget -4 -nv -O /tmp/filter/RUAdListBitBlock6.txt https://schakal.ru/hosts/alive_hosts.txt
+cat /tmp/filter/RUAdListBitBlock6.txt | sed '/#/d' | awk -F\# '$1!="" { print $1 ;}' | grep -i 0.0.0.0 | sed '/0.0.0.0 0.0.0.0/d' | sed 's/^0.0.0.0 //g' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock6.hostname
 echo ""
 
 echo "Объеденение несколько списков в один список..."
