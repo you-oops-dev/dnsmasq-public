@@ -135,6 +135,8 @@ wget -4 -nv -O /tmp/filter/RUAdListBitBlock5.txt https://block.energized.pro/blu
 cat /tmp/filter/RUAdListBitBlock5.txt | sed '/#/d' | sed '/!/d' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock5.hostname
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock6.txt https://schakal.ru/hosts/alive_hosts.txt
 cat /tmp/filter/RUAdListBitBlock6.txt | sed '/#/d' | awk -F\# '$1!="" { print $1 ;}' | grep -i 0.0.0.0 | sed '/0.0.0.0 0.0.0.0/d' | sed 's/^0.0.0.0 //g' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock6.hostname
+wget -4 -nv -O /tmp/filter/RUAdListBitBlock7.txt https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardDNS.txt
+cat /tmp/filter/RUAdListBitBlock7.txt | sed '/#/d' | awk -F\# '$1!="" { print $1 ;}' | grep -i 0.0.0.0 | sed '/0.0.0.0 0.0.0.0/d' | sed 's/^0.0.0.0 //g' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock7.hostname
 echo ""
 
 echo "Объеденение несколько списков в один список..."
@@ -278,6 +280,7 @@ sort /tmp/filter/unbound.hostname -T /root/ | uniq | sponge /tmp/filter/unbound.
 
 echo "Загрузка белого листа"
 wget -4 -nv -O /tmp/filter/whitelist.hostname https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt
+wget -4q -nv -O - https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/firefox.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/banks.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/android.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/issues.txt https://raw.githubusercontent.com/privacy-protection-tools/dead-horse/master/anti-ad-white-list.txt | sed '/\/\//d' | sed '/#/d' | sed '/\$/d' | sed 's/<\/*[^>]*>//g' | sort -T /root/ | uniq >> /tmp/filter/whitelist.hostname
 echo ""
 
 ###
