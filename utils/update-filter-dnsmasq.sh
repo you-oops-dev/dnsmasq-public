@@ -346,9 +346,14 @@ favicon.yandex.net
 mc.yandex.ru
 mail.yandex.ru
 music.yandex.ru" >> /tmp/filter/whitelist.hostname
+#Ozon
+echo "
+ozon.ru
+ozone.ru
+ozonusercontent.com" >> /tmp/filter/whitelist.hostname
 ###
 ###
-#Чистим от киррилитических доменов
+#Чистим от киррилитиcческих доменов
 sed -i '/[А-Я]/d' /tmp/filter/whitelist.hostname
 sed -i '/[а-я]/d' /tmp/filter/whitelist.hostname
 #sed -i 's/^ *//g' /tmp/filter/whitelist.hostname
