@@ -214,7 +214,7 @@ jobs:
         REPOSITORY: ${{ secrets.REPO }}
       run: |
         sudo mkdir -pv /tmp/secret-list/
-        curl --max-time 30 --retry-delay 3 --retry 10 -4 -H "Authorization: token ${TOKEN}" -# https://raw.githubusercontent.com/you-oops-dev/${REPOSITORY}/refs/heads/main/unblock_suite.txt https://raw.githubusercontent.com/you-oops-dev/${REPOSITORY}/refs/heads/main/russia-blacklist_clear.txt | sed '/#/d' | sed 's/ //g' > ./whitelist.hostname
+        curl --max-time 30 --retry-delay 3 --retry 10 -4 -H "Authorization: token ${TOKEN}" -# https://raw.githubusercontent.com/you-oops-dev/${REPOSITORY}/refs/heads/main/unblock_suite.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/refs/heads/main/steam/domain.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/refs/heads/main/discord/domain.txt https://raw.githubusercontent.com/dartraiden/no-russia-hosts/master/hosts.txt https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Categories/geoblock.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Categories/block.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Services/hdrezka.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Services/meta.lst | sed 's/^.ua//g' | sed '/#/d' | sed 's/ //g' | sed '/[][]/d;s/ //g;s/"//g;s/,//g' | sed 's/^https\?:\/\///g' | sed -r '/^\s*$/d' | sort | uniq > ./whitelist.hostname
         sudo mv -fv ./whitelist.hostname /tmp/secret-list/
 
     - name: Generation adblock-list for dnsmasq
