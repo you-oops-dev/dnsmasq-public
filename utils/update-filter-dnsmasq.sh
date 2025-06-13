@@ -147,6 +147,7 @@ wget -4 -nv -O /tmp/filter/RUAdListBitBlock6.txt https://schakal.ru/hosts/alive_
 cat /tmp/filter/RUAdListBitBlock6.txt | sed '/#/d' | awk -F\# '$1!="" { print $1 ;}' | grep -i 0.0.0.0 | sed '/0.0.0.0 0.0.0.0/d' | sed 's/^0.0.0.0 //g' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock6.hostname
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock7.txt https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardDNS.txt
 cat /tmp/filter/RUAdListBitBlock7.txt | sed '/#/d' | awk -F\# '$1!="" { print $1 ;}' | grep -i 0.0.0.0 | sed '/0.0.0.0 0.0.0.0/d' | sed 's/^0.0.0.0 //g' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock7.hostname
+curl --max-time 180 --retry-delay 3 --retry 5 -4s https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/AdGuard/AdvertisingLite/AdvertisingLite.txt | sed '/#/d' | sed 's/!//g' | sed 's/||//g' | sed 's/\^//g' | sed '/[А-Я]/d' | sed '/[а-я]/d' | sort -T /root/ | uniq > /tmp/filter/AdvertisingLite.hostname
 echo ""
 
 echo "Объеденение несколько списков в один список..."
