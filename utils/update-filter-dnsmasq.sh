@@ -147,6 +147,8 @@ wget -4 -nv -O /tmp/filter/RUAdListBitBlock6.txt https://schakal.ru/hosts/alive_
 cat /tmp/filter/RUAdListBitBlock6.txt | sed '/#/d' | awk -F\# '$1!="" { print $1 ;}' | grep -i 0.0.0.0 | sed '/0.0.0.0 0.0.0.0/d' | sed 's/^0.0.0.0 //g' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock6.hostname
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock7.txt https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardDNS.txt
 cat /tmp/filter/RUAdListBitBlock7.txt | sed '/#/d' | awk -F\# '$1!="" { print $1 ;}' | grep -i 0.0.0.0 | sed '/0.0.0.0 0.0.0.0/d' | sed 's/^0.0.0.0 //g' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock7.hostname
+wget -4q -nv -O - https://raw.githubusercontent.com/AdguardTeam/AdGuardSDNSFilter/refs/heads/master/Filters/rules.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed '/\//d' | sed '/\*/d' | sed 's/\^//g' | sed 's/||//g' >> /tmp/filter/RUAdListBitBlock7.hostname
+sort -T /root/ /tmp/filter/RUAdListBitBlock7.hostname | uniq | sed 's/ /\n/g' | sed 's/ //g' | sed -r '/^\s*$/d' | sed 's/[<>]//g' | sed 's/^https\?:\/\///g' | sponge /tmp/filter/RUAdListBitBlock7.hostname
 curl --max-time 180 --retry-delay 3 --retry 5 -4s https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/AdGuard/AdvertisingLite/AdvertisingLite.txt | sed '/#/d' | sed 's/!//g' | sed 's/||//g' | sed 's/\^//g' | sed '/[А-Я]/d' | sed '/[а-я]/d' | sort -T /root/ | uniq > /tmp/filter/AdvertisingLite.hostname
 echo ""
 
@@ -291,10 +293,12 @@ sort /tmp/filter/unbound.hostname -T /root/ | uniq | sponge /tmp/filter/unbound.
 
 echo "Загрузка белого листа"
 wget -4 -nv -O /tmp/filter/whitelist.hostname https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt
-wget -4q -nv -O - https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/firefox.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/banks.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/android.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/issues.txt https://raw.githubusercontent.com/privacy-protection-tools/dead-horse/master/anti-ad-white-list.txt | sed '/\/\//d' | sed '/#/d' | sed '/\$/d' | sed 's/<\/*[^>]*>//g' | sort -T /root/ | uniq >> /tmp/filter/whitelist.hostname
+wget -4q -nv -O - https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/firefox.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/banks.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/android.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/issues.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/mac.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/sensitive.txt https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/windows.txt https://raw.githubusercontent.com/privacy-protection-tools/dead-horse/master/anti-ad-white-list.txt | sed '/\/\//d' | sed '/#/d' | sed '/\$/d' | sed 's/<\/*[^>]*>//g' | sort -T /root/ | uniq >> /tmp/filter/whitelist.hostname
+wget -4q -nv -O - https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/whitelist/master/domains.list | sed '/REG/d' | sed '/[0-9].[0-9].[0-9].[0-9]/d' | sed 's/ALL .//g' | sed '/ALL/d' | sed '/RZD/d' | sed '/[А-Я]/d' | sed '/[а-я]/d' >> /tmp/filter/whitelist.hostname
 echo ""
 cat /tmp/secret-list/whitelist.hostname >> /tmp/filter/whitelist.hostname
 rm -fvr /tmp/secret-list/
+sort -T /root/ /tmp/filter/whitelist.hostname | uniq | sed 's/ /\n/g' | sed 's/ //g' | sed -r '/^\s*$/d' | sed 's/[<>]//g' | sed 's/^https\?:\/\///g' | sponge /tmp/filter/whitelist.hostname
 echo ""
 
 ###
