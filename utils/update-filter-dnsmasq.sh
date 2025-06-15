@@ -471,6 +471,8 @@ if [[ "$auto_reboot_service_after_upd_list" == "Y" ]] || [[ "$auto_reboot_servic
 else
     echo -e "\e[1;33mНе забудьте перезагрузить сервис dnsmasq вручную!!!! \033[0m"
 fi
-cp -v /tmp/01_unbound_filters.hostname ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/domains.host
-cp -v /etc/dnsmasq.d/hosts ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/
+cp -vf /tmp/01_unbound_filters.hostname ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/domains.host
+cp -vf /etc/dnsmasq.d/hosts ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/
+echo -e "! Title: Users filter you-oops-dev\n! Expires: 1 day\n" | tee ${HOME_GITHUB}/ublock_origin_hosts.txt
+cat /etc/dnsmasq.d/hosts >> ${HOME_GITHUB}/ublock_origin_hosts.txt
 exit 0
