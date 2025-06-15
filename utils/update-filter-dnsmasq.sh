@@ -368,6 +368,7 @@ echo "www.app.appsflyer.com" >> /tmp/filter/whitelist.hostname
 echo "ya.ru
 www.ya.ru
 yandex.ru
+ya.ru
 www.yandex.ru
 yastatic.net
 avatars.mds.yandex.net
@@ -377,9 +378,11 @@ favicon.yandex.net
 mc.yandex.ru
 mail.yandex.ru
 music.yandex.ru
-market.yandex.ru" >> /tmp/filter/whitelist.hostname
+market.yandex.ru
+sso.passport.yandex.ru
+passport.yandex.ru" >> /tmp/filter/whitelist.hostname
 #Ozon
-echo "
+echo "www.ozon.ru
 ozon.ru
 ozone.ru
 ozonusercontent.com" >> /tmp/filter/whitelist.hostname
