@@ -421,6 +421,7 @@ sed -i 's/[<>]//g' /tmp/filter/unbound.hostname
 sed -i 's/^https\?:\/\///g' /tmp/filter/unbound.hostname
 sed -i '/[А-Я]/d' /tmp/filter/unbound.hostname
 sed -i '/[а-я]/d' /tmp/filter/unbound.hostname
+sed -i 's/\t//g' /tmp/filter/unbound.hostname
 sed -i '1d' /tmp/filter/unbound.hostname
 
 sort /tmp/filter/whitelist.hostname -T /root/ | uniq | sponge /tmp/filter/whitelist.hostname.sort
@@ -433,6 +434,7 @@ sed -i 's/[<>]//g' /tmp/filter/whitelist.hostname
 sed -i 's/^https\?:\/\///g' /tmp/filter/whitelist.hostname
 sed -i '/[А-Я]/d' /tmp/filter/whitelist.hostname
 sed -i '/[а-я]/d' /tmp/filter/whitelist.hostname
+sed -i 's/\t//g' /tmp/filter/whitelist.hostname
 sed -i '1d' /tmp/filter/whitelist.hostname
 
 echo ""
@@ -448,6 +450,7 @@ sed -i 's/[<>]//g' /tmp/01_unbound_filters.hostname
 sed -i 's/^https\?:\/\///g' /tmp/01_unbound_filters.hostname
 sed -i '/[А-Я]/d' /tmp/01_unbound_filters.hostname
 sed -i '/[а-я]/d' /tmp/01_unbound_filters.hostname
+sed -i 's/\t//g' /tmp/01_unbound_filters.hostname
 sed -i '1d' /tmp/01_unbound_filters.hostname
 echo ""
 
