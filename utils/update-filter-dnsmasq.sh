@@ -152,6 +152,8 @@ sort -T /root/ /tmp/filter/RUAdListBitBlock7.hostname | uniq | sed 's/ /\n/g' | 
 curl --max-time 180 --retry-delay 3 --retry 5 -4s https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/AdGuard/AdvertisingLite/AdvertisingLite.txt | sed '/#/d' | sed 's/!//g' | sed 's/||//g' | sed 's/\^//g' | sed '/[А-Я]/d' | sed '/[а-я]/d' | sort -T /root/ | uniq > /tmp/filter/AdvertisingLite.hostname
 wget -4q -nv -O - https://gitlab.com/kowith337/PersonalFilterListCollection/raw/master/hosts/hosts_google_adservice_id.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' >> /tmp/filter/AdvertisingLite.hostname
 wget -4q -nv -O - https://dl.comss.org/download/Comss-filters.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sort | uniq | sed 's/\t//g' | sed 's/ //g' >> /tmp/filter/AdvertisingLite.hostname
+#4PDA Community hosts blacklist
+wget -4q -nv -O - https://schakal.ru/hosts/hosts.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sort | uniq | sed 's/\t//g' | sed 's/ //g' >> /tmp/filter/AdvertisingLite.hostname
 echo ""
 
 echo "Объеденение несколько списков в один список..."
