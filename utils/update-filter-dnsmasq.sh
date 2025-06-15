@@ -150,6 +150,8 @@ cat /tmp/filter/RUAdListBitBlock7.txt | sed '/#/d' | awk -F\# '$1!="" { print $1
 wget -4q -nv -O - https://raw.githubusercontent.com/AdguardTeam/AdGuardSDNSFilter/refs/heads/master/Filters/rules.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed '/\//d' | sed '/\*/d' | sed 's/\^//g' | sed 's/||//g' >> /tmp/filter/RUAdListBitBlock7.hostname
 sort -T /root/ /tmp/filter/RUAdListBitBlock7.hostname | uniq | sed 's/ /\n/g' | sed 's/ //g' | sed -r '/^\s*$/d' | sed 's/[<>]//g' | sed 's/^https\?:\/\///g' | sponge /tmp/filter/RUAdListBitBlock7.hostname
 curl --max-time 180 --retry-delay 3 --retry 5 -4s https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/AdGuard/AdvertisingLite/AdvertisingLite.txt | sed '/#/d' | sed 's/!//g' | sed 's/||//g' | sed 's/\^//g' | sed '/[А-Я]/d' | sed '/[а-я]/d' | sort -T /root/ | uniq > /tmp/filter/AdvertisingLite.hostname
+wget -4q -nv -O - https://gitlab.com/kowith337/PersonalFilterListCollection/raw/master/hosts/hosts_google_adservice_id.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' >> /tmp/filter/AdvertisingLite.hostname
+wget -4q -nv -O - https://dl.comss.org/download/Comss-filters.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sort | uniq | sed 's/\t//g' | sed 's/ //g' >> /tmp/filter/AdvertisingLite.hostname
 echo ""
 
 echo "Объеденение несколько списков в один список..."
@@ -162,6 +164,9 @@ sed -i 's/^127.0.0.1//g' /tmp/filter/unbound.hostname
 sed -i '/#/d' /tmp/filter/unbound.hostname
 sed -i 's/<\/*[^>]*>//g' /tmp/filter/unbound.hostname
 sed -i 's/^!//g' /tmp/filter/unbound.hostname
+sed -i 's/\t//g' /tmp/filter/unbound.hostname
+sed -i '/^!/d' /tmp/filter/unbound.hostname
+sed -i '^!!/d' /tmp/filter/unbound.hostname
 #Чистим от киррилитических доменов
 sed -i '/[А-Я]/d' /tmp/filter/unbound.hostname
 sed -i '/[а-я]/d' /tmp/filter/unbound.hostname
@@ -422,6 +427,8 @@ sed -i 's/^https\?:\/\///g' /tmp/filter/unbound.hostname
 sed -i '/[А-Я]/d' /tmp/filter/unbound.hostname
 sed -i '/[а-я]/d' /tmp/filter/unbound.hostname
 sed -i 's/\t//g' /tmp/filter/unbound.hostname
+sed -i '/^!/d' /tmp/filter/unbound.hostname
+sed -i '/^!!/d' /tmp/filter/unbound.hostname
 sed -i '1d' /tmp/filter/unbound.hostname
 
 sort /tmp/filter/whitelist.hostname -T /root/ | uniq | sponge /tmp/filter/whitelist.hostname.sort
@@ -435,6 +442,8 @@ sed -i 's/^https\?:\/\///g' /tmp/filter/whitelist.hostname
 sed -i '/[А-Я]/d' /tmp/filter/whitelist.hostname
 sed -i '/[а-я]/d' /tmp/filter/whitelist.hostname
 sed -i 's/\t//g' /tmp/filter/whitelist.hostname
+sed -i '/^!/d' /tmp/filter/whitelist.hostname
+sed -i '/^!!/d' /tmp/filter/whitelist.hostname
 sed -i '1d' /tmp/filter/whitelist.hostname
 
 echo ""
@@ -451,6 +460,8 @@ sed -i 's/^https\?:\/\///g' /tmp/01_unbound_filters.hostname
 sed -i '/[А-Я]/d' /tmp/01_unbound_filters.hostname
 sed -i '/[а-я]/d' /tmp/01_unbound_filters.hostname
 sed -i 's/\t//g' /tmp/01_unbound_filters.hostname
+sed -i '/^!/d' /tmp/01_unbound_filters.hostname
+sed -i '/^!!/d' /tmp/01_unbound_filters.hostname
 sed -i '1d' /tmp/01_unbound_filters.hostname
 echo ""
 
