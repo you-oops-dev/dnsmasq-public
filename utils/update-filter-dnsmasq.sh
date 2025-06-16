@@ -316,7 +316,9 @@ echo "suggestqueries.google.com" >> /tmp/filter/whitelist.hostname #поиско
 echo "hl-img.peco.uodoo.com" >> /tmp/filter/whitelist.hostname #для работоспособности браузера UC Browser
 echo "browser.cloud.ucweb.com" >> /tmp/filter/whitelist.hostname #для работоспособности браузера UC Browser
 echo "gstaticadssl.l.google.com" >> /tmp/filter/whitelist.hostname #для корректной работы шрифтов от Google
-echo "audio-ak-spotify-com.akamaized.net" >> /tmp/filter/whitelist.hostname #для корректного переключения Spotify на другое устройство
+echo "audio-ak-spotify-com.akamaized.net
+wl.spotify.com
+www.wl.spotify.com" >> /tmp/filter/whitelist.hostname #для корректного переключения Spotify на другое устройство
 echo "stat.online.sberbank.ru" >> /tmp/filter/whitelist.hostname #для корректной работы приложения сбербанка
 echo "rutracker.wiki" >> /tmp/filter/whitelist.hostname
 echo "rutracker.org" >> /tmp/filter/whitelist.hostname
