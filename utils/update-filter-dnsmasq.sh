@@ -172,10 +172,9 @@ sed -i 's/^0.0.0.0//g' /tmp/filter/unbound.hostname
 sed -i 's/^127.0.0.1//g' /tmp/filter/unbound.hostname
 sed -i '/#/d' /tmp/filter/unbound.hostname
 sed -i 's/<\/*[^>]*>//g' /tmp/filter/unbound.hostname
-sed -i 's/^!//g' /tmp/filter/unbound.hostname
 sed -i 's/\t//g' /tmp/filter/unbound.hostname
 sed -i '/^!/d' /tmp/filter/unbound.hostname
-sed -i '^!!/d' /tmp/filter/unbound.hostname
+sed -i '/^!!/d' /tmp/filter/unbound.hostname
 #Чистим от киррилитических доменов
 sed -i '/[А-Я]/d' /tmp/filter/unbound.hostname
 sed -i '/[а-я]/d' /tmp/filter/unbound.hostname
