@@ -391,9 +391,14 @@ music.yandex.ru
 market.yandex.ru
 sso.passport.yandex.ru
 passport.yandex.ru" >> /tmp/filter/whitelist.hostname
+#Google
+echo "google.com
+google.ru" >> /tmp/filter/whitelist.hostname
+#
 #Ozon
 echo "www.ozon.ru
 ozon.ru
+finance.ozon.ru
 ozone.ru
 ozonusercontent.com" >> /tmp/filter/whitelist.hostname
 ###
