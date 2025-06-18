@@ -25,6 +25,7 @@ sudo sort -h /tmp/bad_static_merge -T /root/ | uniq | sponge /tmp/bad_static_mer
 rm -fv /tmp/*.txt /tmp/unblock_ipset.conf /tmp/unblock_nftset.conf && mv -fv /tmp/bad_static_merge /tmp/bad_static_merge.txt
 echo "Download merge list for unblock_static set"
 curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/discord/ipv4_smart.txt > /tmp/unblock_static.txt
+curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/cloudflare/ipv4_smart.txt >> /tmp/unblock_static.txt
 #...
 sudo sort /tmp/unblock_static.txt -T /root/ | uniq | sponge /tmp/unblock_static.txt
 
