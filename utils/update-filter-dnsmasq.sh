@@ -357,6 +357,7 @@ echo "s.rbk.ru" >> /tmp/filter/whitelist.hostname
 echo "cdn.cookielaw.org" >> /tmp/filter/whitelist.hostname
 echo "play-fe.googleapis.com" >> /tmp/filter/whitelist.hostname #Не блокировать если заблокируешь сломаю GP в телефоне
 echo "clck.yandex.ru" >> /tmp/filter/whitelist.hostname
+echo "socket.avito.ru" >> /tmp/filter/whitelist.hostname
 ##Spotify
 echo "sentry.io" >> /tmp/filter/whitelist.hostname
 ## URL shorteners
