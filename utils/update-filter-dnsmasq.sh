@@ -393,7 +393,9 @@ sso.passport.yandex.ru
 passport.yandex.ru" >> /tmp/filter/whitelist.hostname
 #Google
 echo "google.com
-google.ru" >> /tmp/filter/whitelist.hostname
+google.ru
+www.google.com
+www.google.ru" >> /tmp/filter/whitelist.hostname
 #
 #Ozon
 echo "www.ozon.ru
