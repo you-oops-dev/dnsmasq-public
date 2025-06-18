@@ -173,6 +173,7 @@ sed -i 's/^127.0.0.1//g' /tmp/filter/unbound.hostname
 sed -i '/#/d' /tmp/filter/unbound.hostname
 sed -i 's/<\/*[^>]*>//g' /tmp/filter/unbound.hostname
 sed -i 's/\t//g' /tmp/filter/unbound.hostname
+sed -i '/\$/d' /tmp/filter/unbound.hostname
 sed -i '/^!/d' /tmp/filter/unbound.hostname
 sed -i '/^!!/d' /tmp/filter/unbound.hostname
 #Чистим от киррилитических доменов
@@ -411,6 +412,7 @@ sed -i '/[А-Я]/d' /tmp/filter/whitelist.hostname
 sed -i '/[а-я]/d' /tmp/filter/whitelist.hostname
 #sed -i 's/^ *//g' /tmp/filter/whitelist.hostname
 sed -i 's/ //g' /tmp/filter/whitelist.hostname #Чистим от пробелов
+sed -i '/\$/d' /tmp/filter/whitelist.hostname
 sed -i '1d' /tmp/filter/whitelist.hostname
 sort /tmp/filter/whitelist.hostname -T /root/ | uniq | sponge /tmp/filter/whitelist.hostname
 sed -i '1d' /tmp/filter/whitelist.hostname
@@ -450,6 +452,7 @@ sed -i '/[а-я]/d' /tmp/filter/unbound.hostname
 sed -i 's/\t//g' /tmp/filter/unbound.hostname
 sed -i '/^!/d' /tmp/filter/unbound.hostname
 sed -i '/^!!/d' /tmp/filter/unbound.hostname
+sed -i '/\$/d' /tmp/filter/unbound.hostname
 sed -i '1d' /tmp/filter/unbound.hostname
 
 sort /tmp/filter/whitelist.hostname -T /root/ | uniq | sponge /tmp/filter/whitelist.hostname.sort
@@ -465,6 +468,7 @@ sed -i '/[а-я]/d' /tmp/filter/whitelist.hostname
 sed -i 's/\t//g' /tmp/filter/whitelist.hostname
 sed -i '/^!/d' /tmp/filter/whitelist.hostname
 sed -i '/^!!/d' /tmp/filter/whitelist.hostname
+sed -i '/\$/d' /tmp/filter/whitelist.hostname
 sed -i '1d' /tmp/filter/whitelist.hostname
 
 echo ""
