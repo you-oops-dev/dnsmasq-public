@@ -332,8 +332,10 @@ echo "rutracker.org" >> /tmp/filter/whitelist.hostname
 echo "thepiratebay.org" >> /tmp/filter/whitelist.hostname
 echo "toptracker.ru" >> /tmp/filter/whitelist.hostname
 echo "track24.ru" >> /tmp/filter/whitelist.hostname
-echo "www.avito.ru" >> /tmp/filter/whitelist.hostname
-echo "avito.ru" >> /tmp/filter/whitelist.hostname
+echo "www.avito.ru
+avito.ru
+m.avito.ru
+socket.avito.ru" >> /tmp/filter/whitelist.hostname
 echo "www.maxmind.com" >> /tmp/filter/whitelist.hostname
 echo "maxmind.com" >> /tmp/filter/whitelist.hostname
 echo "is.gd" >> /tmp/filter/whitelist.hostname #Для работы реферальной ссылки из канала в ТГ Free Steam
@@ -358,7 +360,6 @@ echo "s.rbk.ru" >> /tmp/filter/whitelist.hostname
 echo "cdn.cookielaw.org" >> /tmp/filter/whitelist.hostname
 echo "play-fe.googleapis.com" >> /tmp/filter/whitelist.hostname #Не блокировать если заблокируешь сломаю GP в телефоне
 echo "clck.yandex.ru" >> /tmp/filter/whitelist.hostname
-echo "socket.avito.ru" >> /tmp/filter/whitelist.hostname
 ##Spotify
 echo "sentry.io" >> /tmp/filter/whitelist.hostname
 ## URL shorteners
