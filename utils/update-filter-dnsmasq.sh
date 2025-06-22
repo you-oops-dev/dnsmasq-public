@@ -406,6 +406,9 @@ google.ru
 www.google.com
 www.google.ru" >> /tmp/filter/whitelist.hostname
 #
+#MTS
+echo "api.a.mts.ru" >> /tmp/filter/whitelist.hostname
+#
 #Ozon
 echo "www.ozon.ru
 ozon.ru
