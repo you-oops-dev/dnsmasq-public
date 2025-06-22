@@ -317,6 +317,8 @@ echo ""
 cat /tmp/secret-list/whitelist.hostname >> /tmp/filter/whitelist.hostname
 rm -fvr /tmp/secret-list/
 sort -T /root/ /tmp/filter/whitelist.hostname | uniq | sed 's/ /\n/g' | sed 's/ //g' | sed -r '/^\s*$/d' | sed 's/[<>]//g' | sed 's/^https\?:\/\///g' | sponge /tmp/filter/whitelist.hostname
+##Meta
+wget -4q -nv -O - https://raw.githubusercontent.com/antonme/ipnames/refs/heads/master/dns-facebook.txt | sed '/REG/d' | sed '/[0-9].[0-9].[0-9].[0-9]/d' | sed 's/ALL .//g' | sed '/ALL/d' | sed '/RZD/d' | sed '/[А-Я]/d' | sed '/[а-я]/d' >> /tmp/filter/whitelist.hostname
 echo ""
 
 ###
