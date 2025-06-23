@@ -250,5 +250,5 @@ jobs:
         URL_DEB_SING_BOX: https://github.com/SagerNet/sing-box/releases/download/v1.11.11/sing-box_1.11.11_linux_amd64.deb
         DEBIAN_FRONTEND: noninteractive
       run: |
-       sudo curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_DEB_SING_BOX} > /tmp/sing-box.deb
-       sudo dpkg -i /tmp/sing-box.deb
+       sudo curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_DEB_SING_BOX} > ./sing-box.deb
+       sudo dpkg -i ./sing-box.deb && sudo rm -fv ./sing-box.deb
