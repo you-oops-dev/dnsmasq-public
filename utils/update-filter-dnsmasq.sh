@@ -400,6 +400,15 @@ music.yandex.ru
 market.yandex.ru
 sso.passport.yandex.ru
 passport.yandex.ru" >> /tmp/filter/whitelist.hostname
+#Twitch
+echo "www.twitch.tv
+twitch.tv" >> /tmp/filter/whitelist.hostname
+#
+#Twitter
+echo "twitter.com
+www.twitter.com
+x.com" >> /tmp/filter/whitelist.hostname
+#
 #Google
 echo "google.com
 google.ru
