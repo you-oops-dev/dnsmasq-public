@@ -245,7 +245,7 @@ jobs:
           commit_user_email: github-actions[bot]@users.noreply.github.com
           commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
 
-    - name: Install Sing-Box
+    - shell: bash
       env:
         URL_DEB_SING_BOX: https://github.com/SagerNet/sing-box/releases/download/v1.11.11/sing-box_1.11.11_linux_amd64.deb
         DEBIAN_FRONTEND: noninteractive
