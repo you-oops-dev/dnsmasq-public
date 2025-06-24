@@ -511,13 +511,15 @@ sed -i '/^!!/d' /tmp/01_unbound_filters.hostname
 sed -i '1d' /tmp/01_unbound_filters.hostname
 echo ""
 #
-sed -i '/twitter.com/d' /tmp/01_unbound_filters.hostname
-sed -i '/www.twitter.com/d' /tmp/01_unbound_filters.hostname
-sed -i '/x.com/d' /tmp/01_unbound_filters.hostname
-sed -i '/twitch.tv/d' /tmp/01_unbound_filters.hostname
-sed -i '/www.twitch.tv/d' /tmp/01_unbound_filters.hostname
-sed -i '/fastly.net/d' /tmp/01_unbound_filters.hostname
-sed -i '/www.fastly.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^twitter.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/^www.twitter.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/^x.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/^twitch.tv/d' /tmp/01_unbound_filters.hostname
+sed -i '/^www.twitch.tv/d' /tmp/01_unbound_filters.hostname
+sed -i '/^fastly.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^www.fastly.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^windows.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^www.windows.net/d' /tmp/01_unbound_filters.hostname
 #
 
 cat /tmp/01_unbound_filters.hostname | sort -T /root/ | uniq | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
