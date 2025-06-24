@@ -343,6 +343,7 @@ echo "www.avito.ru
 avito.ru
 m.avito.ru
 socket.avito.ru" >> /tmp/filter/whitelist.hostname
+echo "cloudflareinsights.com" >> /tmp/filter/whitelist.hostname
 echo "www.maxmind.com" >> /tmp/filter/whitelist.hostname
 echo "maxmind.com" >> /tmp/filter/whitelist.hostname
 echo "is.gd" >> /tmp/filter/whitelist.hostname #Для работы реферальной ссылки из канала в ТГ Free Steam
@@ -523,6 +524,7 @@ sed -i '/^windows.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^www.windows.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^blob.core.windows.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^www.blob.core.windows.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^cloudflareinsights.com/d' /tmp/01_unbound_filters.hostname
 #
 
 cat /tmp/01_unbound_filters.hostname | sort -T /root/ | uniq | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
