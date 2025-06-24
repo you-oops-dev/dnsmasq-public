@@ -366,6 +366,8 @@ echo "s.rbk.ru" >> /tmp/filter/whitelist.hostname
 echo "cdn.cookielaw.org" >> /tmp/filter/whitelist.hostname
 echo "play-fe.googleapis.com" >> /tmp/filter/whitelist.hostname #Не блокировать если заблокируешь сломаю GP в телефоне
 echo "clck.yandex.ru" >> /tmp/filter/whitelist.hostname
+echo "fastly.net" >> /tmp/filter/whitelist.hostname
+echo "www.fastly.net" >> /tmp/filter/whitelist.hostname
 ##Spotify
 echo "sentry.io" >> /tmp/filter/whitelist.hostname
 ## URL shorteners
@@ -514,6 +516,8 @@ sed -i '/www.twitter.com/d' /tmp/01_unbound_filters.hostname
 sed -i '/x.com/d' /tmp/01_unbound_filters.hostname
 sed -i '/twitch.tv/d' /tmp/01_unbound_filters.hostname
 sed -i '/www.twitch.tv/d' /tmp/01_unbound_filters.hostname
+sed -i '/fastly.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/www.fastly.net/d' /tmp/01_unbound_filters.hostname
 #
 
 cat /tmp/01_unbound_filters.hostname | sort -T /root/ | uniq | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
