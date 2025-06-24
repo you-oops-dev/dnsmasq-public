@@ -545,6 +545,6 @@ else
 fi
 cp -vf /tmp/01_unbound_filters.hostname ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/domains.host
 cp -vf /etc/dnsmasq.d/hosts ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/
-echo -e "! Title: Users filter you-oops-dev\n! Expires: 1 day\n" | tee ${HOME_GITHUB}/ublock_origin_hosts.txt
+echo -e "! Title: Users filter you-oops-dev\n! Expires: 1 hours\n" | tee ${HOME_GITHUB}/ublock_origin_hosts.txt
 cat /etc/dnsmasq.d/hosts >> ${HOME_GITHUB}/ublock_origin_hosts.txt
 exit 0
