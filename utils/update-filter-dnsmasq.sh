@@ -520,6 +520,8 @@ sed -i '/^fastly.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^www.fastly.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^windows.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^www.windows.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^blob.core.windows.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^www.blob.core.windows.net/d' /tmp/01_unbound_filters.hostname
 #
 
 cat /tmp/01_unbound_filters.hostname | sort -T /root/ | uniq | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
