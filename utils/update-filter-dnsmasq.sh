@@ -344,6 +344,10 @@ avito.ru
 m.avito.ru
 socket.avito.ru" >> /tmp/filter/whitelist.hostname
 echo "cloudflareinsights.com" >> /tmp/filter/whitelist.hostname
+echo "ttvnw.net
+twitch.com
+twitchcdn.net
+k.twitchcdn.net" >> /tmp/filter/whitelist.hostname
 echo "www.maxmind.com" >> /tmp/filter/whitelist.hostname
 echo "maxmind.com" >> /tmp/filter/whitelist.hostname
 echo "is.gd" >> /tmp/filter/whitelist.hostname #Для работы реферальной ссылки из канала в ТГ Free Steam
@@ -369,6 +373,8 @@ echo "cdn.cookielaw.org" >> /tmp/filter/whitelist.hostname
 echo "play-fe.googleapis.com" >> /tmp/filter/whitelist.hostname #Не блокировать если заблокируешь сломаю GP в телефоне
 echo "clck.yandex.ru" >> /tmp/filter/whitelist.hostname
 echo "fastly.net" >> /tmp/filter/whitelist.hostname
+echo "map.fastly.net" >> /tmp/filter/whitelist.hostname
+echo "www.map.fastly.net" >> /tmp/filter/whitelist.hostname
 echo "www.fastly.net" >> /tmp/filter/whitelist.hostname
 ##Spotify
 echo "sentry.io" >> /tmp/filter/whitelist.hostname
@@ -517,14 +523,23 @@ sed -i '/^twitter.com/d' /tmp/01_unbound_filters.hostname
 sed -i '/^www.twitter.com/d' /tmp/01_unbound_filters.hostname
 sed -i '/^x.com/d' /tmp/01_unbound_filters.hostname
 sed -i '/^twitch.tv/d' /tmp/01_unbound_filters.hostname
+sed -i '/^twitch.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/^twitchcdn.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^k.twitchcdn.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^www.twitch.tv/d' /tmp/01_unbound_filters.hostname
 sed -i '/^fastly.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^www.fastly.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^map.fastly.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^windows.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^www.windows.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^blob.core.windows.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^www.blob.core.windows.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/^cloudflareinsights.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/^ttvnw.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^twitch.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/^twitchcdn.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/^k.twitchcdn.net/d' /tmp/01_unbound_filters.hostname
+
 #
 
 cat /tmp/01_unbound_filters.hostname | sort -T /root/ | uniq | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
