@@ -46,3 +46,5 @@
 .whatsapp.com
 .fbcdn.net
 .facebook.com
+.kinoxa.win
+.tiktokcdn.com
