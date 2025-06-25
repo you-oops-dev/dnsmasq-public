@@ -11,9 +11,12 @@ export SORT_PATH=/tmp/
 cd $HOME_GITHUB/templates/sing-box
 
 # domain
-cat ../dnsmasq/dnsmasq.d/unblock.conf | awk -F / '{print $2}' | sort -T ${SORT_PATH} | uniq | sed '/googlevideo.com/d' | sed '/fastly.net/d' | sed '/discord.gg/d' | sed '/discord.com/d' | sed '/steamserver.net/d' | sed '/themoviedb.org/d' | sed '/voidboost.cc/d' | sed '/jetbrains.com/d' | sed '/intel.com/d' | sed '/archlinux.org/d' | sed '/windows.net/d' | sed '/cloudflareinsights.com/d' | sed '/microsoft.com/d' | sed '/steampowered.com/d' | sed '/akamai.net/d' | sed '/steamcloud-eu-ams.storage.googleapis.com/d' | sed '/steamcontent.com/d' | sed '/steamstatic.com/d' | sed '/steammobile.akamaized.net/d' | sed '/steamcommunity.com/d' | sed '/steamcloud-eu-fra.storage.googleapis.com/d' | sed '/ggpht.com/d' | sed '/googleapis.com/d' | sed '/googleusercontent.com/d' | sed '/gstatic.com/d' | sed '/returnyoutubedislikeapi.com/d' | sed '/returnyoutubedislike.com/d' | sed '/ajay.app/d' | sed '/ytimg.com/d' | sed '/yting.com/d' | sed '/tmdb.org/d' | sed '/cloudfront.net/d' | sed '/entware.net/d' | sed '/habr.com/d' | sed '/4pda.ru/d' | sed '/4pda.to/d' | sed '/4pda.ws/d' | sed '/torproject.org/d' | sed '/openai.com/d' | sed '/chatgpt.com/d' | sed '/spotify.com/d' | sed '/spotifycdn.com/d' | sed '/scdn.co/d' | sed '/whatsapp.net/d' | sed '/whatsapp.com/d' | sed '/fbcdn.net/d' | sed '/facebook.com/d' | sed '/kinoxa.win/d' | sed '/^youtube.com/d' | sed '/youtube.com/d' | sed '/youtube/d' | sed '/tiktokcdn.com/d' | sed '/githubusercontent.com/d' | sed '/sinema2.top/d' | sed '/megapeer.ru/d' | sed '/pirat.one/d' | sed '/lordfillms.ru/d' | sed '/lordfilm.lu/d' | sed '/byteoversea.net/d' | sed '/google.com/d' | sed '/github.io/d' | sed '/blogspot.com/d' | sed '/musical.ly/d' > ./domain.txt
+cat ../dnsmasq/dnsmasq.d/unblock.conf | awk -F / '{print $2}' | sort -T ${SORT_PATH} | uniq | sed '/googlevideo.com/d' | sed '/fastly.net/d' | sed '/discord.gg/d' | sed '/discord.com/d' | sed '/steamserver.net/d' | sed '/themoviedb.org/d' | sed '/voidboost.cc/d' | sed '/jetbrains.com/d' | sed '/intel.com/d' | sed '/archlinux.org/d' | sed '/windows.net/d' | sed '/cloudflareinsights.com/d' | sed '/microsoft.com/d' | sed '/steampowered.com/d' | sed '/akamai.net/d' | sed '/steamcloud-eu-ams.storage.googleapis.com/d' | sed '/steamcontent.com/d' | sed '/steamstatic.com/d' | sed '/akamaized.net/d' | sed '/steamcommunity.com/d' | sed '/steamcloud-eu-fra.storage.googleapis.com/d' | sed '/ggpht.com/d' | sed '/googleapis.com/d' | sed '/googleusercontent.com/d' | sed '/gstatic.com/d' | sed '/returnyoutubedislikeapi.com/d' | sed '/returnyoutubedislike.com/d' | sed '/ajay.app/d' | sed '/ytimg.com/d' | sed '/yting.com/d' | sed '/tmdb.org/d' | sed '/cloudfront.net/d' | sed '/entware.net/d' | sed '/habr.com/d' | sed '/4pda.ru/d' | sed '/4pda.to/d' | sed '/4pda.ws/d' | sed '/torproject.org/d' | sed '/openai.com/d' | sed '/chatgpt.com/d' | sed '/spotify.com/d' | sed '/spotifycdn.com/d' | sed '/scdn.co/d' | sed '/whatsapp.net/d' | sed '/whatsapp.com/d' | sed '/fbcdn.net/d' | sed '/facebook.com/d' | sed '/kinoxa.win/d' | sed '/^youtube.com/d' | sed '/youtube.com/d' | sed '/youtube/d' | sed '/tiktokcdn.com/d' | sed '/githubusercontent.com/d' | sed '/sinema2.top/d' | sed '/megapeer.ru/d' | sed '/pirat.one/d' | sed '/lordfillms.ru/d' | sed '/lordfilm.lu/d' | sed '/byteoversea.net/d' | sed '/google.com/d' | sed '/github.io/d' | sed '/blogspot.com/d' | sed '/musical.ly/d' | sed '/tiktokv.com/d' | sed '/lordserialus.fun/d' | sed '/akamaihd.net/d' | sed '/byteoversea.com/d' | sed '/azotmarket.ru/d' | sed '/kinoteatr.one/d' | sed '/tiktokcdn-eu.com/d' | sed '/ibyteimg.com/d' sort -T ${SORT_PATH} | uniq > ./domain.txt
 echo "youtube.com
-www.youtube.com" >> ./domain.txt
+www.youtube.com
+www.instagram.com
+www.facebook.com" >> ./domain.txt
+sort -T ${SORT_PATH} ./domain.txt | uniq | sponge ./domain.txt
 # IP-address 1
 #cat ../ipset/unblock_static.conf.zst | zstd -d | awk '{print $3}' | sed '/:/d' | sort -T ${SORT_PATH} -t. -k1,1n -k2,2n -k3,3n -k4,4n | uniq | sed 's/$/\/32/' > ./ip.txt
 #
@@ -45,7 +48,7 @@ echo ".fastly.net
 .steamcloud-eu-fra.storage.googleapis.com
 .steamcontent.com
 .steamstatic.com
-.steammobile.akamaized.net
+.akamaized.net
 .steamcommunity.com
 .googleapis.com
 .googleusercontent.com
@@ -84,7 +87,15 @@ echo ".fastly.net
 .google.com
 .github.io
 .blogspot.com
-.musical.ly" > ./domain_wildcard.txt
+.musical.ly
+.tiktokv.com
+.lordserialus.fun
+.instagram.com
+.akamaihd.net
+.byteoversea.com
+.kinoteatr.one
+.tiktokcdn-eu.com
+.ibyteimg.com" > ./domain_wildcard.txt
 
 
 jq -n \
