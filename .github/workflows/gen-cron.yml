@@ -252,3 +252,19 @@ jobs:
       run: |
        sudo wget -4q -nv -O - ${URL_DEB_SING_BOX} > ./sing-box.deb
        sudo dpkg -i ./sing-box.deb && sudo rm -fv ./sing-box.deb
+
+    - name: Generation rules for Sing-Box
+      run: |
+        sudo cp -fv utils/create_rules_sing-box.sh /tmp/ && sudo chmod -c 755 /tmp/create_rules_sing-box.sh
+        sudo chown -c root:root /tmp/create_rules_sing-box.sh && sudo /tmp/create_rules_sing-box.sh
+
+    - name: Commit for Sing-Box
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+           commit_message: "Auto-update for sing-box files"
+           file_pattern: './templates/sing-box/domain.txt ./templates/sing-box/ip.txt ./templates/sing-box/domain_wildcard.txt ./templates/sing-box/re-filter-list-plus.json ./templates/sing-box/re-filter-list-plus.srs'
+           commit_options: "--no-verify"
+           repository: .
+           commit_user_name: github-actions[bot]
+           commit_user_email: github-actions[bot]@users.noreply.github.com
+           commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
