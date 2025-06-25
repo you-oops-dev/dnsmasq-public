@@ -29,42 +29,56 @@
   },
   {
     "include": "exclude",
-    "type": "regex",
+    "type": "wildcard",
+    "title": "Gov RU",
+    "pattern": "*://*.gov.ru",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
+    "title": "",
+    "pattern": "*://*gosuslugi.*",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
     "title": "Lan Domain Router 1",
     "pattern": "^[^:]+://openwrt.lan",
     "active": true
   },
   {
     "include": "exclude",
-    "type": "regex",
+    "type": "wildcard",
     "title": "Lan Domain Router 2",
     "pattern": "^[^:]+://my.router",
     "active": true
   },
   {
     "include": "exclude",
-    "type": "regex",
+    "type": "wildcard",
     "title": "Lan Domain Router 3",
     "pattern": "^[^:]+://routerich.lan",
     "active": true
   },
   {
     "include": "exclude",
-    "type": "regex",
+    "type": "wildcard",
     "title": "Lan Domain Router 4",
     "pattern": "^[^:]+://*.lan",
     "active": true
   },
   {
     "include": "exclude",
-    "type": "regex",
+    "type": "wildcard",
     "title": "Lan Domain Router 5",
     "pattern": "^[^:]+://my.keenetic.*",
     "active": true
   },
   {
     "include": "exclude",
-    "type": "regex",
+    "type": "wildcard",
     "title": "Lan Domain Router 6",
     "pattern": "^[^:]+://*asusrouter.com",
     "active": true
