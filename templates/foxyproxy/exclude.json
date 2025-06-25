@@ -45,42 +45,42 @@
     "include": "exclude",
     "type": "wildcard",
     "title": "Lan Domain Router 1",
-    "pattern": "^[^:]+://openwrt.lan",
+    "pattern": "*://openwrt.lan",
     "active": true
   },
   {
     "include": "exclude",
     "type": "wildcard",
     "title": "Lan Domain Router 2",
-    "pattern": "^[^:]+://my.router",
+    "pattern": "*://my.router",
     "active": true
   },
   {
     "include": "exclude",
     "type": "wildcard",
     "title": "Lan Domain Router 3",
-    "pattern": "^[^:]+://routerich.lan",
+    "pattern": "*://routerich.lan",
     "active": true
   },
   {
     "include": "exclude",
     "type": "wildcard",
     "title": "Lan Domain Router 4",
-    "pattern": "^[^:]+://*.lan",
+    "pattern": "*://*.lan",
     "active": true
   },
   {
     "include": "exclude",
     "type": "wildcard",
     "title": "Lan Domain Router 5",
-    "pattern": "^[^:]+://my.keenetic.*",
+    "pattern": "*://my.keenetic.*",
     "active": true
   },
   {
     "include": "exclude",
     "type": "wildcard",
     "title": "Lan Domain Router 6",
-    "pattern": "^[^:]+://*asusrouter.com",
+    "pattern": "*://*asusrouter.com",
     "active": true
   }
 ]
