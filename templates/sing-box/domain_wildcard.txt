@@ -29,7 +29,6 @@
 .ajay.app
 .ytimg.com
 .yting.com
-.youtu.be
 .ggpht.com
 .cloudfront.net
 .entware.net
@@ -43,3 +42,7 @@
 .spotify.com
 .spotifycdn.com
 .scdn.co
+.whatsapp.net
+.whatsapp.com
+.fbcdn.net
+.facebook.com
