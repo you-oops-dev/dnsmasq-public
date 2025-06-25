@@ -320,6 +320,15 @@ rm -fvr /tmp/secret-list/
 sort -T /root/ /tmp/filter/whitelist.hostname | uniq | sed 's/ /\n/g' | sed 's/ //g' | sed -r '/^\s*$/d' | sed 's/[<>]//g' | sed 's/^https\?:\/\///g' | sponge /tmp/filter/whitelist.hostname
 ##Meta
 wget -4q -nv -O - https://raw.githubusercontent.com/antonme/ipnames/refs/heads/master/dns-facebook.txt | sed '/REG/d' | sed '/[0-9].[0-9].[0-9].[0-9]/d' | sed 's/ALL .//g' | sed '/ALL/d' | sed '/RZD/d' | sed '/[А-Я]/d' | sed '/[а-я]/d' >> /tmp/filter/whitelist.hostname
+wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Facebook/Facebook.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASN/d' >> /tmp/filter/whitelist.hostname
+##Twitch
+wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Twitch/Twitch.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASN/d' >> /tmp/filter/whitelist.hostname
+##Instagramm
+wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Instagram/Instagram.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASN/d' >> /tmp/filter/whitelist.hostname
+##Twitter
+wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Twitter/Twitter.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASN/d' >> /tmp/filter/whitelist.hostname
+##GitHub
+wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/GitHub/GitHub.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASNd' >> /tmp/filter/whitelist.hostname
 echo ""
 
 ###
