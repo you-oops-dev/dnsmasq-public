@@ -67,3 +67,5 @@
 .kinoteatr.one
 .tiktokcdn-eu.com
 .ibyteimg.com
+.deepl.com
+.x.com
