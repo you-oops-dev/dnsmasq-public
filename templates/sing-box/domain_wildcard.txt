@@ -19,7 +19,7 @@
 .steamcloud-eu-fra.storage.googleapis.com
 .steamcontent.com
 .steamstatic.com
-.steammobile.akamaized.net
+.akamaized.net
 .steamcommunity.com
 .googleapis.com
 .googleusercontent.com
@@ -59,3 +59,11 @@
 .github.io
 .blogspot.com
 .musical.ly
+.tiktokv.com
+.lordserialus.fun
+.instagram.com
+.akamaihd.net
+.byteoversea.com
+.kinoteatr.one
+.tiktokcdn-eu.com
+.ibyteimg.com
