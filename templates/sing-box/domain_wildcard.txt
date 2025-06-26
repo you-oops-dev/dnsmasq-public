@@ -1,6 +1,7 @@
 .fastly.net
 .googlevideo.com
 .youtube.com
+.youtu.be
 .discord.gg
 .discord.com
 .steamserver.net
@@ -69,3 +70,4 @@
 .ibyteimg.com
 .deepl.com
 .x.com
+.amd.com
