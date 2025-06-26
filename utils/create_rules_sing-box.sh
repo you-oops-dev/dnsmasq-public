@@ -19,7 +19,13 @@ www.facebook.com
 deepl.com
 www.deepl.com
 x.com
-www.x.com" >> ./domain.txt
+www.x.com
+www.intel.com
+intel.com
+amd.com
+www.amd.com
+youtu.be
+www.youtu.be" >> ./domain.txt
 sort -T ${SORT_PATH} ./domain.txt | uniq | sponge ./domain.txt
 # IP-address 1
 #cat ../ipset/unblock_static.conf.zst | zstd -d | awk '{print $3}' | sed '/:/d' | sort -T ${SORT_PATH} -t. -k1,1n -k2,2n -k3,3n -k4,4n | uniq | sed 's/$/\/32/' > ./ip.txt
@@ -34,6 +40,7 @@ curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_LIST} | sort -T ${SORT
 echo ".fastly.net
 .googlevideo.com
 .youtube.com
+.youtu.be
 .discord.gg
 .discord.com
 .steamserver.net
@@ -101,7 +108,8 @@ echo ".fastly.net
 .tiktokcdn-eu.com
 .ibyteimg.com
 .deepl.com
-.x.com" > ./domain_wildcard.txt
+.x.com
+.amd.com" > ./domain_wildcard.txt
 
 
 jq -n \
