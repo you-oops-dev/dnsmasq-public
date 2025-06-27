@@ -330,7 +330,7 @@ wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script
 ##Twitter
 wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Twitter/Twitter.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASN/d' >> /tmp/filter/whitelist.hostname
 ##GitHub
-wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/GitHub/GitHub.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASNd' >> /tmp/filter/whitelist.hostname
+wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/GitHub/GitHub.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASN/d' >> /tmp/filter/whitelist.hostname
 echo ""
 
 ###
