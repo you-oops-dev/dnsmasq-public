@@ -136,6 +136,6 @@ chmod -c 755 $HOME_GITHUB/utils/generate-geoip-geosite-lin64
 $HOME_GITHUB/utils/generate-geoip-geosite-lin64 -s sourceadlist.json -i ./ -o ./
 rm -fv ./geoip.db
 name=adlist
-mv -fv geosite.db ${name}.db && mv -fv include-domain-ads.lst ${name}.lst && mv -fv ruleset-domain-ads.json ${name}.json && mv -fv ruleset-domain-ads.srs ${name}.srs
+mv -fv geosite.db ${name}-site.db && mv -fv include-domain-ads.lst ${name}.lst && mv -fv ruleset-domain-ads.json ${name}.json && mv -fv ruleset-domain-ads.srs ${name}.srs
 
 exit 0

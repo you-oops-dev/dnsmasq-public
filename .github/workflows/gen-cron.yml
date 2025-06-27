@@ -273,7 +273,7 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
            commit_message: "Auto-update adlist for sing-box"
-           file_pattern: './templates/sing-box/adlist.db ./templates/sing-box/adlist.lst ./templates/sing-box/adlist.srs ./templates/sing-box/adlist.json'
+           file_pattern: './templates/sing-box/adlist-site.db ./templates/sing-box/adlist.lst ./templates/sing-box/adlist.srs ./templates/sing-box/adlist.json'
            commit_options: "--no-verify"
            repository: .
            commit_user_name: github-actions[bot]
