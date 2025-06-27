@@ -154,6 +154,8 @@ wget -4q -nv -O - https://gitlab.com/kowith337/PersonalFilterListCollection/raw/
 wget -4q -nv -O - https://dl.comss.org/download/Comss-filters.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sort | uniq | sed 's/\t//g' | sed 's/ //g' >> /tmp/filter/AdvertisingLite.hostname
 #4PDA Community hosts blacklist
 wget -4q -nv -O - https://schakal.ru/hosts/hosts.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sort | uniq | sed 's/\t//g' | sed 's/ //g' >> /tmp/filter/AdvertisingLite.hostname
+wget -4q -nv -O - https://schakal.ru/hosts/alive_hosts_ru_com.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sort | uniq | sed 's/\t//g' | sed 's/ //g' >> /tmp/filter/AdvertisingLite.hostname
+wget -4q -nv -O - https://schakal.ru/hosts/alive_hosts_ru_com_zen.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sort | uniq | sed 's/\t//g' | sed 's/ //g' >> /tmp/filter/AdvertisingLite.hostname
 wget -4q -nv -O - https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/ParsedBlacklists/ABP-X-Files.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sort | uniq | sed 's/\t//g' | sed 's/ //g' >> /tmp/filter/AdvertisingLite.hostname
 wget -4q -nv -O - https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/ParsedBlacklists/RUAdListCounters.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sort | uniq | sed 's/\t//g' | sed 's/ //g' >> /tmp/filter/AdvertisingLite.hostname
 wget -4q -nv -O - https://raw.githubusercontent.com/allendema/noplaylist/main/NoPlayList.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sort | uniq | sed 's/\t//g' | sed 's/ //g' >> /tmp/filter/AdvertisingLite.hostname
@@ -559,6 +561,8 @@ else
 fi
 cp -vf /tmp/01_unbound_filters.hostname ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/domains.host
 cp -vf /etc/dnsmasq.d/hosts ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/
-echo -e "! Title: Users filter you-oops-dev\n! Expires: 1 hours\n" | tee ${HOME_GITHUB}/ublock_origin_hosts.txt
+count_line=$(cat ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/domains.host | wc -l)
+print_date=$(date -u +"%d %b %Y %H:%M UTC")
+echo -e "!Title: Users filter you-oops-dev\n!Last modified: ${print_date}\n!Expires: 1 hours\n!Records: ${count_line}\n" | tee ${HOME_GITHUB}/ublock_origin_hosts.txt
 cat /etc/dnsmasq.d/hosts >> ${HOME_GITHUB}/ublock_origin_hosts.txt
 exit 0
