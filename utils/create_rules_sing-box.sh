@@ -111,8 +111,6 @@ echo ".fastly.net
 .x.com
 .amd.com" > ./domain_wildcard.txt
 
-#Old variant gen not use
-old() {
 jq -n \
     --slurpfile domain_data <(jq -R . domain.txt) \
     --slurpfile domain_wildcard_data <(jq -R . domain_wildcard.txt) \
@@ -129,13 +127,30 @@ jq -n \
 }' > re-filter-list-plus.json
 
 sing-box rule-set compile re-filter-list-plus.json
-}
+mv -f re-filter-list-plus.json re-filter-list-plus.txt
+mv -f re-filter-list-plus.srs re-filter-list-plus.jq
 
 chmod -c 755 $HOME_GITHUB/utils/generate-geoip-geosite-lin64
+
+PATH_GEN=/tmp
 #Gen adlist
-$HOME_GITHUB/utils/generate-geoip-geosite-lin64 -s sourceadlist.json -i ./ -o ./
-rm -fv ./geoip.db
+generate-geoip-geosite-lin64 -s sourceadlist.json -i ${PATH_GEN}/ -o ${PATH_GEN}/
+rm -fv ${PATH_GEN}/geoip.db
 name=adlist
-mv -fv geosite.db ${name}-site.db && mv -fv include-domain-ads.lst ${name}.lst && mv -fv ruleset-domain-ads.json ${name}.json && mv -fv ruleset-domain-ads.srs ${name}.srs
+mv -fv ${PATH_GEN}/geosite.db ${HOME_GITHUB}/templates/sing-box/${name}-site.db && mv -fv ${PATH_GEN}/include-domain-ads.lst ${HOME_GITHUB}/templates/sing-box/${name}.lst && mv -fv ${PATH_GEN}/ruleset-domain-ads.json ${HOME_GITHUB}/templates/sing-box/${name}.json && mv -fv ${PATH_GEN}/ruleset-domain-ads.srs ${HOME_GITHUB}/templates/sing-box/${name}.srs
+rm -fv ${PATH_GEN}/*.{db,lst,json,srs}
+
+#Gen re-filter-list-plus
+name=re-filter-list-plus
+#Добавить в Action include-domain-re-filter-list-plus.lst коммит файла
+cat domain_wildcard.txt domain.txt > include-domain-re-filter-list-plus.lst
+cat ip.txt > include-ip-re-filter-list-plus.lst
+generate-geoip-geosite-lin64 -i ./ -o ${PATH_GEN}/
+mv -fv ${PATH_GEN}/geosite.db ${HOME_GITHUB}/templates/sing-box/${name}-site.db && mv -fv ${PATH_GEN}/geoip.db ${HOME_GITHUB}/templates/sing-box/${name}-geoip.db
+rm -fv ${PATH_GEN}/*.{db,lst,json,srs} ./include-*
+
+
+mv -f re-filter-list-plus.txt re-filter-list-plus.json
+mv -f re-filter-list-plus.jq re-filter-list-plus.srs
 
 exit 0

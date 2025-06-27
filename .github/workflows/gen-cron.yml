@@ -280,3 +280,13 @@ jobs:
            commit_user_email: github-actions[bot]@users.noreply.github.com
            commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
 
+    - name: Commit re-filter-list-plus for Sing-Box
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+           commit_message: "Auto-update re-filter-list-plus for sing-box"
+           file_pattern: './templates/sing-box/re-filter-list-plus-geoip.db templates/sing-box/re-filter-list-plus-site.db ./templates/sing-box/re-filter-list-plus.srs ./templates/sing-box/re-filter-list-plus.json'
+           commit_options: "--no-verify"
+           repository: .
+           commit_user_name: github-actions[bot]
+           commit_user_email: github-actions[bot]@users.noreply.github.com
+           commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
