@@ -1,0 +1,7 @@
+[
+    {
+      "url": "https://raw.githubusercontent.com/you-oops-dev/dnsmasq-public/refs/heads/main/ublock_origin_hosts.txt",
+      "contentType": "HostsFile",
+      "category": "ads"
+    }
+]

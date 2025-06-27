@@ -217,16 +217,16 @@ jobs:
         curl --max-time 30 --retry-delay 3 --retry 10 -4 -H "Authorization: token ${TOKEN}" -# https://raw.githubusercontent.com/you-oops-dev/${REPOSITORY}/refs/heads/main/unblock_suite.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/refs/heads/main/steam/domain.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/refs/heads/main/discord/domain.txt https://raw.githubusercontent.com/dartraiden/no-russia-hosts/master/hosts.txt https://raw.githubusercontent.com/GubernievS/AntiZapret-VPN/main/setup/root/antizapret/download/include-hosts.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/main/tor/domains.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/refs/heads/main/github/domains.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/refs/heads/main/youtube/domain.txt https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Services/youtube.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Categories/geoblock.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Categories/block.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Services/hdrezka.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Services/meta.lst | sed 's/^.ua//g' | sed '/#/d' | sed 's/ //g' | sed '/[][]/d;s/ //g;s/"//g;s/,//g' | sed 's/^https\?:\/\///g' | sed -r '/^\s*$/d' | sort | uniq > ./whitelist.hostname
         sudo mv -fv ./whitelist.hostname /tmp/secret-list/
 
-    - name: Generation adblock-list for dnsmasq
+    - name: Generation adlist for dnsmasq
       run: |
         echo "addn-hosts=/etc/dnsmasq.d/hosts" | sudo tee -a /etc/dnsmasq.conf
         sudo cp -fv utils/update-filter-dnsmasq.sh /tmp/ && sudo chmod -c 755 /tmp/update-filter-dnsmasq.sh
         sudo chown -c root:root /tmp/update-filter-dnsmasq.sh && sudo /tmp/update-filter-dnsmasq.sh
 
-    - name: Commit dnsmasq adlists
+    - name: Commit dnsmasq adlist
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-          commit_message: "Auto-update adslist for dnsmasq"
+          commit_message: "Auto-update adlist for dnsmasq"
           file_pattern: './*/*/hosts ./*/*/domains.host'
           commit_options: "--no-verify"
           repository: .
@@ -234,7 +234,7 @@ jobs:
           commit_user_email: github-actions[bot]@users.noreply.github.com
           commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
 
-    - name: Commit for uBlock Origin list
+    - name: Commit for uBlock origin list
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
           commit_message: "Auto-update for uBlock Origin list"
@@ -258,13 +258,25 @@ jobs:
         sudo cp -fv utils/create_rules_sing-box.sh /tmp/ && sudo chmod -c 755 /tmp/create_rules_sing-box.sh
         sudo chown -c root:root /tmp/create_rules_sing-box.sh && sudo /tmp/create_rules_sing-box.sh
 
-    - name: Commit for Sing-Box
+    - name: Commit files for Sing-Box
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-           commit_message: "Auto-update for sing-box files"
-           file_pattern: './templates/sing-box/domain.txt ./templates/sing-box/ip.txt ./templates/sing-box/domain_wildcard.txt ./templates/sing-box/re-filter-list-plus.json ./templates/sing-box/re-filter-list-plus.srs'
+           commit_message: "Auto-update files for sing-box"
+           file_pattern: './templates/sing-box/domain.txt ./templates/sing-box/ip.txt ./templates/sing-box/domain_wildcard.txt'
            commit_options: "--no-verify"
            repository: .
            commit_user_name: github-actions[bot]
            commit_user_email: github-actions[bot]@users.noreply.github.com
            commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+    - name: Commit adlist for Sing-Box
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+           commit_message: "Auto-update adlist for sing-box"
+           file_pattern: './templates/sing-box/adlist.db ./templates/sing-box/adlist.lst ./templates/sing-box/adlist.srs ./templates/sing-box/adlist.json'
+           commit_options: "--no-verify"
+           repository: .
+           commit_user_name: github-actions[bot]
+           commit_user_email: github-actions[bot]@users.noreply.github.com
+           commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+

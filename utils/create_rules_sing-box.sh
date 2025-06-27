@@ -111,7 +111,8 @@ echo ".fastly.net
 .x.com
 .amd.com" > ./domain_wildcard.txt
 
-
+#Old variant gen not use
+old() {
 jq -n \
     --slurpfile domain_data <(jq -R . domain.txt) \
     --slurpfile domain_wildcard_data <(jq -R . domain_wildcard.txt) \
@@ -128,5 +129,12 @@ jq -n \
 }' > re-filter-list-plus.json
 
 sing-box rule-set compile re-filter-list-plus.json
+}
+
+#Gen adlist
+generate-geoip-geosite-lin64 -s sourceadlist.json -i ./ -o ./
+rm -fv ./geoip.db
+name=adlist
+mv -fv geosite.db ${name}.db && mv -fv include-domain-ads.lst ${name}.lst && mv -fv ruleset-domain-ads.json ${name}.json && mv -fv ruleset-domain-ads.srs ${name}.srs
 
 exit 0
