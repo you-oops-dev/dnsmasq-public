@@ -131,8 +131,9 @@ jq -n \
 sing-box rule-set compile re-filter-list-plus.json
 }
 
+chmod -c 755 $HOME_GITHUB/utils/generate-geoip-geosite-lin64
 #Gen adlist
-generate-geoip-geosite-lin64 -s sourceadlist.json -i ./ -o ./
+$HOME_GITHUB/utils/generate-geoip-geosite-lin64 -s sourceadlist.json -i ./ -o ./
 rm -fv ./geoip.db
 name=adlist
 mv -fv geosite.db ${name}.db && mv -fv include-domain-ads.lst ${name}.lst && mv -fv ruleset-domain-ads.json ${name}.json && mv -fv ruleset-domain-ads.srs ${name}.srs
