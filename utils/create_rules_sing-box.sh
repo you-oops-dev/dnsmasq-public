@@ -153,9 +153,9 @@ mv -fv ${PATH_GEN}/ruleset-domain-adlist.json ./adlist.json
 mv -fv ${PATH_GEN}/ruleset-domain-adlist.srs ./adlist.srs
 
 #refilter_plus domain
-mv -fv ${PATH_GEN}/include-ip-refilter_plus_domains.lst ./refilter_plus_domains.lst
-mv -fv ${PATH_GEN}/ruleset-ip-refilter_plus_domains.json ./refilter_plus_domains.json
-mv -fv ${PATH_GEN}/ruleset-ip-refilter_plus_domains.srs ./refilter_plus_domains.srs
+mv -fv ${PATH_GEN}/include-domain-refilter_plus_domains.lst ./refilter_plus_domains.lst
+mv -fv ${PATH_GEN}/ruleset-domain-refilter_plus_domains.json ./refilter_plus_domains.json
+mv -fv ${PATH_GEN}/ruleset-domain-refilter_plus_domains.srs ./refilter_plus_domains.srs
 
 #refilter_plus ip
 mv -fv ${PATH_GEN}/include-ip-refilter_plus_ipsum.lst ./refilter_plus_ipsum.lst
