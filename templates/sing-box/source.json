@@ -10,7 +10,7 @@
       "category": "refilter_plus_ipsum"
     },
     {
-      "url": "https://raw.githubusercontent.com/you-oops-dev/dnsmasq-public/refs/heads/main/templates/sing-box/domain_all.txt",
+      "url": "https://raw.githubusercontent.com/you-oops-dev/dnsmasq-public/refs/heads/main/templates/sing-box/domain.txt",
       "contentType": "DefaultList",
       "category": "refilter_plus_domains"
     }
