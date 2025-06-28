@@ -10,6 +10,7 @@ export SORT_PATH=/tmp/
 
 cd $HOME_GITHUB/templates/sing-box
 
+if [[ $1 == prepare ]]; then
 # domain
 cat ../dnsmasq/dnsmasq.d/unblock.conf | awk -F / '{print $2}' | sort -T ${SORT_PATH} | uniq | sed '/googlevideo.com/d' | sed '/fastly.net/d' | sed '/discord.gg/d' | sed '/discord.com/d' | sed '/steamserver.net/d' | sed '/themoviedb.org/d' | sed '/voidboost.cc/d' | sed '/jetbrains.com/d' | sed '/intel.com/d' | sed '/archlinux.org/d' | sed '/windows.net/d' | sed '/cloudflareinsights.com/d' | sed '/microsoft.com/d' | sed '/steampowered.com/d' | sed '/akamai.net/d' | sed '/steamcloud-eu-ams.storage.googleapis.com/d' | sed '/steamcontent.com/d' | sed '/steamstatic.com/d' | sed '/akamaized.net/d' | sed '/steamcommunity.com/d' | sed '/steamcloud-eu-fra.storage.googleapis.com/d' | sed '/ggpht.com/d' | sed '/googleapis.com/d' | sed '/googleusercontent.com/d' | sed '/gstatic.com/d' | sed '/returnyoutubedislikeapi.com/d' | sed '/returnyoutubedislike.com/d' | sed '/ajay.app/d' | sed '/ytimg.com/d' | sed '/yting.com/d' | sed '/tmdb.org/d' | sed '/cloudfront.net/d' | sed '/entware.net/d' | sed '/habr.com/d' | sed '/4pda.ru/d' | sed '/4pda.to/d' | sed '/4pda.ws/d' | sed '/torproject.org/d' | sed '/openai.com/d' | sed '/chatgpt.com/d' | sed '/spotify.com/d' | sed '/spotifycdn.com/d' | sed '/scdn.co/d' | sed '/whatsapp.net/d' | sed '/whatsapp.com/d' | sed '/fbcdn.net/d' | sed '/facebook.com/d' | sed '/kinoxa.win/d' | sed '/^youtube.com/d' | sed '/youtube.com/d' | sed '/youtube/d' | sed '/tiktokcdn.com/d' | sed '/githubusercontent.com/d' | sed '/sinema2.top/d' | sed '/megapeer.ru/d' | sed '/pirat.one/d' | sed '/lordfillms.ru/d' | sed '/lordfilm.lu/d' | sed '/byteoversea.net/d' | sed '/google.com/d' | sed '/github.io/d' | sed '/blogspot.com/d' | sed '/musical.ly/d' | sed '/tiktokv.com/d' | sed '/lordserialus.fun/d' | sed '/akamaihd.net/d' | sed '/byteoversea.com/d' | sed '/azotmarket.ru/d' | sed '/kinoteatr.one/d' | sed '/tiktokcdn-eu.com/d' | sed '/ibyteimg.com/d' | sed '/deepl.com/d' | sed '/x.com/d' | sed '/instagram/d' | sort -T ${SORT_PATH} | uniq > ./domain.txt
 echo "youtube.com
@@ -111,6 +112,11 @@ echo ".fastly.net
 .x.com
 .amd.com" > ./domain_wildcard.txt
 
+cat domain_wildcard.txt domain.txt | sort | uniq > domain_all.txt
+fi
+
+if [[ $1 == gen ]]; then
+
 jq -n \
     --slurpfile domain_data <(jq -R . domain.txt) \
     --slurpfile domain_wildcard_data <(jq -R . domain_wildcard.txt) \
@@ -124,33 +130,47 @@ jq -n \
       ip_cidr: $ip_cidr_data
    }
   ]
-}' > re-filter-list-plus.json
+}' > refilter_plus.json
 
-sing-box rule-set compile re-filter-list-plus.json
-mv -f re-filter-list-plus.json re-filter-list-plus.txt
-mv -f re-filter-list-plus.srs re-filter-list-plus.jq
+name=refilter_plus
+sing-box rule-set compile ${name}.json
+mv -f ${name}.json ${name}.txt
+mv -f ${name}.srs ${name}.jq
 
 chmod -c 755 $HOME_GITHUB/utils/generate-geoip-geosite-lin64
 
 PATH_GEN=/tmp
-#Gen adlist
-generate-geoip-geosite-lin64 -s sourceadlist.json -i ${PATH_GEN}/ -o ${PATH_GEN}/
-rm -fv ${PATH_GEN}/geoip.db
-name=adlist
-mv -fv ${PATH_GEN}/geosite.db ${HOME_GITHUB}/templates/sing-box/${name}-site.db && mv -fv ${PATH_GEN}/include-domain-ads.lst ${HOME_GITHUB}/templates/sing-box/${name}.lst && mv -fv ${PATH_GEN}/ruleset-domain-ads.json ${HOME_GITHUB}/templates/sing-box/${name}.json && mv -fv ${PATH_GEN}/ruleset-domain-ads.srs ${HOME_GITHUB}/templates/sing-box/${name}.srs
-rm -fv ${PATH_GEN}/*.{db,lst,json,srs}
+rm -f ${PATH_GEN}/*.{lst,srs,json,db} ./*.zip
+#Gen adlist,refilter_plus
+generate-geoip-geosite-lin64 -s source.json -i ${PATH_GEN}/ -o ${PATH_GEN}/
 
-#Gen re-filter-list-plus
-name=re-filter-list-plus
-#Добавить в Action include-domain-re-filter-list-plus.lst коммит файла
-cat domain_wildcard.txt domain.txt > include-domain-re-filter-list-plus.lst
-cat ip.txt > include-ip-re-filter-list-plus.lst
-generate-geoip-geosite-lin64 -i ./ -o ${PATH_GEN}/
-mv -fv ${PATH_GEN}/geosite.db ${HOME_GITHUB}/templates/sing-box/${name}-site.db && mv -fv ${PATH_GEN}/geoip.db ${HOME_GITHUB}/templates/sing-box/${name}-geoip.db
-rm -fv ${PATH_GEN}/*.{db,lst,json,srs} ./include-*
+#adlist
+mv -fv ${PATH_GEN}/include-domain-adlist.lst ./adlist.lst
+mv -fv ${PATH_GEN}/ruleset-domain-adlist.json ./adlist.json
+mv -fv ${PATH_GEN}/ruleset-domain-adlist.srs ./adlist.srs
 
+#refilter_plus domain
+mv -fv ${PATH_GEN}/include-ip-refilter_plus_domains.lst ./refilter_plus_domains.lst
+mv -fv ${PATH_GEN}/ruleset-ip-refilter_plus_domains.json ./refilter_plus_domains.json
+mv -fv ${PATH_GEN}/ruleset-ip-refilter_plus_domains.srs ./refilter_plus_domains.srs
 
-mv -f re-filter-list-plus.txt re-filter-list-plus.json
-mv -f re-filter-list-plus.jq re-filter-list-plus.srs
+#refilter_plus ip
+mv -fv ${PATH_GEN}/include-ip-refilter_plus_ipsum.lst ./refilter_plus_ipsum.lst
+mv -fv ${PATH_GEN}/ruleset-ip-refilter_plus_ipsum.json ./refilter_plus_ipsum.json
+mv -fv ${PATH_GEN}/ruleset-ip-refilter_plus_ipsum.srs ./refilter_plus_ipsum.srs
+
+#Both domain and IP (refilter_plus)
+name=refilter_plus
+mv -f ${name}.txt ${name}-all.json
+mv -f ${name}.jq ${name}-all.srs
+
+#DataBase
+mv -fv ${PATH_GEN}/geoip.db ./
+mv -fv ${PATH_GEN}/geosite.db ./
+
+dos2unix *.lst *.json
+#Compress zip archive
+zip -9 sb-rules.zip ./*.srs
+fi
 
 exit 0

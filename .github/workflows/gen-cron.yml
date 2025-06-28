@@ -155,10 +155,10 @@ jobs:
     - name: Prepare artifacts
       run: echo "BUILD_TIMESTAMP=$(date '+%d.%m.%Y_%H-%M-%S')" >> $GITHUB_ENV
 
-    - name: Upload artifacts
+    - name: Upload artifact config dnsmasq
       uses: actions/upload-artifact@v4.3.1
       with:
-        name: configs-${{ env.BUILD_TIMESTAMP }}
+        name: configs_dnsmasq-${{ env.BUILD_TIMESTAMP }}
         retention-days: 3
         path: |
           domain_bad_ipset.conf
@@ -253,16 +253,16 @@ jobs:
        sudo wget -4q -nv -O - ${URL_DEB_SING_BOX} > ./sing-box.deb
        sudo dpkg -i ./sing-box.deb && sudo rm -fv ./sing-box.deb
 
-    - name: Generation rules for Sing-Box
+    - name: Generation rules for Sing-Box prepare
       run: |
         sudo cp -fv utils/create_rules_sing-box.sh /tmp/ && sudo chmod -c 755 /tmp/create_rules_sing-box.sh
-        sudo chown -c root:root /tmp/create_rules_sing-box.sh && sudo /tmp/create_rules_sing-box.sh
+        sudo chown -c root:root /tmp/create_rules_sing-box.sh && sudo /tmp/create_rules_sing-box.sh prepare && sleep 3s && sudo /tmp/create_rules_sing-box.sh gen
 
     - name: Commit files for Sing-Box
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
            commit_message: "Auto-update files for sing-box"
-           file_pattern: './templates/sing-box/domain.txt ./templates/sing-box/ip.txt ./templates/sing-box/domain_wildcard.txt'
+           file_pattern: './templates/sing-box/domain.txt ./templates/sing-box/ip.txt ./templates/sing-box/domain_wildcard.txt ./templates/sing-box/domain_all.txt'
            commit_options: "--no-verify"
            repository: .
            commit_user_name: github-actions[bot]
@@ -273,20 +273,43 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
            commit_message: "Auto-update adlist for sing-box"
-           file_pattern: './templates/sing-box/adlist-site.db ./templates/sing-box/adlist.lst ./templates/sing-box/adlist.srs ./templates/sing-box/adlist.json'
+           file_pattern: './templates/sing-box/adlist.lst ./templates/sing-box/adlist.json ./templates/sing-box/adlist.srs'
            commit_options: "--no-verify"
            repository: .
            commit_user_name: github-actions[bot]
            commit_user_email: github-actions[bot]@users.noreply.github.com
            commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
 
-    - name: Commit re-filter-list-plus for Sing-Box
+    - name: Commit refilter_plus for Sing-Box
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-           commit_message: "Auto-update re-filter-list-plus for sing-box"
-           file_pattern: './templates/sing-box/re-filter-list-plus-geoip.db templates/sing-box/re-filter-list-plus-site.db ./templates/sing-box/re-filter-list-plus.srs ./templates/sing-box/re-filter-list-plus.json'
+           commit_message: "Auto-update refilter_plus for sing-box"
+           file_pattern: './templates/sing-box/sb-rules.zip ./templates/sing-box/refilter_plus_domains.lst ./templates/sing-box/refilter_plus_domains.json ./templates/sing-box/refilter_plus_domains.srs ./templates/sing-box/refilter_plus_ipsum.lst ./templates/sing-box/refilter_plus_ipsum.json ./templates/sing-box/refilter_plus_ipsum.srs ./templates/sing-box/refilter_plus-all.json ./templates/sing-box/refilter_plus-all.srs ./templates/sing-box/geoip.db ./templates/sing-box/geosite.db'
            commit_options: "--no-verify"
            repository: .
            commit_user_name: github-actions[bot]
            commit_user_email: github-actions[bot]@users.noreply.github.com
            commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+    - name: Prepare artifacts
+      run: echo "BUILD_TIMESTAMP=$(date '+%d.%m.%Y_%H-%M-%S')" >> $GITHUB_ENV
+
+    - name: Upload artifact sing-box rules all
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        name: rule_sing-box-all-${{ env.BUILD_TIMESTAMP }}
+        retention-days: 3
+        path: |
+          adlist.lst
+          adlist.json
+          adlist.srs
+          refilter_plus_domains.lst
+          refilter_plus_domains.json
+          refilter_plus_domains.srs
+          refilter_plus_ipsum.lst
+          refilter_plus_ipsum.json
+          refilter_plus_ipsum.srs
+          refilter_plus-all.json
+          refilter_plus-all.srs
+          geoip.db
+          geosite.db
