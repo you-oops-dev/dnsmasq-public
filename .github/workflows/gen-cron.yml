@@ -269,6 +269,11 @@ jobs:
            commit_user_email: github-actions[bot]@users.noreply.github.com
            commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
 
+    - name: Generation rules for Sing-Box gen
+      run: |
+        sudo cp -fv utils/create_rules_sing-box.sh /tmp/ && sudo chmod -c 755 /tmp/create_rules_sing-box.sh
+        sudo chown -c root:root /tmp/create_rules_sing-box.sh && sudo /tmp/create_rules_sing-box.sh gen
+
     - name: Commit adlist for Sing-Box
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
