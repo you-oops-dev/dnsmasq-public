@@ -256,7 +256,7 @@ jobs:
     - name: Generation rules for Sing-Box prepare
       run: |
         sudo cp -fv utils/create_rules_sing-box.sh /tmp/ && sudo chmod -c 755 /tmp/create_rules_sing-box.sh
-        sudo chown -c root:root /tmp/create_rules_sing-box.sh && sudo /tmp/create_rules_sing-box.sh prepare && sleep 3s && sudo /tmp/create_rules_sing-box.sh gen
+        sudo chown -c root:root /tmp/create_rules_sing-box.sh && sudo /tmp/create_rules_sing-box.sh prepare
 
     - name: Commit files for Sing-Box
       uses: stefanzweifel/git-auto-commit-action@v5
