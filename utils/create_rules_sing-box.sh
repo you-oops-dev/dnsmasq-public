@@ -32,9 +32,13 @@ sort -T ${SORT_PATH} ./domain.txt | uniq | sponge ./domain.txt
 #cat ../ipset/unblock_static.conf.zst | zstd -d | awk '{print $3}' | sed '/:/d' | sort -T ${SORT_PATH} -t. -k1,1n -k2,2n -k3,3n -k4,4n | uniq | sed 's/$/\/32/' > ./ip.txt
 #
 # IP-address 2
-URL_LIST="https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/discord/ipv4_smart.txt https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/cloudflare/ipv4_smart.txt https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/telegram/ipv4_smart.txt"
+#URL_LIST="https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/discord/ipv4_smart.txt https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/cloudflare/ipv4_smart.txt https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/telegram/ipv4_smart.txt"
+#curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_LIST} | sort -T ${SORT_PATH} -t. -k1,1n -k2,2n -k3,3n -k4,4n | uniq | grep -i "/" > ./ip.txt
+#curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_LIST} | sort -T ${SORT_PATH} -t. -k1,1n -k2,2n -k3,3n -k4,4n | uniq | grep -v "/" | sed 's/$/\/32/' >> ./ip.txt
+#
+# IP-address 3 from resolving-public
+URL_LIST="https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/resolving-public/refs/heads/main/unblock_suite_with_ip_hoster_border_ipset.txt"
 curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_LIST} | sort -T ${SORT_PATH} -t. -k1,1n -k2,2n -k3,3n -k4,4n | uniq | grep -i "/" > ./ip.txt
-curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_LIST} | sort -T ${SORT_PATH} -t. -k1,1n -k2,2n -k3,3n -k4,4n | uniq | grep -v "/" | sed 's/$/\/32/' >> ./ip.txt
 #
 
 # domain wildcald
