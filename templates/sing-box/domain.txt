@@ -2799,7 +2799,7 @@ audimas.lt
 audio-base.mostop.ru
 audiobaza.net
 audiobks.net
-audiobookbay.luhdrezka.ag
+audiobookbay.lu
 audiobook-mp3.com
 audiobooks.my1.ru
 audiobooks.pw
@@ -17156,6 +17156,7 @@ makeafriend.top
 makeagif.com
 makebettercode.com
 makecode.org
+make.comhdrezka.ag
 makedeals.beauty
 make.go2me.top
 makemer14.com
@@ -23292,7 +23293,6 @@ questforwisdom.quest
 questindustries.bond
 quick-cassa.shop
 quickcheck.narod.ru
-quickconnect.to
 quicknode.com
 quickosint.com
 quickosint.me
