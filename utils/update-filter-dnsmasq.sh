@@ -404,6 +404,7 @@ echo "fastly.net" >> /tmp/filter/whitelist.hostname
 echo "map.fastly.net" >> /tmp/filter/whitelist.hostname
 echo "www.map.fastly.net" >> /tmp/filter/whitelist.hostname
 echo "www.fastly.net" >> /tmp/filter/whitelist.hostname
+echo "tricolor.ru" >> /tmp/filter/whitelist.hostname
 ##Spotify
 echo "sentry.io" >> /tmp/filter/whitelist.hostname
 ## URL shorteners
@@ -558,6 +559,7 @@ sed -i '/cloudflareinsights.com/d' /tmp/01_unbound_filters.hostname
 sed -i '/ttvnw.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/tinkoff.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/ltkarta.ru/d' /tmp/01_unbound_filters.hostname
+sed -i '/tricolor.ru/d' /tmp/01_unbound_filters.hostname
 #
 
 cat /tmp/01_unbound_filters.hostname | sort -T /root/ | uniq | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
