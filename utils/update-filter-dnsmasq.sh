@@ -367,6 +367,8 @@ moneroseeds.ru
 moneroseeds.ru.org
 moneroseeds.ch
 moneroseeds.ch.org" >> /tmp/filter/whitelist.hostname
+echo "digiseller.ru
+api.digiseller.ru" >> /tmp/filter/whitelist.hostname
 echo "www.avito.ru
 avito.ru
 m.avito.ru
@@ -560,6 +562,8 @@ sed -i '/ttvnw.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/tinkoff.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/ltkarta.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/tricolor.ru/d' /tmp/01_unbound_filters.hostname
+sed -i '/^digiseller.ru/d' /tmp/01_unbound_filters.hostname
+sed -i '/^api.digiseller.ru/d' /tmp/01_unbound_filters.hostname
 #
 
 cat /tmp/01_unbound_filters.hostname | sort -T /root/ | uniq | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
