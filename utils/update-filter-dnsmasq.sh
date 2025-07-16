@@ -565,6 +565,7 @@ sed -i '/tricolor.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/^digiseller.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/^api.digiseller.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/googlevideo.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/avito.ru/d' /tmp/01_unbound_filters.hostname
 #
 
 cat /tmp/01_unbound_filters.hostname | sort -T /root/ | uniq | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
