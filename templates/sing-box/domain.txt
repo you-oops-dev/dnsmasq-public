@@ -2385,6 +2385,7 @@ apps-cashy.com
 appscent.ru
 appserviceenvironment.cn
 apps.fandom.com
+appspot.com
 app.st-official.fun
 app.st-official.life
 appstorrent.ru
@@ -2554,7 +2555,6 @@ arturomsk.ru
 artusmed.kz
 a.ruanabol.zone
 arum-lavan.co
-a.run.app
 arv24.com
 arzamas-film.site
 as6723.net
@@ -19992,7 +19992,6 @@ netflix.zfilm-hd-1759.online
 netflix.zfilm-hd-731.online
 netfox-smotret.online
 net-gains.ru
-nethub.fi
 net.knigisamizdat.ru
 netlify.com
 netmovies21.com
@@ -22776,6 +22775,7 @@ pplace.ru
 ppp.demru.cy
 ppriimmeveenturre.site
 p.protorrent.fun
+pp.ru
 pr0speritypath.hair
 pr0speritypath.motorcycles
 pr-13.com
@@ -23648,7 +23648,6 @@ rapidapi.com
 rapidgator.net
 rapidlinks.org
 rapidzona.ucoz.org
-r.appspot.com
 rarbg.to
 rargb.to
 ra.sargas.stream
@@ -24923,6 +24922,7 @@ ru.mp3-tut.biz
 ru.my-hit.one
 ru.mytempsms.com
 runaflowers.ru
+run.app
 ru.netgazeti.ge
 ru.newbrazz.com
 runewmir.ru
@@ -26644,7 +26644,6 @@ sloznoneskazat.mave.digital
 slpravo.ru
 sl.pt
 slret.intesk.top
-sl-reverse.com
 sltngms.com
 slubtem.com
 sluga-narodu.com
@@ -27097,7 +27096,6 @@ spb-pogruzchik.ru
 spb-post.com
 spb.rope-jumper.ru
 spb.rosegrn.com
-spb.ru
 spbspravki.com
 spbspravki.ru
 spcs.bio
@@ -30330,6 +30328,7 @@ uchijika.ru
 uchis-rus.ru
 uchords.net
 u-col.ru
+ucoz.ru
 ucp.su
 u.cubeupload.com
 ucznvao.ru
