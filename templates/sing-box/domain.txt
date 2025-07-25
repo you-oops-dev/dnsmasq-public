@@ -2460,7 +2460,6 @@ areas.news
 a.recept-reduksin.club
 a.reduksin-kaps.shop
 a.relaxportal-simf.com
-arena-frontend.rapid.openai.org
 arendaavtokranamos.ru
 arenda-samosvala.ru
 arewereadyyet.com
@@ -5395,8 +5394,6 @@ chatgpt.livekit.cloud
 chat.groq.com
 chatly.online
 chatmehard.net
-chat.openai
-chat.openai.home.setia.ru
 chatpic.org
 chatrandom.com
 chatropolis.com
@@ -6105,7 +6102,6 @@ covidapi.info
 covok.biz
 cowegeu.info
 c.parkerlabs.tech
-cpcontacts.openai.idarkode.in
 cpec-laundrygov.com
 cpedge.com
 cpelon.fastiprog.live
@@ -9177,8 +9173,6 @@ filemood.com
 filerio.in
 file-ru-media.ru-files.com
 file-ru.ru-files.com
-files07.oaiusercontent.com
-files08.oaiusercontent.com
 files.manus.cdn
 files.oaiusercontent.com
 files-ru-media.ru-files.com
@@ -14396,7 +14390,6 @@ jsoffosttores.ru
 jsparrow.top
 jswift.ru
 jthqarg.info
-juaneloturriano.oaistore.es
 jugar.loteriaangelita.com
 juice-farm.space
 juicymoms.net
@@ -17373,7 +17366,6 @@ management-azure-devices-int.net
 management-azure-devices.net
 management-azure-devices-provisioning.cn
 managementmaze.site
-manage.openai.auth0app.com
 managerhub.website
 managewizard.homes
 manaligupta.com
@@ -21243,12 +21235,9 @@ opa-top.xyz
 opdag.ru
 openacsqrb.website
 openaiapi-site.azureedge.net
-openai.chat.com
 openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 openaicom.imgix.net
 openai.fund
-openai.ikontra.com
-openai.openthinklabs.com
 openai.org
 openai.qualtrics.com
 openamt.com
@@ -21871,7 +21860,6 @@ perm.sex8.ru
 perm-tp.ru
 peroneqabi.website
 persha.kr.ua
-persistent.oaistatic.com
 personaljournal.ca
 personal.ncwebcentr.com
 personalvoditel.ru
@@ -23509,7 +23497,6 @@ quotesgram.com
 quotex-broker.com
 quqexei.info
 quuustter.site
-qv3y4.oai.com
 qw.devsoft11.cfd
 qwertfd.info
 qwerty.gov-bac-t.top
@@ -24011,7 +23998,6 @@ re-peat.ru
 repo.mongodb.org
 reporters.media
 report.if.ua
-repository.oai.yamaguchi-u.ac.jp
 repo.webosbrew.org
 reptancfgq.xyz
 rep.tipoches.live
@@ -25634,12 +25620,6 @@ sdgnbvf.info
 sd.go2me.top
 sd.joysonshops.ru
 sdm-market.ru
-sdmntprcentralus.oaiusercontent.com
-sdmntpreastus2.oaiusercontent.com
-sdmntprnorthcentralus.oaiusercontent.com
-sdmntprsouthcentralus.oaiusercontent.com
-sdmntprwestcentralus.oaiusercontent.com
-sdmntprwestus.oaiusercontent.com
 s.do4a.me
 sdsd.wabotse.site
 s.dsoffosttores.ru
@@ -30919,7 +30899,6 @@ valera.piratbit.top
 valeriyalepet.ru
 valerymorozov.com
 valhalla-age.net
-validator.oaipmh.com
 valimed.ru
 valiytniy.org
 valoreal-capital.com
@@ -35014,7 +34993,6 @@ www.onlyhentaistuff.com
 www.onlylads.com
 www.onway.fun
 www.oooo.plus
-www.openai.chat.com
 www.opencard.top
 www.opensanctions.org
 www.opensocietyfoundations.org
@@ -36492,7 +36470,6 @@ xilfy.com
 xino-quent.co
 xistor.ru
 xittv.net
-xiucai.oai.de
 xjoys.ru
 xkauf.net
 xkeezmovies.com
