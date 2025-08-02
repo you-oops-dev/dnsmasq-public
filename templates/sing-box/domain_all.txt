@@ -5238,6 +5238,7 @@ cdn.discordapp.com
 cdn.id.supercell.com
 cdnjs.cloudflare.com
 cdn.masto.host
+cdn.nperf.com
 cdn.oaistatic.com
 cdn-qc.content.steamchina.com
 cdn-spotify-experiments.conductrics.com
@@ -32736,6 +32737,7 @@ wsexcomics.com
 ws-game.in
 wsjournal.ru
 ws.joysonshops.ru
+ws.nperf.com
 w.spravka-moscow77.club
 wss.animego.org
 w.sslkn.name
