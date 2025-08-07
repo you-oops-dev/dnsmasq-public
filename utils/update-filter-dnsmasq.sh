@@ -351,6 +351,8 @@ echo "rutracker.org" >> /tmp/filter/whitelist.hostname
 echo "thepiratebay.org" >> /tmp/filter/whitelist.hostname
 echo "toptracker.ru" >> /tmp/filter/whitelist.hostname
 echo "track24.ru" >> /tmp/filter/whitelist.hostname
+echo "osm.wifly.net" >> /tmp/filter/whitelist.hostname
+echo "wifly.net" >> /tmp/filter/whitelist.hostname
 echo "dns.google" >> /tmp/filter/whitelist.hostname
 echo "dns.nextdns.io" >> /tmp/filter/whitelist.hostname
 echo "nextdns.io" >> /tmp/filter/whitelist.hostname
