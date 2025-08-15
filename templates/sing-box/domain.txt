@@ -5833,6 +5833,7 @@ cod03.ru
 cod3sun.com
 codebrowser.dev
 codegiamgia.com
+code.gist.build
 codeineonlinestore.com
 codeium.com
 codeload.github.com
@@ -6717,6 +6718,7 @@ delightworld.site
 delightzone.site
 delivembed.cc
 deliverator.ru
+delivery.2d.net.co
 dell-alw.com
 dell-brand.com
 dellcdn.com
@@ -19565,6 +19567,7 @@ my.ntxpro.ai
 my.onebidasset.pro
 myosu.ru
 my-otels.ru
+myparallels.com
 my-park.biz
 mypervyfamily.com
 mypetition.ru
@@ -19578,7 +19581,7 @@ myprepaidcenter.com
 myprofitbtc.offersallcpa.com
 my-profit.pro
 mypykiy0.pro
-myqrcode.comshowip.net
+myqrcode.com
 my-rc.biz
 myrotvorets.center
 myrotvorets.team
@@ -20427,6 +20430,7 @@ noteworthystage.top
 notgamstop.com
 not.greygrat.sbs
 notion.com
+notion-emojis.s3-us-west-2.amazonaws.com
 notion.new
 notion.site
 notion.so
@@ -21281,12 +21285,14 @@ opencard.top
 openculture.com
 opendroneid.org
 opengserwfwerg.pro
+openh264.org
 open-hide.info
 openlessons.biz
 openmedia.io
 openok.org
 openoption.net
 openoption.pro
+openrouter.ai
 openru.live
 openrunet.org
 openrussia.org
@@ -21669,6 +21675,10 @@ paradis-shop.ru
 parafia.org.ua
 paraklit.org
 paraknig.net
+parallelsaccess.com
+parallels.cn
+parallels.com
+parallels.net
 parasited.com
 paraswap.io
 para-train.com
@@ -23860,6 +23870,7 @@ redi-lonsar.cfd
 redirector.gvt1.com
 redis.com
 redis.io
+redislabs.com
 reditt1.soccerstreams.net
 reditt.soccerstreams.net
 redkollegia.org
@@ -25827,6 +25838,7 @@ sensorynetworks.com
 senssationalgrrouup.top
 sensualits.com
 sensueel.net
+sentry.dev
 sentry.io
 senumy.com
 senzuri.tube
@@ -28938,6 +28950,7 @@ tinyurl.com
 tinyzonetv.se
 tinyzonetv.stream
 tionlong.cfd
+tiptop-vpn.com
 tirepros.ru
 tirs.sheelpor.top
 tishkinov.net
@@ -32168,6 +32181,7 @@ waynakh.com
 wbagora.com
 wbcenter.ru
 wbd.ms
+wbgames.com
 wbinsights.com
 wbkoatied.com
 wc24.biz
