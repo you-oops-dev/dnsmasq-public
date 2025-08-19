@@ -333,6 +333,8 @@ wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script
 wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Twitter/Twitter.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASN/d' >> /tmp/filter/whitelist.hostname
 ##GitHub
 wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/GitHub/GitHub.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASN/d' >> /tmp/filter/whitelist.hostname
+#Porn Suite
+wget -4q -nv -O - https://raw.githubusercontent.com/Sinfonietta/hostfiles/master/pornography-hosts | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sed 's/\t//g' | sed 's/ //g' | sort | uniq >> /tmp/filter/whitelist.hostname
 echo ""
 
 ###
@@ -572,6 +574,80 @@ sed -i '/avito.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/z-lib.id/d' /tmp/01_unbound_filters.hostname
 sed -i '/osm.wifly.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/wifly.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/xhcdn.com/d' /tmp/01_unbound_filters.hostname
+##CDN
+sed -i '/akamaihd.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/akamaized.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/amazonaws.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/mixpanel.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/avataaars.io/d' /tmp/01_unbound_filters.hostname
+sed -i '/azureedge.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/bootstrapcdn.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/bugsnag.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/changelog.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/paddle.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/polyfill.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/polyfill.io/d' /tmp/01_unbound_filters.hostname
+sed -i '/cloudflare.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/cloudfront.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/jquery.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/edgesuite.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/devmate.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/dropboxstatic.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/fastly.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/fbcdn.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/soundcloud.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/fiplabcdn.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/firebaseio.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/googleapis.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/gstatic.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/gfx.ms/d' /tmp/01_unbound_filters.hostname
+sed -i '/ggpht.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/ghbtns.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/githubusercontent.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/googleusercontent.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/googlevideo.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/gravatar.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/gvt1.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/helpscout.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/hockeyapp.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/icloud-content.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/images-amazon.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/imgix.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/intercom.io/d' /tmp/01_unbound_filters.hostname
+sed -i '/intercomassets.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/intercomcdn.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/kxcdn.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/local.adguard.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/adguard.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/loggly.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/media-amazon.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/msecnd.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/msedge.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/notion-static.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/paddle.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/paddleapi.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/pscdn.co/d' /tmp/01_unbound_filters.hostname
+sed -i '/pusher.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/query.yahoo.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/rackcdn.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/raw.github.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/raw.githubusercontent.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/raygun.io/d' /tmp/01_unbound_filters.hostname
+sed -i '/replies.io/d' /tmp/01_unbound_filters.hostname
+sed -i '/res.cloudinary.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/scdn.co/d' /tmp/01_unbound_filters.hostname
+sed -i '/sentry.io/d' /tmp/01_unbound_filters.hostname
+sed -i '/sndcdn.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/ssl-images-amazon.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/statuspage.io/d' /tmp/01_unbound_filters.hostname
+sed -i '/tinyfac.es/d' /tmp/01_unbound_filters.hostname
+sed -i '/twimg.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/typekit.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/vsassets.io/d' /tmp/01_unbound_filters.hostname
+sed -i '/vscode-update.azurewebsites.net/d' /tmp/01_unbound_filters.hostname
+sed -i '/ytimg.com/d' /tmp/01_unbound_filters.hostname
+##
 #
 
 cat /tmp/01_unbound_filters.hostname | sort -T /root/ | uniq | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
