@@ -335,6 +335,8 @@ wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script
 wget -4q -nv -O - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/GitHub/GitHub.list | sed '/USER-AGENT,/d' | sed '/DOMAIN-KEYWORD/d' | sed 's/ //g' | sed -r '/^\s*$/d' | sed '/!/d' | sed '/!!/d' | sed '/#/d' | sed 's/DOMAIN-SUFFIX,//g' | sed 's/^https\?:\/\///g' | sed '/IP-CIDR/d' | sed '/@/d' | sed 's/full://g' | sed '/:/d' | sed 's/DOMAIN,//g' | sed '/IP-ASN/d' >> /tmp/filter/whitelist.hostname
 #Porn Suite
 wget -4q -nv -O - https://raw.githubusercontent.com/Sinfonietta/hostfiles/master/pornography-hosts | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sed 's/\t//g' | sed 's/ //g' | sort | uniq >> /tmp/filter/whitelist.hostname
+#CDN Whiting list
+wget -4q -nv -O - https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Whitelists/Whitelist | awk '{print $1}' | sed '/#/d' | sed 's/\t//g' | sed 's/ //g' | sort | uniq >> /tmp/filter/whitelist.hostname
 echo ""
 
 ###
