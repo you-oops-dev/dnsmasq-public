@@ -1249,6 +1249,7 @@ a.dark2web.biz
 a.dark2web.one
 a.dark2web.site
 a.dark2web.top
+adblockplus.org
 adblockstreamtape.site
 adcmemorial.org
 addcred.biz
@@ -7785,6 +7786,7 @@ easyintro.click
 easyjet.com
 easylender.site
 easylender.top
+easylist-downloads.adblockplus.org
 easyluxlivepro.cfd
 easyluxuryrpro.cfd
 easyporn.xxx
@@ -23555,6 +23557,7 @@ qmc.liwall.top
 q.mgfilm.info
 qnx-russia.ru
 qobuz.com
+qoder.com
 qosvideos.com
 qotsher.com
 qpkvarti.ru
