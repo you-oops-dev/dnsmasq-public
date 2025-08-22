@@ -677,7 +677,8 @@ echo -e "!Title: Users filter you-oops-dev\n!Last modified: ${print_date}\n!Expi
 cat /etc/dnsmasq.d/hosts >> ${HOME_GITHUB}/ublock_origin_hosts.txt
 #Create list for Adblock Plus (cromite) and uBlock Origin
 wget -4q -nv -O - https://raw.githubusercontent.com/eEIi0A5L/adblock_filter/master/youtube_wo_tonikaku_filter.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' > ${HOME_GITHUB}/ublock_origin_abp.temp
-wget -4q -nv -O - https://gitlab.com/eyeo/anti-cv/abp-filters-anti-cv/-/raw/master/russian.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://easylist-downloads.adblockplus.org/ruadlist+easylist.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://raw.githubusercontent.com/DandelionSprout/adfilt/master/AdGuard%20Home%20Compilation%20List/AdGuardHomeCompilationList.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 count_line=$(cat ${HOME_GITHUB}/ublock_origin_abp.temp | wc -l)
 print_date=$(date -u +"%d %b %Y %H:%M UTC")
