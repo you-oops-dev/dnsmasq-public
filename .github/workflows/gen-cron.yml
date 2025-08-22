@@ -237,8 +237,8 @@ jobs:
     - name: Commit for uBlock origin list
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-          commit_message: "Auto-update for uBlock Origin list"
-          file_pattern: './ublock_origin_hosts.txt'
+          commit_message: "Auto-update for uBlock Origin lists"
+          file_pattern: './ublock_origin_hosts.txt ./ublock_origin_abp.txt'
           commit_options: "--no-verify"
           repository: .
           commit_user_name: github-actions[bot]

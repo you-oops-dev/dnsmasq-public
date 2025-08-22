@@ -168,7 +168,8 @@ wget -4q -nv -O - https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/ref
 wget -4q -nv -O - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed '/ip6-/d' | sed '/255.255.255.255/d' | sed '/.localdomain/d' | sed '/fe80/d' | sed '/local/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/|//g' | sed 's/@//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed '/*/d' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sed 's/\t//g' | sed 's/ //g' | sort | uniq >> /tmp/filter/AdvertisingLite.hostname
 wget -4q -nv -O - https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed '/ip6-/d' | sed '/255.255.255.255/d' | sed '/.localdomain/d' | sed '/fe80/d' | sed '/local/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/|//g' | sed 's/@//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed '/*/d' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sed 's/\t//g' | sed 's/ //g' | sort | uniq >> /tmp/filter/AdvertisingLite.hostname
 wget -4q -nv -O - https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed '/ip6-/d' | sed '/255.255.255.255/d' | sed '/.localdomain/d' | sed '/fe80/d' | sed '/local/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/|//g' | sed 's/@//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed '/*/d' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sed 's/\t//g' | sed 's/ //g' | sort | uniq >> /tmp/filter/AdvertisingLite.hostname
-wget -4q -nv -O - https://www.cromite.org/filters/badmojr-1Hosts-master-Pro-adblock.txt | sed '/!/d' | sed 's/||//g' | sed 's/\^//g' | sort | uniq >> /tmp/filter/AdvertisingLite.hostname
+wget -4q -nv -O - https://www.cromite.org/filters/badmojr-1Hosts-master-Pro-adblock.txt | sed '/!/d' | sed 's/||//g' | sed 's/\^//g' | sed '/#/d' | sort | uniq >> /tmp/filter/AdvertisingLite.hostname
+wget -4q -nv -O - https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/ParsedBlacklists/Adblock-YouTube-Ads.txt | sed '/!/d' | sed '/#/d' | sort | uniq >> /tmp/filter/AdvertisingLite.hostname
 echo ""
 
 echo "Объеденение несколько списков в один список..."
@@ -674,4 +675,13 @@ count_line=$(cat ${HOME_GITHUB}/templates/dnsmasq/dnsmasq.d/domains.host | wc -l
 print_date=$(date -u +"%d %b %Y %H:%M UTC")
 echo -e "!Title: Users filter you-oops-dev\n!Last modified: ${print_date}\n!Expires: 1 hours\n!Records: ${count_line}\n" | tee ${HOME_GITHUB}/ublock_origin_hosts.txt
 cat /etc/dnsmasq.d/hosts >> ${HOME_GITHUB}/ublock_origin_hosts.txt
+#Create list for Adblock Plus (cromite) and uBlock Origin
+wget -4q -nv -O - https://raw.githubusercontent.com/eEIi0A5L/adblock_filter/master/youtube_wo_tonikaku_filter.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' > ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://gitlab.com/eyeo/anti-cv/abp-filters-anti-cv/-/raw/master/russian.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+#
+count_line=$(cat ${HOME_GITHUB}/ublock_origin_abp.temp | wc -l)
+print_date=$(date -u +"%d %b %Y %H:%M UTC")
+echo -e "!Title: Users filter you-oops-dev for ubo and abp\n!Last modified: ${print_date}\n!Expires: 1 hours\n!Records: ${count_line}\n" | tee ${HOME_GITHUB}/ublock_origin_abp.txt
+cat ${HOME_GITHUB}/ublock_origin_abp.temp >> ${HOME_GITHUB}/ublock_origin_abp.txt
+rm -f ${HOME_GITHUB}/ublock_origin_abp.temp
 exit 0
