@@ -679,6 +679,10 @@ cat /etc/dnsmasq.d/hosts >> ${HOME_GITHUB}/ublock_origin_hosts.txt
 wget -4q -nv -O - https://raw.githubusercontent.com/eEIi0A5L/adblock_filter/master/youtube_wo_tonikaku_filter.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' > ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://easylist-downloads.adblockplus.org/ruadlist+easylist.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://raw.githubusercontent.com/DandelionSprout/adfilt/master/AdGuard%20Home%20Compilation%20List/AdGuardHomeCompilationList.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://www.cromite.org/filters/badblock_lite.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://www.cromite.org/filters/badblock_lite.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://www.cromite.org/filters/abpvn.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://www.cromite.org/filters/ruadlist.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 count_line=$(cat ${HOME_GITHUB}/ublock_origin_abp.temp | wc -l)
 print_date=$(date -u +"%d %b %Y %H:%M UTC")
