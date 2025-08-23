@@ -170,6 +170,10 @@ wget -4q -nv -O - https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/
 wget -4q -nv -O - https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt | sed '/#/d' | sed '/!/d' | sed '/!!/d' | sed '/ip6-/d' | sed '/255.255.255.255/d' | sed '/.localdomain/d' | sed '/fe80/d' | sed '/local/d' | sed 's/\^//g' | sed 's/||//g' | sed 's/|//g' | sed 's/@//g' | sed 's/127.0.0.1 localhost//g' | sed 's/::1 localhost//g' | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed '/*/d' | sed 's/127.0.0.1//g' | sed 's/0.0.0.0//g' | sed 's/\t//g' | sed 's/ //g' | sort | uniq >> /tmp/filter/AdvertisingLite.hostname
 wget -4q -nv -O - https://www.cromite.org/filters/badmojr-1Hosts-master-Pro-adblock.txt | sed '/!/d' | sed 's/||//g' | sed 's/\^//g' | sed '/#/d' | sort | uniq >> /tmp/filter/AdvertisingLite.hostname
 wget -4q -nv -O - https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/ParsedBlacklists/Adblock-YouTube-Ads.txt | sed '/!/d' | sed '/#/d' | sort | uniq >> /tmp/filter/AdvertisingLite.hostname
+wget -4q -nv -O - https://winhelp2002.mvps.org/hosts.txt | sed '/!/d' | sed '/#/d' | sed '/127.0.0.1/d' | sed -r '/^\s*$/d' | awk '{print $2}' | uniq | sort >> /tmp/filter/AdvertisingLite.hostname
+wget -4q -nv -O - https://adaway.org/hosts.txt | sed '/!/d' | sed '/#/d' | sed -r '/^\s*$/d' | awk '{print $2}' | uniq | sort >> /tmp/filter/AdvertisingLite.hostname
+wget -4q -nv -O - https://hostsfile.mine.nu/Hosts | sed '/!/d' | sed '/#/d' | sed '/127.0.0.1     localhost/d' | sed -r '/^\s*$/d' | awk '{print $2}' | uniq | sort >> /tmp/filter/AdvertisingLite.hostname
+wget -4q -nv -O - https://raw.githubusercontent.com/Kittyskj/FreeFromMi/refs/heads/main/hosts | sed '/!/d' | sed '/#/d' | sed '/^127.0.0.1/d' | sed '/^255.255.255.255/d' | sed '/^\:\:1/d' | sed '/^fe80\:\:1\%lo0/d' | sed '/^ff00::0/d' | sed '/^ff02::1/d' | sed '/^ff02::2/d' | sed '/^ff02::3/d' | sed '/0.0.0.0 0.0.0.0/d' | sed -r '/^\s*$/d' | awk '{print $2}' | sort | uniq >> /tmp/filter/AdvertisingLite.hostname
 echo ""
 
 echo "Объеденение несколько списков в один список..."
