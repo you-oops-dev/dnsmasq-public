@@ -693,6 +693,9 @@ wget -4q -nv -O - https://www.cromite.org/filters/fanboy-notifications.txt | sed
 wget -4q -nv -O - https://www.cromite.org/filters/easyprivacy.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://www.i-dont-care-about-cookies.eu/abp/ | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 #
+#Fixing list
+sed -i '/\?action=opensearch/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+#
 count_line=$(cat ${HOME_GITHUB}/ublock_origin_abp.temp | wc -l)
 print_date=$(date -u +"%d %b %Y %H:%M UTC")
 echo -e "!Title: Users filter you-oops-dev for ubo and abp\n!Last modified: ${print_date}\n!Expires: 1 hours\n!Records: ${count_line}\n" | tee ${HOME_GITHUB}/ublock_origin_abp.txt
