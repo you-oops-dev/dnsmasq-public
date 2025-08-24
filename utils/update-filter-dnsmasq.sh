@@ -700,6 +700,7 @@ sed -i '/typekit.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/vsassets.io/d' /tmp/01_unbound_filters.hostname
 sed -i '/vscode-update.azurewebsites.net/d' /tmp/01_unbound_filters.hostname
 sed -i '/ytimg.com/d' /tmp/01_unbound_filters.hostname
+sed -i '/^yastatic.net/d' /tmp/01_unbound_filters.hostname
 ##
 #
 
