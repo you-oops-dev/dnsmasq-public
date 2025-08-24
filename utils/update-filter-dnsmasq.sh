@@ -227,9 +227,7 @@ mobile.yandexadexchange.net
 googleads.g.doubleclick.net
 firestore.googleapis.com" >> /tmp/filter/unbound.hostname
 #Реклама от Яндекс
-echo "report.appmetrica.yandex.net
-yastatic.net
-storage.mds.yandex.ru" >> /tmp/filter/unbound.hostname
+echo "report.appmetrica.yandex.net" >> /tmp/filter/unbound.hostname
 #Реклама от Гугл
 echo "userlocation.googleapis.com
 ads.google.com
