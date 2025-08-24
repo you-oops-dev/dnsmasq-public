@@ -695,6 +695,10 @@ wget -4q -nv -O - https://www.i-dont-care-about-cookies.eu/abp/ | sed '/!/d' | s
 #
 #Fixing list
 sed -i '/\?action=opensearch/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/www.google.com\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/google.com\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/www.google.ru\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/google.ru\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 count_line=$(cat ${HOME_GITHUB}/ublock_origin_abp.temp | wc -l)
 print_date=$(date -u +"%d %b %Y %H:%M UTC")
