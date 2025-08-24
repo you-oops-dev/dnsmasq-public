@@ -475,6 +475,54 @@ ozon.ru
 finance.ozon.ru
 ozone.ru
 ozonusercontent.com" >> /tmp/filter/whitelist.hostname
+#Schakal white list
+echo "ad.admitad.com
+s.click.aliexpress.com
+r.mradx.net
+clck.ru
+sba.yandex.net
+mtalk.google.com
+firebaseinstallations.googleapis.com
+api.recsys.opera.com
+news.opera-api.com
+thumbnails.opera.com
+news.opera-api.com
+t.paypal.com
+sessions.bugsnag.com
+www.googletagmanager.com
+www.google-analytics.com
+ssl.google-analytics.com
+stats.g.doubleclick.net
+firebaseremoteconfig.googleapis.com
+s.youtube.com
+www.youtube-nocookie.com
+youtube-nocookie.com
+firebaseinstallations.googleapis.com
+firebaseremoteconfig.googleapis.com
+mc.yandex.ru
+sbbe.group-ib.ru
+firebaseremoteconfig.googleapis.com
+firebaseinstallations.googleapis.com
+firebase-settings.crashlytics.com
+stat.online.sberbank.ru
+report.appmetrica.yandex.net
+top-fwz1.mail.ru
+rs.mail.ru
+firebaseremoteconfig.googleapis.com
+mc.yandex.ru
+push.yandex.com
+startup.mobile.yandex.net
+graph.instagram.com
+html-load.com
+rose.ixbt.com
+pagead2.googlesyndication.com
+www.googletagmanager.com
+wurfl.io
+pagead.l.doubleclick.net
+www.googleadservices.com
+googleadapis.l.google.com
+ads.adfox.ru
+mc.yandex.ru" >> /tmp/filter/whitelist.hostname
 ###
 ###
 #Чистим от киррилитиcческих доменов
