@@ -749,7 +749,10 @@ sed -i '/www.google.com\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/google.com\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/www.google.ru\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/google.ru\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/s.youtube.com/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 #
+sort -T /root/ ${HOME_GITHUB}/ublock_origin_abp.temp | uniq > ${HOME_GITHUB}/ublock_origin_abp.temp.2 && mv -f ${HOME_GITHUB}/ublock_origin_abp.temp.2 ${HOME_GITHUB}/ublock_origin_abp.temp
+
 count_line=$(cat ${HOME_GITHUB}/ublock_origin_abp.temp | wc -l)
 print_date=$(date -u +"%d %b %Y %H:%M UTC")
 echo -e "!Title: Users filter you-oops-dev for ubo and abp\n!Last modified: ${print_date}\n!Expires: 1 hours\n!Records: ${count_line}\n" | tee ${HOME_GITHUB}/ublock_origin_abp.txt
