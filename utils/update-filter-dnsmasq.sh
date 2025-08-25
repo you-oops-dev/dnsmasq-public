@@ -748,6 +748,7 @@ wget -4q -nv -O - https://raw.githubusercontent.com/DandelionSprout/adfilt/maste
 wget -4q -nv -O - https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://mkb2091.github.io/blockconvert/output/adblock.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://secure.fanboy.co.nz/fanboy-cookiemonster.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://raw.githubusercontent.com/caffeinewriter/DontPushMe/master/filterlist.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 #Fixing list
 sed -i '/\?action=opensearch/d' ${HOME_GITHUB}/ublock_origin_abp.temp
