@@ -739,6 +739,9 @@ wget -4q -nv -O - https://www.cromite.org/filters/global-filters.txt | sed '/!/d
 wget -4q -nv -O - https://www.cromite.org/filters/fanboy-notifications.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://www.cromite.org/filters/easyprivacy.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://www.i-dont-care-about-cookies.eu/abp/ | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://easylist-downloads.adblockplus.org/ruadlist-minified.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://gitlab.com/eyeo/anti-cv/abp-filters-anti-cv/-/raw/master/russian.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://raw.githubusercontent.com/pafnuty/onlineConsultantBlocker/master/online-consultant.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 #Fixing list
 sed -i '/\?action=opensearch/d' ${HOME_GITHUB}/ublock_origin_abp.temp
