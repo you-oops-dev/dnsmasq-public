@@ -749,7 +749,8 @@ sed -i '/www.google.com\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/google.com\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/www.google.ru\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/google.ru\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
-sed -i '/s.youtube.com/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/youtube\.com\/api\/stats\//d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/www\.youtube\.com\/api\/stats\//d' ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 sort -T /root/ ${HOME_GITHUB}/ublock_origin_abp.temp | uniq > ${HOME_GITHUB}/ublock_origin_abp.temp.2 && mv -f ${HOME_GITHUB}/ublock_origin_abp.temp.2 ${HOME_GITHUB}/ublock_origin_abp.temp
 
