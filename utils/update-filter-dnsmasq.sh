@@ -728,6 +728,7 @@ echo -e "!Title: Users filter you-oops-dev\n!Last modified: ${print_date}\n!Expi
 cat /etc/dnsmasq.d/hosts >> ${HOME_GITHUB}/ublock_origin_hosts.txt
 #Create list for Adblock Plus (cromite) and uBlock Origin
 wget -4q -nv -O - https://raw.githubusercontent.com/eEIi0A5L/adblock_filter/master/youtube_wo_tonikaku_filter.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' > ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://raw.githubusercontent.com/kbinani/adblock-youtube-ads/master/signed.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://easylist-downloads.adblockplus.org/ruadlist+easylist.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://raw.githubusercontent.com/DandelionSprout/adfilt/master/AdGuard%20Home%20Compilation%20List/AdGuardHomeCompilationList.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://www.cromite.org/filters/badblock_lite.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
@@ -749,6 +750,8 @@ wget -4q -nv -O - https://raw.githubusercontent.com/Spam404/lists/master/adblock
 wget -4q -nv -O - https://mkb2091.github.io/blockconvert/output/adblock.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://secure.fanboy.co.nz/fanboy-cookiemonster.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://raw.githubusercontent.com/caffeinewriter/DontPushMe/master/filterlist.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://raw.githubusercontent.com/Hubird-au/Adversity/master/Adversity.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://raw.githubusercontent.com/T4Tea/ADPMobileFilter/master/ADPMobileFilter.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 #Fixing list
 sed -i '/\?action=opensearch/d' ${HOME_GITHUB}/ublock_origin_abp.temp
@@ -758,6 +761,7 @@ sed -i '/www.google.ru\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/google.ru\/complete/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/youtube\.com\/api\/stats\//d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/www\.youtube\.com\/api\/stats\//d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/dnsleaktest\.com/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 sort -T /root/ ${HOME_GITHUB}/ublock_origin_abp.temp | uniq > ${HOME_GITHUB}/ublock_origin_abp.temp.2 && mv -f ${HOME_GITHUB}/ublock_origin_abp.temp.2 ${HOME_GITHUB}/ublock_origin_abp.temp
 
