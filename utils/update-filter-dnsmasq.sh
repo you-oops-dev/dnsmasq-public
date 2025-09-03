@@ -313,6 +313,7 @@ echo "api3.friproxy0.org" >> /tmp/filter/unbound.hostname
 echo "api3.friproxy.org" >> /tmp/filter/unbound.hostname
 echo "s1814.frigateblocklist.com" >> /tmp/filter/unbound.hostname
 echo "s814.frigateblocklist.com" >> /tmp/filter/unbound.hostname
+echo "api.raygun.com" >> /tmp/filter/unbound.hostname
 #######
 sort /tmp/filter/unbound.hostname -T /root/ | uniq | sponge /tmp/filter/unbound.hostname
 
@@ -753,6 +754,7 @@ wget -4q -nv -O - https://secure.fanboy.co.nz/fanboy-cookiemonster.txt | sed '/!
 wget -4q -nv -O - https://raw.githubusercontent.com/caffeinewriter/DontPushMe/master/filterlist.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://raw.githubusercontent.com/Hubird-au/Adversity/master/Adversity.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 wget -4q -nv -O - https://raw.githubusercontent.com/T4Tea/ADPMobileFilter/master/ADPMobileFilter.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
+wget -4q -nv -O - https://raw.githubusercontent.com/Zalexanninev15/NoADS_RU/refs/heads/main/ads_list.txt | sed '/!/d' | sed '/\[Adblock Plus/d' | sed 's/ //g' | sed -r '/^\s*$/d' >> ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 #Fixing list
 sed -i '/\?action=opensearch/d' ${HOME_GITHUB}/ublock_origin_abp.temp
