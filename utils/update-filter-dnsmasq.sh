@@ -706,6 +706,7 @@ sed -i '/cse\.google\.com/d' /tmp/01_unbound_filters.hostname
 sed -i '/securitylab\.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/irr\.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/spb\.ru/d' /tmp/01_unbound_filters.hostname
+sed -i '/||spb.ru\^/d' /tmp/01_unbound_filters.hostname
 sed -i '/aviasales\.ru/d' /tmp/01_unbound_filters.hostname
 ##
 #
