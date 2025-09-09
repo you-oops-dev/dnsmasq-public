@@ -786,6 +786,7 @@ sed -i '/||nowa.cc\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||toptracker.ru\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||tapochek.net\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||hidemy.name\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/||sourceforge.net\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 sort -T /root/ ${HOME_GITHUB}/ublock_origin_abp.temp | uniq > ${HOME_GITHUB}/ublock_origin_abp.temp.2 && mv -f ${HOME_GITHUB}/ublock_origin_abp.temp.2 ${HOME_GITHUB}/ublock_origin_abp.temp
 
