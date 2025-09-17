@@ -13476,7 +13476,6 @@ icqinfo.ru
 icvoenmeh.ru
 icybluefish.quest
 idaoffice.org
-id.atlassian.com
 idc2019.ru
 id.cisco.com
 iddis-shop.ru
@@ -18677,7 +18676,6 @@ market.korupciya.com
 market.kybbik4.ru
 market.mega8.ru
 marketmega.top
-marketplace.atlassian.com
 markets60.co
 markets60.com
 markets60.net
