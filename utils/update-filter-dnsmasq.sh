@@ -711,6 +711,7 @@ sed -i '/irr\.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/spb\.ru/d' /tmp/01_unbound_filters.hostname
 sed -i '/||spb.ru\^/d' /tmp/01_unbound_filters.hostname
 sed -i '/spb/d' /tmp/01_unbound_filters.hostname
+sed -i '/github.com/d' /tmp/01_unbound_filters.hostname
 #
 
 cat /tmp/01_unbound_filters.hostname | sort -T /root/ | uniq | awk -F="" '{ print "0.0.0.0" " " $1}' > /etc/dnsmasq.d/hosts
@@ -791,6 +792,7 @@ sed -i '/||hidemy.name\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||sourceforge.net\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||sourceforge.io\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||ipv6-test.com\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/||github.com\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 sort -T /root/ ${HOME_GITHUB}/ublock_origin_abp.temp | uniq > ${HOME_GITHUB}/ublock_origin_abp.temp.2 && mv -f ${HOME_GITHUB}/ublock_origin_abp.temp.2 ${HOME_GITHUB}/ublock_origin_abp.temp
 
