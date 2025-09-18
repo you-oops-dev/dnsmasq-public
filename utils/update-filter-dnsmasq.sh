@@ -793,6 +793,8 @@ sed -i '/||sourceforge.net\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||sourceforge.io\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||ipv6-test.com\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||github.com\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/||ytimg\.com\/generate_204/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/||i\.ytimg\.com\/generate_204/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 #
 sort -T /root/ ${HOME_GITHUB}/ublock_origin_abp.temp | uniq > ${HOME_GITHUB}/ublock_origin_abp.temp.2 && mv -f ${HOME_GITHUB}/ublock_origin_abp.temp.2 ${HOME_GITHUB}/ublock_origin_abp.temp
 
