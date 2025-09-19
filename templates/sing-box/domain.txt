@@ -6162,7 +6162,6 @@ compose-spec.io
 compound.finance
 computer-mouse.ru
 computingforgeeks.com
-com.ru
 com.saitfilmov.com
 com.se
 com.tr
@@ -21283,7 +21282,6 @@ netpeaksoftware.com
 netprizyvu.ru
 net-prostuda.ru
 netputleru.com
-net.ru
 net.ru-knigi.ru
 net.sofosbuvir24h.ru
 netvideogirls.com
@@ -22705,7 +22703,6 @@ org.knigisamizdat.ru
 org.knigiskachat.ru
 org.kz
 orgmanagement.ru
-org.ru
 org.ru-knigi.ru
 orgs.biz
 org.uk
@@ -26255,7 +26252,6 @@ ru.cauvocapital.net
 rucelka.com
 ruckuswireless.com
 ru.coldfilm7.cam
-ru.com
 rucompromat.eu
 rucriminal.info
 rucriminal.io
@@ -26377,7 +26373,6 @@ ru.my-hit.one
 ru.mytempsms.com
 run2me.top
 runaflowers.ru
-ru.net
 ru.netgazeti.ge
 ru.newbrazz.com
 runewmir.ru
