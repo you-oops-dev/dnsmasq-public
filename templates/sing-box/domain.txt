@@ -17484,6 +17484,7 @@ lib.ru
 lib.ru-knigi.ru
 lib.rus.ec
 lib.rus.ec.hns.to
+lib-tech.com
 libusik.cepura.site
 libzek.club
 licdn.com
@@ -23675,6 +23676,7 @@ poluchkadeng.info
 polustrovsky45.ru
 polyanafeya.com
 polyanka-center.ru
+poly.com
 polycronos.com
 polymarket.com
 pomagam.pl
