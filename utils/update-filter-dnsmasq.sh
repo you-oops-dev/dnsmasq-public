@@ -789,6 +789,7 @@ sed -i '/||nowa.cc\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||toptracker.ru\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||tapochek.net\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||hidemy.name\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
+sed -i '/||ir.ozone.ru\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||sourceforge.net\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||sourceforge.io\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
 sed -i '/||ipv6-test.com\^/d' ${HOME_GITHUB}/ublock_origin_abp.temp
