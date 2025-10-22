@@ -5409,6 +5409,7 @@ cdn.oaistatic.com
 cdn-qc.content.steamchina.com
 cdn-spotify-experiments.conductrics.com
 cdn.sstatic.net
+cdn-telegram.org
 cdn.web-platform.io
 cdn-ws.content.steamchina.com
 cdromance.org
@@ -29955,6 +29956,7 @@ tc.wabotse.site
 tdarbat.online
 tdardo.ru
 tdeniga24.biz
+tdesktop.com
 td.joyfilm.top
 tdmdm.ru
 tdmicron.ru
@@ -30140,19 +30142,27 @@ telecharger-musique-gratuite.eu
 teledays.net
 teledidar.tv
 telefonnii-spravochnik-krima.ru
+telega.one
 teleg.cc
 teleg.eu
 telegoo.top
 telegrachan.ru
 telegram.cc
+telegram-cdn.org
 telegram.djeneriki.biz
+telegram.dog
 telegramian.com
+telegram.me
+telegram.org
+telegram.space
+telegra.ph
 telegraph.co.uk
 telekritika.ua
 tele-linkeds.in
 telemag-td.ru
 telemetr.io
 tele-planeta.com
+telesco.pe
 teleskopov.net
 teletextart.com
 tellmewhygame.com
@@ -30284,6 +30294,7 @@ tfvideo.ru
 tfyuvva.info
 tg02.kinosliv.org
 tg-bot.pro
+tg.dev
 tgepcenter.ru
 tghookah.ru
 tgirljapan.com
@@ -30654,6 +30665,7 @@ tmdb.com
 tmdb.cub.red
 tmdb-image-prod.b-cdn.net
 .tmdb.org
+t.me
 tmg110.tripod.com
 tmhf.ru
 tmnthd.com
@@ -31986,6 +31998,7 @@ tw.turkru.im
 tww18.biz
 t.xatab-repack.org
 tx-global.net
+tx.me
 txserial.online
 txt.newsru.com
 txtraffic.ru
