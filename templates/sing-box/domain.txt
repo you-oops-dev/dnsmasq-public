@@ -1938,6 +1938,7 @@ altaro.com
 altcensored.com
 alt-cigaret.com
 alt.com
+altera.co.jp
 altera.com
 alteraforum.com
 alteraforums.com
@@ -6136,6 +6137,7 @@ community.primezone.one
 community.sap.com
 community.sophos.com
 community.teamviewer.com
+comm-verse.com
 comofv.ru
 comonlab.fr
 companion.ua
@@ -7392,6 +7394,7 @@ d.med-spravki.one
 dmitriyprosvetov.ru
 dm.joysonshops.ru
 dm-komfort.ru
+dml-lang.org
 dmm.co.jp
 dmnvd.umb.one
 dmsedra.com
@@ -11952,6 +11955,7 @@ grant001.com
 grant555.com
 grantfind.shop
 grantstart.shop
+granulate.io
 graphengine.io
 graphs24-7.com
 graphs247.com
@@ -12306,6 +12310,7 @@ habragay.tech
 habrahabr.ru
 hackernoon.com
 hackerslist.com
+hackharassment.com
 hackharbor.icu
 hackhnt.homes
 hackmd.io
@@ -14031,6 +14036,7 @@ insiderua.net
 in-side.site
 insidewoman.ru
 insiemegiu.com
+insight.tech
 insite-vyksa.ru
 insk.sheelpor.top
 insor-russia.ru
@@ -14082,6 +14088,7 @@ intelcloudbuilders.com
 intelcloudfinder.com
 intel.cm
 intel.cn
+intel.co
 intel.co.ae
 intel.co.cr
 intel.co.id
@@ -14095,6 +14102,7 @@ intel.cr
 intel.cu
 intel.cz
 intel.de
+intel.dev
 intel.dk
 intel.dz
 intel.ec
@@ -14111,6 +14119,7 @@ intelfreepress.com
 intel.ga
 intel.gd
 intel.ge
+intel.gg
 intel.gl
 intel.gm
 intelgo.net
@@ -14122,6 +14131,7 @@ intel.hk
 intel.hn
 intel.ht
 intel.hu
+intel.id
 intel.ie
 intel.in
 intelinsight.com
@@ -14160,7 +14170,6 @@ intel.mx
 intel.my
 intelnervana.com
 intelnet.component
-intelnet.Component
 intel.ng
 intel.nl
 intel.nu
@@ -14175,6 +14184,8 @@ intelquark.com
 intel.re
 intelrealsense.cn
 intelrealsense.com
+intelrealsense.net
+intelreimbursement.com
 intel-research.net
 intel.ro
 intel.ru
@@ -18921,6 +18932,7 @@ mebel-mahaon.ru
 mebelnorilsk.ru
 mebelv96.ru
 meb-market.com
+meccontroller.com
 mechanics-games.com
 mechanics-games.net
 meclee.com
@@ -20205,6 +20217,7 @@ mover.uz
 movi.club
 movidius.com
 movidius.net
+movidius.org
 movieboom.fun
 movie.coocha.tv
 movie-hd.net
@@ -23072,6 +23085,7 @@ passonljza.website
 passport.net
 passport-ru.ru
 passport-ru.su
+passwordday.org
 paste2.org
 pastebin.com
 pastebin.pl
@@ -23615,6 +23629,8 @@ pm27.ru
 pmatehunter.com
 pmbk55.space
 pm.by
+pmem.org
+pmem.us
 pmg.ua
 pm.me
 pm-parimatch.click
@@ -24460,6 +24476,7 @@ projectbest.click
 projectbest.shop
 projectbuy.top
 projectch.ru
+projectcircuitbreaker.com
 projectcorp.top
 project-gaz.ru
 projectharmony.com
@@ -27960,6 +27977,7 @@ significantsociety.site
 significantsociety.space
 signon.oracle.com
 sigo-mania.site
+sigopt.com
 sig-opt.pro
 sigopt.pro
 sila.kinozadrot4.site
@@ -27967,6 +27985,8 @@ silak.intesk.top
 silcom-gt.co
 silence.femeretes.org
 silentcircle.com
+silicon-mobility.com
+siliconmobility.com
 siliconwives.com
 silikatex.ru
 sil.media
@@ -28253,6 +28273,12 @@ smartbear.co
 smartbear.com
 smartdeploy.com
 smart-edge.com
+smart-edge.info
+smartedge.info
+smart-edge.io
+smart-edge.net
+smart-edge.org
+smart-edge.systems
 smart-electric.kz
 smart-epargne.net
 smart-family-system.cfd
@@ -29186,6 +29212,8 @@ stoptarif.company.site
 stopthewar-peace.com
 stopwarcrime.com
 stopwar.org.uk
+storageclassmemory.io
+storageclassmemory.org
 store.ddpills.com
 store.epicgames.com
 store.galaxy-of-heroes.starwars.ea.com
@@ -30469,6 +30497,7 @@ thotslife.com
 thottok.com
 thotvids.com
 thr1ving-boost.site
+threadingbuildingblocks.org
 threadreaderapp.com
 threads.com
 threads.net
