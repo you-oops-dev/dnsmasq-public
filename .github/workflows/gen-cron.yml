@@ -151,6 +151,10 @@ jobs:
         NAME_ACCOUNT_GITHUB: you-oops-dev
       run: |
         chmod -c 755 /tmp/generate_list.sh && /tmp/generate_list.sh donwload
+        cat /tmp/unblock_ipset.conf | grep -i '\.' | sort -T /tmp/ | uniq | sponge /tmp/unblock_ipset.conf
+        cat /tmp/domain_bad_ipset.conf | grep -i '\.' | sort -T /tmp/ | uniq | sponge /tmp/domain_bad_ipset.conf
+        cat /tmp/unblock_nftset.conf | grep -i '\.' | sort -T /tmp/ | uniq | sponge /tmp/unblock_nftset.conf
+        cat /tmp/domain_bad_nftset.conf | grep -i '\.' | sort -T /tmp/ | uniq | sponge /tmp/domain_bad_nftset.conf
 
     - name: Prepare artifacts
       run: echo "BUILD_TIMESTAMP=$(date '+%d.%m.%Y_%H-%M-%S')" >> $GITHUB_ENV
