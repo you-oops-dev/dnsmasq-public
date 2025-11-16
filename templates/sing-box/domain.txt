@@ -2008,6 +2008,7 @@ amazonaws.com
 amazon.com
 amazonpress.ru
 amazon-rp.ru
+amazontrust.com
 ambarcinema.zfilm-hd-2679.online
 ambarcinema.zfilm-hd-731.online
 ambition.hair
@@ -11266,6 +11267,7 @@ georgianlegion.ge
 georgiatherapy.org
 geospy.ai
 geo-torrent.biz
+geotrust.com
 gepad.ru
 gepa-medical.ru
 gepanet8-7.ru
@@ -11550,6 +11552,7 @@ globalnerdds.website
 global.nethub.fi
 global.platform.seconddinnertech.com
 globalpremiers.com
+globalsign.com
 globalsoftcore.com
 globalstreams.xyz
 globalsync.tech
@@ -17309,6 +17312,7 @@ lemonde.fr
 len73.ru
 lenatoplist.com
 len-c.pro
+lencr.org
 lenenergomash.ru
 lenfrow.com
 leninskii.sex8.ru
@@ -17406,6 +17410,7 @@ letmeway.com
 letmewin77.com
 letmewinmillions.com
 letsdoeit.com
+letsencrypt.org
 letsenhance.io
 letsgoarizona.com
 letsgotoprofit.com
@@ -23495,6 +23500,7 @@ pkfers.ru
 pkg-cdn.jetbrains.space
 pkg.eu-1.jetbrains.space
 pkgs.tailscale.com
+pki.goog
 pkk-2024.ru
 pkk.kartagov.net
 pkpb10.ru
@@ -27253,6 +27259,7 @@ secretlove.top
 secretsessions.club
 secretsline.org
 secretstash.in
+sectigo.com
 sector.biz.ua
 sectorpravdy.com
 sectretday.asia
@@ -28993,6 +29000,7 @@ srt.sarhotpopki.ru
 s.ruanabol.zone
 s-rule.life
 srv.voidnetwork.cloud
+ss2.us
 s-sadovoda.ru
 ssangyong-echoauto.ru
 ssb76.fun
@@ -29718,6 +29726,8 @@ sykaaa-start.ru
 sykhiv.media
 symbolcodes.com
 symboldrama.ru
+symcb.com
+symcd.com
 syncfusion.com
 syn-ch.com
 synchroncode.com
@@ -32921,6 +32931,7 @@ verfahrbareregale.de
 verhentai.org
 veriftools.ru
 verify-sg.tiktok.com
+verisign.com
 veritas.com
 veritasvincit.info
 versailles-repro.fr
@@ -34486,6 +34497,7 @@ ws.nperf.com
 w.spravka-moscow77.club
 wss.animego.org
 w.sslkn.name
+ws.symantec.com
 wstracker.online
 wtasthz.info
 wtf.lordserials.wtf
