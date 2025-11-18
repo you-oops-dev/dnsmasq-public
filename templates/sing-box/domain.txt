@@ -12742,6 +12742,7 @@ hdrezka.bio
 hdrezka.club
 hdrezka.cm
 hdrezka.homes
+hdrezka-home.tv
 hdrezka.info
 hdrezka.me
 hdrezka.tech
