@@ -1961,6 +1961,7 @@ amazingenclosure.site
 amazingenclosure.top
 amazingenclosure.website
 amazingone.one
+amazonaws.com
 amazon.com
 amazonpress.ru
 amazon-rp.ru
@@ -2404,6 +2405,7 @@ apps-cashy.com
 appscent.ru
 appserviceenvironment.cn
 apps.fandom.com
+appspot.com
 app.st-official.fun
 app.st-official.life
 appstorrent.ru
@@ -2578,6 +2580,7 @@ arturomsk.ru
 artusmed.kz
 a.ruanabol.zone
 arum-lavan.co
+a.run.app
 arv24.com
 arzamas-film.site
 as6723.net
@@ -4076,6 +4079,7 @@ bizinside.club
 biz.liga.net
 bizner.pro
 biznesgame.live
+biz.net.ru
 bizocenka.com
 biz.rusff.me
 biz.smartsys.beauty
@@ -27428,6 +27432,7 @@ slovopacana.mylodrama.org
 slovo-pacana-v2.slovo-pacana-lordserial.com
 sloznoneskazat.mave.digital
 slpravo.ru
+sl.pt
 slret.intesk.top
 sltngms.com
 slubtem.com
