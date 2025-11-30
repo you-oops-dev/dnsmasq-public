@@ -1,0 +1,86 @@
+[
+  {
+    "include": "exclude",
+    "type": "regex",
+    "title": "local hostnames (usually no dots in the name). Pattern exists because 'Do not use this proxy for localhost and intranet/private IP addresses' is checked.",
+    "pattern": "^[^:]+://(?:[^:@/]+(?::[^@/]+)?@)?(?:localhost|127\\.\\d+\\.\\d+\\.\\d+)(?::\\d+)?(?:/.*)?/",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "regex",
+    "title": "local subnets (IANA reserved address space). Pattern exists because 'Do not use this proxy for localhost and intranet/private IP addresses' is checked.",
+    "pattern": "^[^:]+://(?:[^:@/]+(?::[^@/]+)?@)?(?:192\\.168\\.\\d+\\.\\d+|10\\.\\d+\\.\\d+\\.\\d+|172\\.(?:1[6789]|2[0-9]|3[01])\\.\\d+\\.\\d+)(?::\\d+)?(?:/.*)?/",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "regex",
+    "title": "localhost - matches the local host optionally prefixed by a user:password authentication string and optionally suffixed by a port number. The entire local subnet (127.0.0.0/8) matches. Pattern exists because 'Do not use this proxy for localhost and intranet/private IP addresses' is checked.",
+    "pattern": "^[^:]+://(?:[^:@/]+(?::[^@/]+)?@)?[\\w-]+(?::\\d+)?(?:/.*)?/",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
+    "title": "RKN check block",
+    "pattern": "*://blocklist.rkn.gov.ru",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
+    "title": "Gov RU",
+    "pattern": "*://*.gov.ru",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
+    "title": "",
+    "pattern": "*://*gosuslugi.*",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
+    "title": "Lan Domain Router 1",
+    "pattern": "*://openwrt.lan",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
+    "title": "Lan Domain Router 2",
+    "pattern": "*://my.router",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
+    "title": "Lan Domain Router 3",
+    "pattern": "*://routerich.lan",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
+    "title": "Lan Domain Router 4",
+    "pattern": "*://*.lan",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
+    "title": "Lan Domain Router 5",
+    "pattern": "*://my.keenetic.*",
+    "active": true
+  },
+  {
+    "include": "exclude",
+    "type": "wildcard",
+    "title": "Lan Domain Router 6",
+    "pattern": "*://*asusrouter.com",
+    "active": true
+  }
+]

@@ -1,0 +1,320 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Gen. domains list for dnsmasq with ipset or nftset
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+on:
+  workflow_dispatch:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '0 */3 * * *'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # The "build" workflow
+  Generation_list:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v4
+
+#    - name: Change DNS-Server's in runner
+#      run: |
+#       echo -e "nameserver 1.0.0.1\nnameserver 8.8.4.4\nnameserver 8.8.8.8\nnameserver 1.1.1.1" | sudo tee /etc/resolv.conf.DNSoverride &>/dev/null;
+#       sudo ln -svf /etc/resolv.conf.DNSoverride /etc/resolv.conf
+#       echo ""
+#       cat -n /etc/resolv.conf
+#       echo ""
+
+#Из-за специфики проекта НИКОГДА не расскоментировать данный блок
+#    - name: Settings DoT DNS with systemd-resolved
+#      run: |
+#       sudo apt update
+#       sudo apt install -y bind9-dnsutils sudo --no-install-suggests
+#       sudo mkdir -pv /etc/systemd/resolved.conf.d/
+#       echo -e "[Resolve]\nDNS=8.8.4.4#dns.google\nFallbackDNS=\nDNSOverTLS=yes\nDNSSEC=yes\nCache=yes\nCacheFromLocalhost=yes\nReadEtcHosts=no" | sudo tee /etc/systemd/resolved.conf.d/google.conf &>/dev/null;
+#       echo -e "[Resolve]\nDNS=1.0.0.1#1dot1dot1dot1.cloudflare-dns.com\nFallbackDNS=\nDNSOverTLS=yes\nDNSSEC=yes\nCache=yes\nCacheFromLocalhost=yes\nReadEtcHosts=no" | sudo tee /etc/systemd/resolved.conf.d/cloudflare.conf &>/dev/null;
+#       cat /etc/systemd/resolved.conf.d/google.conf
+#       echo ""
+#       cat /etc/systemd/resolved.conf.d/cloudflare.conf
+#       echo ""
+#       echo "nameserver 127.0.0.53" | sudo tee /etc/resolv.conf.DNSoverride &>/dev/null;
+#       sudo ln -svf /etc/resolv.conf.DNSoverride /etc/resolv.conf
+#       cat -n /etc/resolv.conf
+#       echo ""
+#       cat -n /etc/hosts
+#       echo ""
+#       sudo systemctl restart systemd-resolved.service
+#       sleep 3s
+#       nc -z -v 127.0.0.53 53 && echo ""
+
+############################
+    - name: Install depens for CoreDNS and install dnsmasq
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+       sudo apt update && sudo apt install curl make software-properties-common git dnsmasq ipset ipset-persistent iptables iptables-persistent dbus -y --no-install-suggests && sudo add-apt-repository ppa:longsleep/golang-backports -y
+       sudo apt install golang upx-ucl -y --no-install-suggests
+
+    - name: Compile CoreDNS
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+       git clone --depth 1 https://github.com/coredns/coredns.git
+       cd coredns && make -j$(nproc) && sudo upx -q ./coredns && sudo cp coredns /usr/local/bin/ && cd ../ && sudo rm -r ./coredns/
+       sudo apt autoremove golang upx-ucl -y
+
+    - name: Install CoreDNS
+      env:
+        URL_CONFIG_COREDNS: https://gist.githubusercontent.com/you-oops-dev/e244f9f6fe96a609b8d9cf2f1f478bdf/raw/51ece1c11022cd9604206bff94698316567a4881/CoreDNS_config.conf
+      run: |
+       sudo chmod -c 755 /usr/local/bin/coredns && sudo chown -c root:root /usr/local/bin/coredns
+       whereis coredns
+       sudo mkdir -p /etc/coredns/ /etc/systemd/system/
+       echo -e "[Unit]\nDescription=CoreDNS DNS server\nDocumentation=https://coredns.io\nAfter=network.target\n[Service]\nPermissionsStartOnly=true\nLimitNOFILE=1048576\nLimitNPROC=512\nCapabilityBoundingSet=CAP_NET_BIND_SERVICE\nAmbientCapabilities=CAP_NET_BIND_SERVICE\nNoNewPrivileges=true\nUser=root\nExecStart=/usr/local/bin/coredns -conf=/etc/coredns/Corefile\nExecReload=/bin/kill -SIGUSR1 $MAINPID\nRestart=on-failure\n[Install]\nWantedBy=multi-user.target" | sudo tee /etc/systemd/system/coredns.service
+       curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_CONFIG_COREDNS} | sudo tee /etc/coredns/Corefile &>/dev/null
+       sudo chown root:root /etc/coredns/Corefile
+       sudo sed -i "s|.:53 {|.:54 {|g" /etc/coredns/Corefile && sudo sed -i "s|forward .:53|forward .:54|g" /etc/coredns/Corefile
+       sudo cat -n /etc/coredns/Corefile
+       echo ""
+       sudo systemctl daemon-reload
+
+    - name: Copy directory dnsmasq
+      run: sudo rm -rfv /etc/dnsmasq* && sudo cp -fv templates/dnsmasq/dnsmasq.conf /etc/dnsmasq.conf && sudo cp -fvr templates/dnsmasq/dnsmasq.d/ /etc/ && sudo chown -Rc root:root /etc/dnsmasq*
+
+    - name: Change DNS-Server's using dnsmasq
+      run: |
+       echo "nameserver 127.0.0.1" | sudo tee /etc/resolv.conf.DNSoverride &>/dev/null;
+       sudo ln -svf /etc/resolv.conf.DNSoverride /etc/resolv.conf
+       echo ""
+       cat -n /etc/resolv.conf
+       echo ""
+       sudo systemctl stop systemd-resolved.service && sudo systemctl disable systemd-resolved.service
+       sudo rm -fv /etc/dnsmasq.d/domains.host /etc/dnsmasq.d/hosts
+       sudo systemctl start coredns.service dnsmasq.service && sleep 15s && echo "" && nc -z -v 127.0.0.1 53 && echo ""
+       systemctl -q status coredns.service dnsmasq.service
+
+############################
+
+    - name: Test DNS-query
+      run: |
+       nslookup -type=A google.com
+       echo ""
+       dig google.com A
+
+    - name: Install dependencies for start script
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+       sudo apt update
+       sudo apt upgrade -y
+       sudo apt install -y bind9-dnsutils git wget curl bash coreutils util-linux moreutils ccache dos2unix sudo language-pack-ru language-pack-en locales --no-install-suggests
+       sudo sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+       sudo sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
+       sudo locale-gen --no-purge en_US.UTF-8 ru_RU.UTF-8
+       sudo apt install -y grepcidr jq idn ipset bc --no-install-suggests
+
+    - shell: bash
+      env:
+        TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        NAME_ACCOUNT_GITHUB: you-oops-dev
+      run: |
+        curl --max-time 30 --retry-delay 3 --retry 10 -4 -H "Authorization: token ${TOKEN}" -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/dnsmasq-private/master/generate_list.sh > /tmp/generate_list.sh
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+          python-version: '3.11'
+
+    - name: Cache pip
+      uses: actions/cache@v4
+      with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('utils/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+
+    - name: Install dependencies
+      run: |
+          pip install -r utils/requirements.txt
+
+    - name: Pre-start and start bash script
+      env:
+        LANG: en_US.UTF-8
+        CHARSET: UTF-8
+        MODE: ${{ secrets.MODE }}
+        TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        NAME_ACCOUNT_GITHUB: you-oops-dev
+      run: |
+        chmod -c 755 /tmp/generate_list.sh && /tmp/generate_list.sh donwload
+
+    - name: Prepare artifacts
+      run: echo "BUILD_TIMESTAMP=$(date '+%d.%m.%Y_%H-%M-%S')" >> $GITHUB_ENV
+
+    - name: Upload artifact config dnsmasq
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        name: configs_dnsmasq-${{ env.BUILD_TIMESTAMP }}
+        retention-days: 3
+        path: |
+          domain_bad_ipset.conf
+          domain_bad_nftset.conf
+          unblock_ipset.conf
+          unblock_nftset.conf
+
+    - name: Moving config to directory
+      run: |
+       mv -fv domain_bad_ipset.conf templates/dnsmasq/dnsmasq.d/ && mv -fv domain_bad_nftset.conf templates/dnsmasq/dnsmasq.d/ && mv -fv unblock_ipset.conf templates/dnsmasq/dnsmasq.d/ && mv -fv unblock_nftset.conf templates/dnsmasq/dnsmasq.d/
+
+    - name: Test config
+      run: sudo rm -rfv /etc/dnsmasq* && sudo cp -fv templates/dnsmasq/dnsmasq.conf /etc/dnsmasq.conf && sudo cp -fvr templates/dnsmasq/dnsmasq.d/ /etc/ && sudo chown -Rc root:root /etc/dnsmasq* && sudo rm -fv /etc/dnsmasq.d/domains.host /etc/dnsmasq.d/hosts && sudo systemctl restart coredns.service dnsmasq.service && sleep 15s && echo "" && nc -z -v 127.0.0.1 53 && echo "" && systemctl -q status coredns.service dnsmasq.service && sleep 3s
+
+    - name: Test func dnsmasq and ipset
+      run: sudo ipset create bad hash:ip maxelem 1000000 && sudo ipset create bad_static hash:ip maxelem 1000000000 && sudo ipset create unblock hash:ip maxelem 1000000 timeout 3600 && sudo ipset create unblock_static hash:ip maxelem 1000000000 && dig rutracker.org A +short && dig rutracker.org A +short && sudo ipset -L unblock | head -n 15
+
+    - name: Commit configs files
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Auto-update config"
+        file_pattern: './*/*/*/*.conf'
+        commit_options: "--no-verify"
+        repository: .
+        commit_user_name: github-actions[bot]
+        commit_user_email: github-actions[bot]@users.noreply.github.com
+        commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+    - name: Install depends for Phase 2
+      run: sudo apt-get install -y zstd zip grepcidr libarchive-tools
+
+    - name: Phase 2,3 merge ip address and create ipset configs
+      env:
+        TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      run: |
+        sudo mount -t tmpfs -o size=8G,rw,nosuid,nodev,relatime,mode=0755 tmpfs /tmp
+        sudo bash -x ./utils/create_ipset.sh
+
+    - name: Commit ipset configs file
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+          commit_message: "Auto-update configs"
+          file_pattern: './*/*/*.conf.zst'
+          commit_options: "--no-verify"
+          repository: .
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+    - shell: bash
+      env:
+        TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        REPOSITORY: ${{ secrets.REPO }}
+      run: |
+        sudo mkdir -pv /tmp/secret-list/
+        curl --max-time 30 --retry-delay 3 --retry 10 -4 -H "Authorization: token ${TOKEN}" -# https://raw.githubusercontent.com/you-oops-dev/${REPOSITORY}/refs/heads/main/unblock_suite.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/refs/heads/main/steam/domain.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/refs/heads/main/discord/domain.txt https://raw.githubusercontent.com/dartraiden/no-russia-hosts/master/hosts.txt https://raw.githubusercontent.com/GubernievS/AntiZapret-VPN/main/setup/root/antizapret/download/include-hosts.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/main/tor/domains.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/refs/heads/main/github/domains.txt https://raw.githubusercontent.com/you-oops-dev/ipranges/refs/heads/main/youtube/domain.txt https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Services/youtube.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Categories/geoblock.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Categories/block.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Services/hdrezka.lst https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Services/meta.lst | sudo sed 's/^.ua//g' | sudo sed '/#/d' | sudo sed 's/ //g' | sudo sed '/[][]/d;s/ //g;s/"//g;s/,//g' | sudo sed 's/^https\?:\/\///g' | sudo sed -r '/^\s*$/d' | sudo sort -T /root/ | sudo uniq > ./whitelist.hostname
+        sudo mv -fv ./whitelist.hostname /tmp/secret-list/
+
+    - name: Generation adlist for dnsmasq
+      run: |
+        echo "addn-hosts=/etc/dnsmasq.d/hosts" | sudo tee -a /etc/dnsmasq.conf
+        sudo cp -fv utils/update-filter-dnsmasq.sh /tmp/ && sudo chmod -c 755 /tmp/update-filter-dnsmasq.sh
+        sudo chown -c root:root /tmp/update-filter-dnsmasq.sh && sudo /tmp/update-filter-dnsmasq.sh
+
+    - name: Commit dnsmasq adlist
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+          commit_message: "Auto-update adlist for dnsmasq"
+          file_pattern: './*/*/hosts ./*/*/domains.host'
+          commit_options: "--no-verify"
+          repository: .
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+    - name: Commit for uBlock origin list
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+          commit_message: "Auto-update for uBlock Origin lists"
+          file_pattern: './ublock_origin_hosts.txt ./ublock_origin_abp.txt'
+          commit_options: "--no-verify"
+          repository: .
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+    - shell: bash
+      env:
+        URL_DEB_SING_BOX: https://github.com/SagerNet/sing-box/releases/download/v1.11.11/sing-box_1.11.11_linux_amd64.deb
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+       sudo wget -4q -nv -O - ${URL_DEB_SING_BOX} > ./sing-box.deb
+       sudo dpkg -i ./sing-box.deb && sudo rm -fv ./sing-box.deb
+
+    - name: Generation rules for Sing-Box prepare
+      run: |
+        sudo cp -fv utils/create_rules_sing-box.sh /tmp/ && sudo chmod -c 755 /tmp/create_rules_sing-box.sh
+        sudo chown -c root:root /tmp/create_rules_sing-box.sh && sudo /tmp/create_rules_sing-box.sh prepare
+
+    - name: Commit files for Sing-Box
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+           commit_message: "Auto-update files for sing-box"
+           file_pattern: './templates/sing-box/domain.txt ./templates/sing-box/ip.txt ./templates/sing-box/domain_wildcard.txt ./templates/sing-box/domain_all.txt'
+           commit_options: "--no-verify"
+           repository: .
+           commit_user_name: github-actions[bot]
+           commit_user_email: github-actions[bot]@users.noreply.github.com
+           commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+    - name: Generation rules for Sing-Box gen
+      run: |
+        sudo cp -fv utils/create_rules_sing-box.sh /tmp/ && sudo chmod -c 755 /tmp/create_rules_sing-box.sh
+        sudo chown -c root:root /tmp/create_rules_sing-box.sh && sudo /tmp/create_rules_sing-box.sh gen
+
+    - name: Commit adlist for Sing-Box
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+           commit_message: "Auto-update adlist for sing-box"
+           file_pattern: './templates/sing-box/adlist.lst ./templates/sing-box/adlist.json ./templates/sing-box/adlist.srs'
+           commit_options: "--no-verify"
+           repository: .
+           commit_user_name: github-actions[bot]
+           commit_user_email: github-actions[bot]@users.noreply.github.com
+           commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+    - name: Commit refilter_plus for Sing-Box
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+           commit_message: "Auto-update refilter_plus for sing-box"
+           file_pattern: './templates/sing-box/sb-rules.zip ./templates/sing-box/refilter_plus_domains.lst ./templates/sing-box/refilter_plus_domains.json ./templates/sing-box/refilter_plus_domains.srs ./templates/sing-box/refilter_plus_ipsum.lst ./templates/sing-box/refilter_plus_ipsum.json ./templates/sing-box/refilter_plus_ipsum.srs ./templates/sing-box/refilter_plus-all.json ./templates/sing-box/refilter_plus-all.srs ./templates/sing-box/geoip.db ./templates/sing-box/geosite.db'
+           commit_options: "--no-verify"
+           repository: .
+           commit_user_name: github-actions[bot]
+           commit_user_email: github-actions[bot]@users.noreply.github.com
+           commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+    - name: Prepare artifacts
+      run: echo "BUILD_TIMESTAMP=$(date '+%d.%m.%Y_%H-%M-%S')" >> $GITHUB_ENV
+
+    - name: Upload artifact sing-box rules all
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        name: rule_sing-box-all-${{ env.BUILD_TIMESTAMP }}
+        retention-days: 3
+        path: |
+          ./templates/sing-box/adlist.lst
+          ./templates/sing-box/adlist.json
+          ./templates/sing-box/adlist.srs
+          ./templates/sing-box/refilter_plus_domains.lst
+          ./templates/sing-box/refilter_plus_domains.json
+          ./templates/sing-box/refilter_plus_domains.srs
+          ./templates/sing-box/refilter_plus_ipsum.lst
+          ./templates/sing-box/refilter_plus_ipsum.json
+          ./templates/sing-box/refilter_plus_ipsum.srs
+          ./templates/sing-box/refilter_plus-all.json
+          ./templates/sing-box/refilter_plus-all.srs
+          ./templates/sing-box/geoip.db
+          ./templates/sing-box/geosite.db
