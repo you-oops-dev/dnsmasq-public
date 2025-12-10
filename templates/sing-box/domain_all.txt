@@ -26419,6 +26419,7 @@ sci-hub.se
 sci-hub.shop
 sci-hub.st
 sci-hub.wang
+sc-jpl.com
 sclive.net
 sc.livetv413.me
 sc.livetv422.me
@@ -26469,6 +26470,7 @@ scryde.ru
 scryde.world
 s-crypto.ru
 s.csoffosttores.ru
+sc-static.net
 sctyt.biz
 sdbroker.org
 sdc.com
@@ -27652,7 +27654,9 @@ smutty.com
 smw.bigmny.top
 snabarmatura-spb.ru
 snapchat.com
+snap.com
 snapgene.com
+snapkit.com
 snappygoat.com
 snap-telemetry.io
 snaptube.su
