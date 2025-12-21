@@ -1242,6 +1242,7 @@ a.dark2web.biz
 a.dark2web.one
 a.dark2web.site
 a.dark2web.top
+adbappcontrol.com
 adblockplus.org
 adblockstreamtape.site
 adcmemorial.org
@@ -5081,6 +5082,8 @@ capablebarricade.shop
 capablebarricade.top
 capacitorjs.com
 capcut.com
+capcutstatic.com
+capcutvod.com
 capper-rating.ru
 captain-droid.com
 captcha.mega555kf7lkmklspiqf.com
@@ -5262,6 +5265,10 @@ cdn.cub.red
 cdn.discordapp.com
 cdn.id.supercell.com
 cdnjs.cloudflare.com
+cdn-lfs-eu-1.hf.co
+cdn-lfs.hf.co
+cdn-lfs.huggingface.co
+cdn-lfs-us-1.hf.co
 cdn.masto.host
 cdn.nperf.com
 cdn.oaistatic.com
@@ -7173,6 +7180,7 @@ discordstatus.com
 discord.store
 discord.tools
 discours.co
+discourse-cdn.com
 discours.io
 discoverbing.com
 discover-cassa.shop
@@ -10139,6 +10147,7 @@ fresh-wheel7.com
 freshwing.xyz
 freya-suba-etalon.space
 fribed.ru
+friendlyelec.com
 friends-bar.ru
 friends.in.ua
 fri-gate.org
@@ -11498,7 +11507,6 @@ goodwin.am
 goodwin-am.com
 goof.lintant.top
 google.dev
-googleplay.com
 google.ru
 googletagmanager.com
 goolerris.shop
@@ -13041,6 +13049,7 @@ hugeoriginate.website
 hugepdf.com
 hugeresearch.site
 hugeresearch.space
+huggingface.co
 hugryhunter-gapca.pw
 hugryhunter-wodsv.pw
 hulu.fandom.com
@@ -16520,6 +16529,7 @@ kyivweekly.com
 kyky.org
 kym-cdn.com
 kympqts.info
+kyoceradocumentsolutions.com
 kyplyu-plawa.online
 kyxaqae4.pro
 kyzexhzw---ei3mgr4e-bsccljbcrq-ez.a.run.app
@@ -17325,6 +17335,7 @@ lobynui.info
 localbitcoinschain.com
 localbitcoins.com
 localmart.kz
+localsend.org
 locals.md
 localytics.com
 location.services.mozilla.com
@@ -19584,7 +19595,6 @@ motorgame.net
 motosobaky.ru
 mototai.ru
 mouser.com
-mouser.comshowip.net
 mouser.fi
 mou-sosh4.ru
 movable.ru
@@ -21981,6 +21991,7 @@ opensmartpro.rest
 opensocietyfoundations.org
 openspot.fr
 open.stealth.si
+opensubtitles.org
 open-system.autos
 open-system.bond
 open-system.cfd
@@ -30738,6 +30749,7 @@ tumblr.com
 tumblr.freepornpreview.net
 tumblrgallery.xyz
 tumen-bot.info
+tunemymusic.com
 tunesoupro.com
 tunilopahiki.store
 tuning-bmw.ru
@@ -31010,6 +31022,7 @@ tvbalti.md
 tvcok.ru
 tv.cool-show.com
 tvddownwardspiral.ru
+tvdevinfo.comhdrezka.ag
 tvdy1.com
 tveavvq.info
 tvekran.net
@@ -31146,7 +31159,6 @@ twinkpornvideos.xxx
 twinkshoots.com
 twinkspornos.com
 twinlife-systems.com
-twinlife-systems.comhdrezka.ag
 twin.me
 twinme.com
 twirpx.club
@@ -37856,6 +37868,7 @@ x.pornopika.mobi
 xprimeuk.biz
 x.protorrent.fun
 xrares.com
+xraycore.org
 xrest.net
 xrgccl.com
 xrslvqr.info
