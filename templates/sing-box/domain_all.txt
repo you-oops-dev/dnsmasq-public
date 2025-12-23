@@ -4713,6 +4713,7 @@ bsgl.hn
 bs-gl.ltd
 bsglobal.pro
 bs-gl-sc.com
+bsh-group.com
 bs-hn.com
 bs-hn.net
 bs-hn.org
@@ -12575,6 +12576,7 @@ help-informatika.ru
 help.keenetic.com
 helpmyscores.com
 helpshift.com
+help.ui.com
 help-zarabotok.ru
 helsinki.org.ua
 heltnormal.blogg.se
