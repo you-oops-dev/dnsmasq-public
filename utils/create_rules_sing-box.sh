@@ -37,7 +37,7 @@ sort -T ${SORT_PATH} ./domain.txt | uniq | sponge ./domain.txt
 #curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_LIST} | sort -T ${SORT_PATH} -t. -k1,1n -k2,2n -k3,3n -k4,4n | uniq | grep -v "/" | sed 's/$/\/32/' >> ./ip.txt
 #
 # IP-address 3 from resolving-public
-URL_LIST="https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/resolving-public/refs/heads/main/unblock_suite_ip_ipset.txt"
+URL_LIST="https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/resolving-public/refs/heads/main/unblock_suite_with_ip_hoster_border_ipset.txt"
 curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_LIST} | sort -T ${SORT_PATH} -t. -k1,1n -k2,2n -k3,3n -k4,4n | uniq | grep -i "/" > ./ip.txt
 #
 
