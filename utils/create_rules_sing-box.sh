@@ -179,6 +179,16 @@ dos2unix *.lst *.json
 # Download CIDR prefix country for exclude (husi)
 #for countries in {ru,by}; do curl --max-time 90 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/country/"$countries"/"$countries".srs | tee -i ./"$countries".srs &>/dev/null; done
 wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/country/ru/ru.srs -P ./
+#YouTube
+name_service=youtube
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#ChatGPT
+name_service=chatgpt
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#4pda
+name_service=4pda
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+
 # Compress zip archive
 zip -9 sb-rules.zip ./*.srs
 fi
