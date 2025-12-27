@@ -203,6 +203,18 @@ wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-sing
 #Arch Linux
 name_service=arch
 wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#Steam
+name_service=steam
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#Tor
+name_service=tor
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#Roblox
+name_service=roblox
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#Discord
+name_service=discord
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
 
 # Compress zip archive
 zip -9 sb-rules.zip ./*.srs
