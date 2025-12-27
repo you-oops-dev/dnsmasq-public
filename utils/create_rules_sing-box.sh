@@ -188,6 +188,21 @@ wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-sing
 #4pda
 name_service=4pda
 wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#Spotify
+name_service=spotify
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#Intel
+name_service=intel
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#microsoft
+name_service=microsoft
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#Rezka
+name_service=rezka
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#Arch Linux
+name_service=arch
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
 
 # Compress zip archive
 zip -9 sb-rules.zip ./*.srs
