@@ -32339,7 +32339,6 @@ urbanculture.gay
 urbanculture.live
 urbanculture.lol
 urbaninfo.ru
-urban-vpn.com
 urduvoa.com
 uref.kinogid.pw
 urgentnews.media
