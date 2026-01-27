@@ -20637,6 +20637,7 @@ my.mir-serialov.com
 my.myvimir.plus
 my.natex.tech
 mynikolaev.net
+mynonpublic.com
 my.ntxpro.ai
 my.onebidasset.pro
 myosu.ru
@@ -22440,6 +22441,7 @@ openai.qualtrics.com
 openamt.com
 open-api.tiktok.com
 openartmoscow.org
+openbh.net
 opencard.top
 opencode.ai
 openculture.com
@@ -22453,6 +22455,7 @@ openmedia.io
 openok.org
 openoption.net
 openoption.pro
+openpli.org
 openrailwaymap.org
 openrouter.ai
 openru.live
