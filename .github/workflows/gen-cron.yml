@@ -101,7 +101,7 @@ jobs:
       run: |
        sudo apt update && sudo apt install libarchive-tools wget curl make software-properties-common git dnsmasq ipset ipset-persistent iptables iptables-persistent dbus -y --no-install-suggests
        sudo wget ${URL_PREBUILD_COREDNS} -P /tmp/ && sudo mv -fv /tmp/coredns_${COREDNS_VER}_linux_amd64.tgz /tmp/coredns.tgz
-       sudo bsdtar -pvxf /tmp/coredns.tgz && sudo mv /tmp/coredns /usr/local/bin/coredns && sudo rm -f /tmp/coredns.tgz
+       sudo bsdtar -pvxf /tmp/coredns.tgz && sudo mv -fv coredns /usr/local/bin/coredns && sudo rm -fv /tmp/coredns.tgz
        sudo chmod -c 755 /usr/local/bin/coredns && sudo chown -c root:root /usr/local/bin/coredns
        whereis coredns
        sudo mkdir -p /etc/coredns/ /etc/systemd/system/
