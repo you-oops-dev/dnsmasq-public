@@ -99,8 +99,8 @@ jobs:
         URL_PREBUILD_COREDNS: https://github.com/coredns/coredns/releases/download/v1.14.1/coredns_1.14.1_linux_amd64.tgz
       run: |
        sudo apt update && sudo apt install libarchive-tools curl make software-properties-common git dnsmasq ipset ipset-persistent iptables iptables-persistent dbus -y --no-install-suggests
-       curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_PREBUILD_COREDNS} | sudo tee /tmp/coredns.tgz
-       bsdtar -pvxf /tmp/coredns.tgz && sudo mv /tmp/coredns /usr/local/bin/coredns && sudo rm -f /tmp/coredns.tgz
+       curl --max-time 30 --retry-delay 3 --retry 10 -4 -# ${URL_PREBUILD_COREDNS} > coredns.tgz && sudo mv -fv coredns.tgz /tmp/
+       sudo bsdtar -pvxf /tmp/coredns.tgz && sudo mv /tmp/coredns /usr/local/bin/coredns && sudo rm -f /tmp/coredns.tgz
        sudo chmod -c 755 /usr/local/bin/coredns && sudo chown -c root:root /usr/local/bin/coredns
        whereis coredns
        sudo mkdir -p /etc/coredns/ /etc/systemd/system/
