@@ -4822,6 +4822,7 @@ archive.vn
 archivohot.com
 archiv.preussische-allgemeine.de
 arch-jinji.com
+archlinuxarm.org
 .archlinux.org
 archlure.icu
 archmart.ru
