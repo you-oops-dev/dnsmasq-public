@@ -4591,6 +4591,7 @@ api.home-connect.com
 apihub-internal.cn
 api.imgur.com
 api.jetbrains.ai
+apilevels.com
 api.meshtastic.org
 api.msn.com
 api-m.tiktok.com
