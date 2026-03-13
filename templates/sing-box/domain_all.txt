@@ -42834,6 +42834,7 @@ opel-nizhegorodec.ru
 open2.info
 open7000offer.com
 openaiapi-site.azureedge.net
+openai.canva.com
 openai.chat.com
 .openai.com
 openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
