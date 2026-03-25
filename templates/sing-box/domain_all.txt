@@ -12409,6 +12409,7 @@ congdonglgbt.com
 conifer.rhizome.org
 connectcard.ru
 connect.ngrok-agent.com
+connector_openai_deep_research.web-sandbox.oaiusercontent.com
 connect.ubisoft.com
 connect-vpn.uptodown.com
 conquerwithcharacter.com
@@ -55106,6 +55107,7 @@ skybit.org
 skyblenta.com
 skyblockassets.com
 skybountygame.top
+skybridge.oaistatic.com
 skybrookedge.com
 skycdp.com
 sky-cloud.ru
