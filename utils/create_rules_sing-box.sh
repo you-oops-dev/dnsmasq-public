@@ -215,6 +215,9 @@ wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-sing
 #Discord
 name_service=discord
 wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
+#mozilla
+name_service=mozilla
+wget -4nv https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges-singbox/refs/heads/main/${name_service}/${name_service}.srs -P ./
 
 # Compress zip archive
 zip -9 sb-rules.zip ./*.srs
