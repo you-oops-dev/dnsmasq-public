@@ -6,8 +6,6 @@ export CHARSET=UTF-8
 export THRESHOLDv4="1/4"
 export IP2NET_PREFIX_LENGTH="10-24"
 export NAME_ACCOUNT_GITHUB=you-oops-dev
-export ACCOUNT_NAME=herrbischoff
-export TYPE=ipv4
 export Mat1RX_count=10000000
 #
 export HOME_GITHUB=$(pwd)
