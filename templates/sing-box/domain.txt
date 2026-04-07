@@ -2396,6 +2396,7 @@ adidas.com
 adjuntar.com
 adk-sochi.ru
 ad.lu4.org
+admin-cdn.oaistatic.com
 adminforge.de
 ad.nl
 adobe.activate.com
@@ -3240,6 +3241,7 @@ alkanight-174.ru
 alkas.lt
 alkilapp.com
 all2.tv-online.icu
+all3dp.com
 all3dp.comshowip.net
 all3.tv-online.icu
 all4equality.org
@@ -4425,6 +4427,7 @@ anthemgame.com
 anthemthegame.com
 anthonysmall.ru
 anthropic.com
+anthropic.qualtrics.com
 antibiotic.cc
 anticoruptie.md
 antifasongfest.ru
@@ -6462,6 +6465,7 @@ babytransport.ru
 bacch.com
 bacgiangcity.site
 bachilo.ru
+backend-v2.crixet.com
 backhim.web.tv
 backoffice.s-group.io
 backroomcastingcouch.com
@@ -11061,6 +11065,7 @@ characterhub.org
 characterlibrary.booru.org
 charanadi.ru
 chargebacks.ru
+charhub.io
 charitum.com
 charitysweets.org
 charlzen.online
@@ -13439,7 +13444,9 @@ dasgay.com
 dash.asset-ace.net
 dashavita-ai.com
 dashavitaai.org
+dashboard.algolia.com
 dashboard.flx-crm.com
+dashboard.gitguardian.com
 dashboard-global.bdswiss.com
 dashboard-global.swissmarkets-id.com
 dashboard-km.bdswiss.com
@@ -15332,6 +15339,7 @@ download.schneider-electric.com
 download.screamingfrog.co.uk
 downloads.gratorama.com
 downloads.gtnewhorizons.com
+downloads.intercomcdn.com
 downloads.malwarebytes.com
 downloads.ultraedit.com
 download.teamviewer.com
@@ -19590,6 +19598,7 @@ five.check-you.ru
 five.eogs.pro
 five.indi-samara11.com
 fiveostang.com
+fivetran.com
 fixikishowbishkek.site
 fixridge.com
 fixserv.ru
@@ -22880,6 +22889,7 @@ go.filmy2024.co
 goforporn.com
 goforwardy.icu
 gofucker.net
+gofund.me
 gofundme.com
 go.gamesoftrones.ru
 gogayfuck.cc
@@ -22998,6 +23008,7 @@ gomosek.xyz
 gon-best.ru
 gonchar-production.ru
 goncharukfoundation.org
+gonift.com
 goninja.ru
 gonitro.com
 goniver.info
@@ -25680,6 +25691,7 @@ htsales.ru
 htsflowgrowth.com
 hts.vidak.icu
 http.ipv6check.akadns.net
+httptoolkit.com
 htube.com
 h.twirpx.link
 h.twirpx.one
@@ -27142,6 +27154,7 @@ interavtovl.ru
 interbid-radio.ru
 intercomcdn.com
 intercom.help
+intercom.io
 intercourier.news
 interesnoje.ru
 interestonescrowsettlement.com
@@ -35699,6 +35712,7 @@ meetmarket.mingle.com
 meetmydog.com
 meet.pimp36.com
 meetsweetmeet.com
+meetup.com
 meetyourdevices.com
 mef1.ac
 mefaweb4.com
@@ -38642,6 +38656,7 @@ multi-plus.ru
 multipups.ru
 multi-royalq-trading.net
 multishellcorp.com
+multisim.com
 multitecdes247.com
 multitrustassets.com
 multivilla.ru
@@ -40736,6 +40751,7 @@ nickwogan.com
 nico-kaz.com
 nicolanomnomvideos.com
 nicolemelephotography.com
+ni.com
 nidhipaydex-solution.com
 niflheim.top
 nifty.org
@@ -44260,6 +44276,7 @@ phemeschange.cfd
 phemexpro.net
 phg.ashoo.so
 phica.eu
+philiascans.org
 philosophy-science.ru
 philscomputerlab.com
 phim-sexhd.biz
@@ -48071,6 +48088,7 @@ qnbsnhzhjjofiiob.a2vxunhuaj4s.xyz
 qnp.ashoo.black
 qn.reddit.com
 qobuz.com
+qodana.cloud
 qoder.com
 qofygia3.ru
 qo.reddit.com
@@ -52868,6 +52886,7 @@ schiff-vaults.pro
 sch-int2.ru
 schkola14.ru
 schnappshandoff.com
+schneider-electric.comshowip.net
 schnellstrend.com
 scholar.af
 schule1212.online
@@ -53081,6 +53100,7 @@ seborea.ru
 secfirst.org
 sec-insturifysoftware.com
 seclists.org
+se.com
 se.com.sa
 seconddinnertech.com
 secool.ru
@@ -63266,6 +63286,7 @@ verhnii-tagil.alevelclub.ru
 verhnii-tagil.ddt86.online
 verhnyaya-pyshma.mkflat.ru
 veridavaultsolution.com
+verificationacademy.com
 verifiedblocks.com
 veriftools.net
 verify-sg.tiktok.com
@@ -77078,6 +77099,7 @@ xreferat.com
 xrest.info
 xrest.net
 xrests.net
+xrite.com
 xrllbc38-4eku.info
 x.rocketon.pw
 xr.reddit.com
