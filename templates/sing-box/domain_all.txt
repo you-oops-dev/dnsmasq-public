@@ -40279,6 +40279,7 @@ neotokyo.supertop-100.com
 neotube.ru
 neowallet.online
 neowar.ru
+neowin.com
 neozeo.ru
 nepalaviyan.com
 nepalportal.ru
@@ -53196,6 +53197,7 @@ sdirekt.ru
 sdk-nn.com
 sd.lk
 sdmntpraustraliaeast.oaiusercontent.com
+sdmntprbrazilsouth.oaiusercontent.com
 sdmntprcacentral.oaiusercontent.com
 sdmntprcentralindia.oaiusercontent.com
 sdmntprcentralus.oaiusercontent.com
