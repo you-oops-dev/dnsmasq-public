@@ -3282,6 +3282,7 @@ allatra.org
 allatra.tv
 allatra.video
 allawards.ru
+allawnos.com
 allbags.kz
 all-barnaul.ru
 allbookslib.com
@@ -4606,6 +4607,7 @@ api2.branch.io
 apiary.io
 api-auth.soundcloud.com
 apia-world.org
+apic-desktop.musixmatch.com
 apicecorebit.com
 api.cloudflareclient.com
 api-dashboard.search.brave.com
@@ -8322,6 +8324,7 @@ bitversp.com
 bitvestora.com
 bitvexty.com
 bitviking.tech
+bitvise.com
 bitwerker.com
 bitwest-group.pro
 bit-x-club.pro
@@ -8468,6 +8471,7 @@ blacked.com
 blackedjav.com
 blackedraw.com
 blackfriday.com
+blackhatworld.com
 blackmonsterterror.com
 blackpatrol.com
 blackporn.tube
@@ -10256,6 +10260,7 @@ calinopoisk.ru
 call-board.ru
 caller-id.net
 callersbane.com
+callfilter.app
 call.mashina.org
 callrussia.org
 callsystem.role.ru
@@ -11906,6 +11911,7 @@ cloudfi.app
 cloudflareclient.com
 cloudflare-dns.com
 cloudflare-ech.com
+cloudflarestorage.com
 cloudfront.pkg-cdn.jetbrains.space
 cloud.h-ani.com
 cloudhealthtech.com
@@ -12416,6 +12422,7 @@ conquerwithcharacter.com
 conquestador.com
 conradlotz.com
 consciousharvest.org
+consensus.app
 consent.sndcdn.com
 consistencyfitness.fit
 consistentgrowths.com
@@ -13117,6 +13124,8 @@ current-time.gitlab.io
 currenttime.tv
 currentzis.com
 curseforge.com
+cursorapi.com
+cursor-cdn.com
 cursor.com
 cursorinfo.co.il
 cursor.sh
@@ -13256,6 +13265,7 @@ d3company.com
 d3.ebook.surf
 d3sa9co3.filonl.ru
 d4.boominfo.org
+d4c.nintendo.net
 d4.ebook.surf
 d4.rumassa.store
 d5.boominfo.org
@@ -14773,6 +14783,7 @@ docplan.ru
 docpsy.ru
 doc-rf.com
 docs.backtofuture.fun
+docs.camunda.io
 docs.chaos.com
 docs.com
 docs.easygovpn.site
@@ -15464,6 +15475,7 @@ draftora.click
 dragonage.com
 dragonagekeep.com
 dragonagemovie.com
+dragons.nintendo.net
 draif.shop-hyip.ru
 draillem.gay365.top
 drakar.ws
@@ -17724,6 +17736,7 @@ eshentai.tv
 eshkabz.ru
 es-holding.ru
 e-shop.bagsslove.com
+eshop.nintendo.net
 esh-pei.ru
 esimsale.com
 es.katestube.com
@@ -19194,6 +19207,7 @@ fightcampconditioning.com
 fighting.su
 fightnews.info
 fightplace.com
+figshare.com
 figuradoma.ru
 figuredao.app
 fihav.ru
@@ -20539,7 +20553,12 @@ frambolicious.com
 frame-atarax-ai.com
 frameimitrex500-platform.com
 frameit.icu
+framer.app
+framercanvas.com
+framercdn.com
 framer.com
+framerstatic.com
+framerusercontent.com
 franchbook.ru
 franchisemap.ru
 franch-mechta.ru
@@ -22582,6 +22601,7 @@ giving.comv.info
 givingnizhny.ru
 givirtrinxes-app.com
 gixdera-soft.com
+gizmochina.com
 gj.films-2024.club
 gjgffgj-10cheki.info
 gjhjfgltdvip.com
@@ -24945,6 +24965,7 @@ hierarchy.online
 hierarchy.pro
 hiexvoronezh.ru
 hifibliss.com
+higgsfield.ai
 high5rehab.org
 highendexteriors.ca
 high-gains.online
@@ -26658,6 +26679,7 @@ incredibles.freehentaidb.com
 incruises.co
 incrypted.com
 inctanh.com
+incy.cc
 indbooks.in
 indeed.com
 indent59.ru
@@ -27997,6 +28019,7 @@ iran-tpprf.ru
 iranyszekelyfold.info
 irato.ru
 irbisai.kz
+irc-ws.chat.twitch.tv
 irecycle.ru
 i-referrer.ru
 irella-monix-software.com
@@ -29219,7 +29242,6 @@ jwehcmmb.com
 jwforum.org
 jwhchemicalshub.com
 jw-noblood.ucoz.ru
-jw.org
 jw.reddit.com
 jwrussia.news
 jw-russia.org
@@ -33629,6 +33651,7 @@ lovikino.ru
 lovingsocialmedia.com
 lovisam.net
 lovnymph.top
+lowendtalk.com
 lowes.com
 lowpassion.com
 low.quest
@@ -33663,6 +33686,7 @@ lra60.cc
 lra69.cc
 lraz.lineorg.com
 lrbs.ru
+lrclib.net
 lrgsu.online
 lrgsu.ru
 lrjtxyia.xn----7sbbas7adbh1ak4hek1gg.xn--p1ai
@@ -34606,6 +34630,7 @@ manga1.org
 manga1s.com
 manga-books.com
 mangabuddy.com
+manga-chan.medeepmind.com
 mangacute.com
 mangadex.org
 mangadistrict.com
@@ -35670,6 +35695,7 @@ med-i4ka.ru
 medi4ki.ru
 media25fiarys.com
 media2o.com
+media5.cdnbase.com
 mediaaccelerator.ru
 mediabuying.kz
 mediabuzz.icu
@@ -39218,7 +39244,6 @@ my.amarkets.website
 myamazfit.ru
 myamishop.ru
 myanimelist.net
-myanimelist.netdeepmind.com
 myannikregina.ru
 myartsdesign.ru
 my.ashoo.bar
@@ -42986,6 +43011,7 @@ opg96.biz
 ophentai.com
 ophthalmic-hub.com
 opinions.glavred.info
+opintopolku.fi
 opituli.ru
 opivrn.ru
 opkam.ru
@@ -44029,6 +44055,7 @@ paysitesreviews.net
 pay.slongame.me
 paytoby.com
 paywayhub.com
+paywithmoon.com
 paywith.world
 paz.de
 pazon.ru
@@ -44112,6 +44139,7 @@ pddknow.ru
 pdd-now.ru
 pdf.11klasov.net
 pdf24.biz.24rc.lol
+pdfcoffee.com
 pdfcookie.com
 pdfdrive.com
 pdfdrive.to
@@ -44598,6 +44626,7 @@ pinata.cloud
 pinaynay.com
 pinayot.com
 pinaypornsite.com
+ping-admin.com
 pingdom.com
 pinia-colada.esm.dev
 pink42203.com
@@ -44724,7 +44753,6 @@ pixel-platform.online
 p-i-x-e-l.ru
 pixiv.moe
 pixiv.net
-pixiv.nethdrezka.ag
 pixli.ru
 pixmedia.ru
 pixv.ws
@@ -48014,6 +48042,7 @@ pururin.to
 puryquimica.com
 pushbr.com
 pushchinocity.ru
+pusher.com
 pushherenow.com
 pushino-sanatoriy.ru
 pushistyj-forsazh-gran-pri-2025.lopdfilm.ru
@@ -52910,6 +52939,7 @@ sbori-resultat.ru
 sbornik-music.ru
 sborniy-gruz.ru
 sborvtor.ru
+sbox.game
 sb-promcentr.ru
 sb.reddit.com
 sbri-fe12.com
@@ -53044,7 +53074,7 @@ sch-int2.ru
 schkola14.ru
 schnappshandoff.com
 schneegans.de
-schneider-electric.comshowip.net
+schneider-electric.com
 schnellstrend.com
 scholar.af
 schule1212.online
@@ -53105,6 +53135,7 @@ scratchalpacasilver.top
 screamingfrog.co.uk
 sc.reddit.com
 screwmywifeclub.com
+scribd.com
 script-ok.ru
 scriptone-studio.ru
 scriptvendor.ru
@@ -53552,6 +53583,7 @@ seriaonline.mom
 sericaenergylt.com
 series1.hodyachie-mertvecini.ru
 series2.hodyachie-mertvecini.ru
+seriesgraph.com
 series.hodyachie-mertvecini.ru
 serif.com
 serintcomp.com
@@ -54224,6 +54256,8 @@ sharavoz.tv
 sharavoz.xyz
 share.america.gov
 shareasale-analytics.com
+sharefile.com
+sharefile.io
 sharelita.com
 shareman-tv.ru
 share.musemuse.cn
@@ -54612,6 +54646,7 @@ showerbait.com
 showfilm.net
 showgrowvegas.com
 showhome-property.com
+showip.net
 showtamtam.ru
 showtime.com
 shpalta.media
@@ -54763,6 +54798,7 @@ sigopt.com
 sigoptom.info
 sigorig.ru
 sigroup.top
+sigsauer.com
 sikatpinoy.net
 sikiree9.ru
 sila-aero.ru
@@ -56542,6 +56578,7 @@ srub36.ru
 srubimillion.ru
 srubizbrevna.com
 srvkp.com
+srv.nintendo.net
 srv.voidnetwork.cloud
 srzaev.ru
 sr.zebraboss.com
@@ -57399,6 +57436,7 @@ studsex.info
 studwork.org
 study2019.com
 studychat.app
+studyinfinland.fi
 studyinfrance.ru
 studyup.club
 stuffbucks24.com
@@ -58002,6 +58040,7 @@ sysdig.com
 sysertapart.ru
 sysinternals.com
 syslinux.ru
+syslog-ng.com
 s.ysoffosttores.ru
 syspromomail.com
 system-cat.com
@@ -59419,6 +59458,7 @@ thuonghieunguoiviet.com
 thyroidcancer.ru
 tiaglin.com
 tiava.com
+tibco.com
 tiberiumalliances.com
 tiburon.com
 tic75.ru
@@ -60589,6 +60629,7 @@ transiki.in
 transiki.li
 transikoff.cc
 transilvaniaai.com
+transistor.fm
 transjaund.de
 transkarpatia.net
 transkun.cc
@@ -64096,6 +64137,7 @@ vivid-beauty.com
 vividceleb.com
 vividtranny.com
 viviennetradingklass.com
+vivo.com.cn
 vivoes.com
 vivthomas.com
 vivxpert.com
@@ -64691,6 +64733,7 @@ vpnhome.sbs
 vpnhouse.net
 vpn.how
 vpn.inform.click
+vpnjantit.com
 vpnkey.net
 vpn-key.online
 vpnkeys.org
@@ -65204,6 +65247,7 @@ walkbyfaithcandles.co
 walkingdead.life
 walklive.org
 wallderivfs.com
+walletbot.me
 walletconnect.com
 walletconnect.org
 wallet.gemcy.app
