@@ -1,3 +1,4 @@
+For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).1.178.0.0/17
 1.9.57.77/32
 1.9.57.81/32
 1.9.57.83/32
@@ -74,7 +75,6 @@
 1.54.241.210/32
 1.54.241.214/32
 1.54.241.217/32
-1.178.0.0/17
 1.178.172.0/22
 1.179.2.0/23
 1.179.14.0/23
