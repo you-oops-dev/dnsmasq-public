@@ -20349,7 +20349,6 @@ forumrush.com
 forum.russianamerica.com
 forum.russiansingapore.com
 forum.rylraven.com
-forums.chaos.com
 forums.creagames.com
 forumserver.twoplustwo.com
 forums.gerki.in
@@ -22786,7 +22785,6 @@ glyf.ru
 glynleagrace.com
 glyntoravox-platform.com
 gm38.ru
-gmail.com
 gmark.kz
 gm.ashoo.bar
 gmbl.pro
@@ -23931,8 +23929,6 @@ gvk24.ru
 gv.reddit.com
 gvt1.com
 gvt1.comcloudflare.com
-gvt2.com
-gvt3.com
 gw1.torlook.info
 gwaramedia.com
 gw.ashoo.fun
@@ -32615,7 +32611,6 @@ librespeed.org
 libria.fun
 libri-online.net
 libropueblosmagicos.com
-lib.ru
 lib.rus.ec
 librusec.pro
 libsdl.org
@@ -38783,6 +38778,7 @@ muratozfilizler.com
 murawei.de
 murdetpol5.ru
 mu.reddit.com
+mureka.ai
 mures-tus.ru
 murino.city-driving.ru
 murka.org
@@ -65014,7 +65010,6 @@ waf.mp3-tut.biz
 wagersusa.com
 wag.mp3-tut.biz
 wahacker.org
-wahapedia.ru
 wahkiakum.info
 wahlclub.ru
 wahlstore.ru
@@ -65091,7 +65086,6 @@ warface.in.ua
 wargamingalliance.ru
 wargaming.net
 war.gov
-warhammer-community.com
 war.hvylya.net
 war-info.com
 wariolandshakeit.com
