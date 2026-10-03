@@ -58,7 +58,7 @@ wget -4q -nv -O - https://raw.githubusercontent.com/StevenBlack/hosts/master/alt
 
 wget -4q -nv -O - https://adblock.mahakala.is/ | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed '/:/d' | sed '/ip6/d' | sed '/!/d' | sed '/#/d' | sed 's/ //g' | sort -T /root/ | uniq > /tmp/filter/mahakala.hostname
 
-wget -4q -nv -O - https://block.energized.pro/blu/formats/domains.txt | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed '/:/d' | sed '/ip6/d' | sed '/!/d' | sed '/#/d' | sed 's/ //g' | sort -T /root/ | uniq > /tmp/filter/energized.hostname
+#wget -4q -nv -O - https://block.energized.pro/blu/formats/domains.txt | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed '/:/d' | sed '/ip6/d' | sed '/!/d' | sed '/#/d' | sed 's/ //g' | sort -T /root/ | uniq > /tmp/filter/energized.hostname
 
 wget -4q -nv -O - https://raw.githubusercontent.com/DataMaster-2501/DataMaster-Android-AdBlock-Hosts/master/hosts | sed 's/0.0.0.0 //g' | sed 's/127.0.0.1 //g' | sed '/:/d' | sed '/ip6/d' | sed '/!/d' | sed '/#/d' | sed 's/ //g' | sort -T /root/ | uniq > /tmp/filter/DataMaster.hostname
 
@@ -141,8 +141,8 @@ wget -4 -nv -O /tmp/filter/RUAdListBitBlock2.hostname https://raw.githubusercont
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock3.hostname https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/CountryCodesLists/Russia.txt
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock4.txt https://raw.githubusercontent.com/parseword/nolovia/master/skel/hosts-government-malware.txt
 cat /tmp/filter/RUAdListBitBlock4.txt | sed '/#/d' | sed '/!/d' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock4.hostname
-wget -4 -nv -O /tmp/filter/RUAdListBitBlock5.txt https://block.energized.pro/blu/formats/domains.txt
-cat /tmp/filter/RUAdListBitBlock5.txt | sed '/#/d' | sed '/!/d' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock5.hostname
+#wget -4 -nv -O /tmp/filter/RUAdListBitBlock5.txt https://block.energized.pro/blu/formats/domains.txt
+#cat /tmp/filter/RUAdListBitBlock5.txt | sed '/#/d' | sed '/!/d' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock5.hostname
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock6.txt https://schakal.ru/hosts/alive_hosts.txt
 cat /tmp/filter/RUAdListBitBlock6.txt | sed '/#/d' | awk -F\# '$1!="" { print $1 ;}' | grep -i 0.0.0.0 | sed '/0.0.0.0 0.0.0.0/d' | sed 's/^0.0.0.0 //g' | sort -T /root/ | uniq > /tmp/filter/RUAdListBitBlock6.hostname
 wget -4 -nv -O /tmp/filter/RUAdListBitBlock7.txt https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardDNS.txt
