@@ -2238,6 +2238,7 @@ account.apple.com
 account.deepsilver.com
 account.live.com
 account.proton.me
+accounts.chaos.com
 accounts.google.ru
 accounts.reddit.com
 account.templatemonster.com
@@ -2910,7 +2911,6 @@ aivahobby.ru
 aivest-app.com
 aivontrixen-app.com
 aivontrixenplatform.com
-aivorax-tech.com
 aivpn.help
 aixteen.com
 aiyadesignframework.ru
@@ -4085,7 +4085,6 @@ andgo.travel
 and-just-like-that.net
 and-just-like-that.org
 andjustlikethat.ru
-andmexbit-engine.com
 andonline.ru
 andrawealths.com
 andreapol.rosprom-gov-ru.ru
@@ -4685,6 +4684,7 @@ app.arbittroom.tech
 app.argosclub.net
 app.argos.marketing
 appatlantisbk.com
+appbrain.com
 appcenter.ms
 appcherkessk.ru
 app.claystack.com
@@ -8748,6 +8748,7 @@ bltpandac.com
 b.lu4.org
 bludexe.org
 blueaggrestore.com
+bluearchiveyostar.com
 bluebutterflyproject.org
 bluechew.com
 bluechipadvisor.live
@@ -9282,6 +9283,7 @@ boxerstar.ru
 box-fight.ru
 boxing-kipa.ru
 boxmanhwa.com
+boxofficemojo.com
 boxtracker.ru
 boyceexcavating.net
 boyenhaddin.com
@@ -9831,6 +9833,7 @@ btv24.ru
 btvsat.eu
 b.twirpx.link
 b.twirpx.one
+buanzo.org
 bubamultik.ru
 bubbavape.com
 bubblebuttpics.com
@@ -9907,6 +9910,7 @@ building-tech.org
 buildmelody.icu
 buildmotion.icu
 buildmusic.icu
+build.openvpn.net
 buildrhythm.icu
 buildscene.digital
 buildsound.icu
@@ -9945,6 +9949,7 @@ bulba-salo.ru
 bulbuledgesystem.com
 bulgemag.com
 bulgur.rest
+bulkhead.com
 bulki.raptoronline.ru
 bulkjerk.com
 bulk.nnmclub.to
@@ -10460,6 +10465,7 @@ caoz.net
 capacitorjs.com
 capassures-limited.com
 capcutapi.com
+capcutapi.us
 capcut.com
 capcutstatic.com
 capcutvod.com
@@ -11741,6 +11747,7 @@ cityasia.info
 citybeautyy.ru
 cityboom.top
 citychemiststore.com
+citycodegame.com
 city-driving.ru
 cityfashionweek.ru
 city-gazprom.ru
@@ -11839,6 +11846,7 @@ classifieds.russianamerica.com
 clati11.ru
 claude.ai
 claude.com
+claudeusercontent.com
 clawar.net
 clawhub.ai
 clayfold.icu
@@ -11980,6 +11988,7 @@ cloud.mongodb.com
 cloudns.net
 cloud.oracle.com
 cloud.owncube.com
+cloudsmith.io
 cloudsteering.ru
 cloudsync-prod.s3.amazonaws.com
 cloud-tdg.com
@@ -12465,6 +12474,7 @@ connect.ngrok-agent.com
 connector_693864f100e4819093e6ed9b651239f1.web-sandbox.oaiusercontent.com
 connector-openai-deep-research.web-sandbox.oaiusercontent.com
 connector_openai_deep_research.web-sandbox.oaiusercontent.com
+connector_openai_orbit_user_channel.web-sandbox.oaiusercontent.com
 connect.ubisoft.com
 connect-vpn.uptodown.com
 conquerwithcharacter.com
@@ -13730,6 +13740,7 @@ debaty.sumy.ua
 debitos-sp-2025.online
 deb.sury.org
 debt-freedao.live
+decagames.com
 decarbonisationday.kz
 de.castop.net
 decerotaqueria.com
@@ -16490,6 +16501,7 @@ ecctech.com
 ecency.com
 echangevyro-software.com
 echelon-yield-ai.com
+echelonyieldai-engine.com
 echiman.com
 echo-books.com
 echoclub.live
@@ -19156,10 +19168,10 @@ fexano.com
 fex.net
 fexokirantera-soft.com
 fexorium-pro-expert.org
-fexotuvanex-soft.com
 fexovion-app.net
 fexovion-tech.com
 fexoviontech.com
+fextralife.com
 feyginlive.net
 f.fapabelno.org
 ffaqlits.ru
@@ -20669,6 +20681,7 @@ free4k.net
 free555kf7lsmbsite.to
 free-addlink.com
 free.all-vkontakte.top
+freeanimehentai.net
 freeanime.info
 free-anime.ru
 freeanime.ru
@@ -24214,6 +24227,7 @@ h-ani.com
 hanime1.biz
 hanime1.me
 hanime4u.com
+hanime-cdn.com
 hanime.fun
 hanimehentai.tv
 h.animerem.org
@@ -27480,7 +27494,6 @@ ipay.ua
 ip-blockchain.ru
 ipburger.com
 ip-centre.ru
-ipdata.co
 i-pd.ch
 iperf3serverlist.net
 i-perf.ru
@@ -28771,6 +28784,7 @@ jbauto.ru
 jbb.mp3wr.com
 jbb.ru-music.online
 jbcam.al
+jbcam.cz
 jb.casvn.ru
 jbcnn.ru
 jb.gg
@@ -32117,7 +32131,6 @@ learn.hoou.de
 learningfreedomandtheweb.org
 learningmatters.co
 learnprogame.com
-leatherman.com
 le-baobab.net
 lebed.com
 lebedevlegal.ru
@@ -35540,6 +35553,7 @@ mcmathcontrols.com
 mcmo-adm.ru
 mcmoskva.ru
 mc-myclinik.xyz
+mcp-app-9d1670aeddb8248ef0499db2eea4a515b5ed1381839cbdf9.web-sandbox.oaiusercontent.com
 mcp-cg.com
 mcpemods.org
 mcphersoninc.com
@@ -37503,6 +37517,7 @@ mobi.huyamba.org
 mobilariuz.ru
 mobileapp-partner.olymp1.xyz
 mobileapp-partner.olymp2.xyz
+mobile.de
 mobiledevice.ru
 mobile-info.ru
 mobile-pomosh.ru
@@ -38729,6 +38744,7 @@ m.tevass.top
 m.tevazz.top
 mtf-phone.top
 mtfprogram.ru
+mtgcardbuilder.com
 m.theenglishmansion.com
 m.thegay.porn
 m.thepiratebay0.org
@@ -40442,7 +40458,6 @@ neuronize.dev
 neuro-pax-aitech.com
 neurosofia.ru
 neurothlon.ru
-neurovex-auracore-soft.com
 neusoftco.com
 nevachina.ru
 nevacoatings.ru
@@ -42995,6 +43010,7 @@ opengate.click
 openglobalrights.org
 opengserwfwerg.pro
 openh264.org
+openhands.dev
 openhearthelp.com
 openkm.ru
 openlesruk.ru
@@ -46822,6 +46838,7 @@ powershellgallery.com
 power-smart.io
 power-space.ru
 power.sportsstd.com
+powersurf.eu
 power-vpn.ru
 poweryogaworks.com
 power-zertum3solution.com
@@ -47283,6 +47300,7 @@ prod-prod.ru
 prodregistryv2.org
 producerbocharova.ru
 production2023.cvedetails.com
+production.cloudfront.docker.com
 production-line.ru
 production-openaicom-storage.azureedge.net
 produhovku.ru
@@ -48721,6 +48739,7 @@ rai.it
 raikerian.com
 raikou2.donmai.us
 railrus.ru
+railway.com
 railwayz.info
 rainbowchildrenshome.org
 rainbowconosur.com
@@ -55810,6 +55829,7 @@ software-download.top
 softwarestore.shure.com
 softwavey.com
 softzakon.org.ua
+sofvenixpro-platform.com
 sogayfuck.cc
 sogayporn.cc
 sogixia7.ru
@@ -57380,6 +57400,7 @@ stt163.ru
 sttexpo.ru
 sttonelove.biz
 st-tver.ru
+stubhub.com
 student-files.ru
 studently.net
 studfiles.net
@@ -57819,6 +57840,7 @@ svyatskiy.ru
 svyaznoy-promo.ru
 svzje67fechzot6.filonl.ru
 swaga.space
+swaggerhub.com
 swagger.io
 swag.live
 swaillze.erokomiksi.fun
@@ -61113,7 +61135,6 @@ trycasicopt.com
 trycasicoru.com
 trycasicouz.com
 trycasicpt.com
-try.chaos.com
 tryd-6345.okis.ru
 trydildo.net
 tryfist.net
@@ -62437,6 +62458,7 @@ uoplfiigka.online
 uoplfiigka.ru
 uoprim.ru
 uo.reddit.com
+up2.oaiusercontent.com
 upakovok.ru
 upakservis.ru
 upala-moneta.ru
@@ -62455,6 +62477,7 @@ upc.ubisoft.com
 upcybernet.com
 upcybernova.com
 upcygnal.com
+updates.oaistatic.com
 updfund.com
 updowntoday.com
 upfy.org
@@ -66128,6 +66151,7 @@ wooinfo.ru
 woolandmania.ru
 wool-ekat.ru
 woolyss.com
+wooting.io
 woow-porn.com
 woqimuy6.ru
 wording.ru
@@ -66587,6 +66611,7 @@ www.1clickvpn.com
 www.1fichier.com
 www1.kasparov.org
 www.1ki174.com
+www.1kinobig.ru
 www1.mega555nel9.com
 www1.mega555netl.com
 www1.movielab.work
@@ -67813,6 +67838,7 @@ www.camseek.tv
 www.camsexysluts.com
 www.camshowdownloads.org
 www.camsitedownloads.org
+www.camsoda.com
 www.camstank.com
 www.camster.com
 www.camstrans.com
@@ -74068,6 +74094,7 @@ www.wildsultan.com
 www.wildtornado.org
 www.wildvegascampaign.com
 www.wildz.com
+www.williamhill.es
 www.williamhill.it
 www.williamhillplc.com
 www.williamhill.se
@@ -74918,7 +74945,6 @@ xmarketcoin.com
 xmature.net
 xmcsrv.net
 xmegadrive.com
-xmeye.net
 xmg.gg
 xmilf.com
 xmilfs.tv
@@ -77293,6 +77319,7 @@ xp.apple.com
 xp.apple.comapps.apple.com
 xpbee.pro
 xpee.com
+xpenology.tech
 xpertconnectedsignals.com
 xpertglowlytics.com
 xpervmom.com
@@ -78040,6 +78067,8 @@ yorki-strizhka.ru
 yorkshireweddingbarn.co.uk
 yorktheatre.org
 yoshla.ru
+yostarplat.com
+yotube.com
 youandme.chat
 you-anime.ru
 youaredonbas.com
@@ -78293,7 +78322,6 @@ zags2.top
 zahadibro.site.cutestat.com
 zahav.ru
 zahid.espreso.tv
-zahlentis-software.com
 zahodi-posmotri.ru
 zaim-dynai.ru
 zaim-irk.ru
@@ -78609,6 +78637,7 @@ zerossl.com
 zerotier.com
 zerowasteeducation.com
 zerowastelab.ru
+zerro.app
 zerx.club
 zerx.co
 zerx.tv
