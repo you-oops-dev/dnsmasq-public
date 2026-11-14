@@ -26,6 +26,10 @@ curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubuserconten
 curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/cloudflare/ipv4_smart.txt >> /tmp/unblock_static.txt
 curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/telegram/ipv4_smart.txt >> /tmp/unblock_static.txt
 curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/meta/ipv4_smart.txt >> /tmp/unblock_static.txt
+curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/steam/ipv4_smart.txt >> /tmp/unblock_static.txt
+curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/datacamp/ipv4_smart.txt >> /tmp/unblock_static.txt
+curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/ovh/ipv4_smart.txt >> /tmp/unblock_static.txt
+curl --max-time 30 --retry-delay 3 --retry 10 -4 -# https://raw.githubusercontent.com/${NAME_ACCOUNT_GITHUB}/ipranges/refs/heads/main/digitalocean/ipv4_smart.txt >> /tmp/unblock_static.txt
 #...
 sudo sort /tmp/unblock_static.txt -T /root/ | uniq | sponge /tmp/unblock_static.txt
 
