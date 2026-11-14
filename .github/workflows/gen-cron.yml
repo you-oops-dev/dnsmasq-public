@@ -130,11 +130,11 @@ jobs:
 
 ############################
 
-    - name: Test DNS-query
-      run: |
-       nslookup -type=A google.com
-       echo ""
-       dig google.com A
+#    - name: Test DNS-query
+#      run: |
+#       nslookup -type=A google.com
+#       echo ""
+#       dig google.com A
 
     - name: Install dependencies for start script
       env:
